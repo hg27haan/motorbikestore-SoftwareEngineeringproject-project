@@ -169,15 +169,15 @@
                             <div class=" col-12 col-md-6 col-lg-3">
                                 <div class="card">
                                 <div class="view zoom z-depth-2 rounded">
-                                    <img class="img-fluid w-100" src="${o.image}" alt="Card image cap">
+                                    <img class="img-fluid w-100" src="${o.hinhAnh1}" alt="Card image cap">
                                    
                                      </div>
                                     <div class="card-body">
-                                        <h4 class="card-title show_txt"><a href="detail?pid=${o.id}" title="View Product">${o.name}</a></h4>
+                                        <h4 class="card-title show_txt"><a href="detail?pmaXe=${o.maXe}" title="View XeMay">${o.tenXe}</a></h4>
                                         <p class="card-text show_txt">${o.title}</p>
                                         <div class="row">
                                             <div class="col">
-                                                <p class="btn btn-success btn-block">${o.price} $</p>
+                                                <p class="btn btn-success btn-block">${o.giaTien} $</p>
                                             </div> 
                                         </div>
                                     </div>
@@ -199,14 +199,14 @@
                             <div class="productNike col-12 col-md-6 col-lg-3">
                                 <div class="card">
                                  <div class="view zoom z-depth-2 rounded">
-                                    <img class="img-fluid w-100" src="${o.image}" alt="Card image cap">
+                                    <img class="img-fluid w-100" src="${o.hinhAnh1}" alt="Card image cap">
                                     </div>
                                     <div class="card-body">
-                                        <h4 class="card-title show_txt"><a href="detail?pid=${o.id}" title="View Product">${o.name}</a></h4>
+                                        <h4 class="card-title show_txt"><a href="detail?pmaXe=${o.maXe}" title="View XeMay">${o.tenXe}</a></h4>
                                         <p class="card-text show_txt">${o.title}</p>
                                         <div class="row">
                                             <div class="col">
-                                                <p class="btn btn-success btn-block">${o.price} $</p>
+                                                <p class="btn btn-success btn-block">${o.giaTien} $</p>
                                             </div>
                                             
                                         </div>
@@ -228,14 +228,14 @@
                             <div class="productAdidas col-12 col-md-6 col-lg-3">
                                 <div class="card">
                                 <div class="view zoom z-depth-2 rounded">
-                                    <img class="img-fluid w-100" src="${o.image}" alt="Card image cap">
+                                    <img class="img-fluid w-100" src="${o.hinhAnh1}" alt="Card image cap">
                                     </div>
                                     <div class="card-body">
-                                        <h4 class="card-title show_txt"><a href="detail?pid=${o.id}" title="View Product">${o.name}</a></h4>
+                                        <h4 class="card-title show_txt"><a href="detail?pmaXe=${o.maXe}" title="View XeMay">${o.tenXe}</a></h4>
                                         <p class="card-text show_txt">${o.title}</p>
                                         <div class="row">
                                             <div class="col">
-                                                <p class="btn btn-success btn-block">${o.price} $</p>
+                                                <p class="btn btn-success btn-block">${o.giaTien} $</p>
                                             </div>
                                            
                                         </div>
