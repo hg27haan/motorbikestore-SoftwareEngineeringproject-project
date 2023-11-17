@@ -7,9 +7,9 @@ package control;
 
 import dao.DAO;
 import entity.Account;
-import entity.Category;
-import entity.Product;
-import entity.SoLuongDaBan;
+import entity.DanhMuc;
+import entity.XeMay;
+import entity.SoLuongXeDaBan;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -40,8 +40,8 @@ public class Top10SanPhamControl extends HttpServlet {
         
        
         DAO dao = new DAO();
-        List<Product> listAllProduct = dao.getAllProduct();
-        List<SoLuongDaBan> listTop10Product = dao.getTop10SanPhamBanChay();
+        List<XeMay> listAllProduct = dao.getAllProduct();
+        List<SoLuongXeDaBan> listTop10Product = dao.getTop10SanPhamBanChay();
 
 
         

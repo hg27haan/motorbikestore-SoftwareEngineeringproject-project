@@ -6,8 +6,8 @@
 package control;
 
 import dao.DAO;
-import entity.Category;
-import entity.Product;
+import entity.DanhMuc;
+import entity.XeMay;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.List;
@@ -37,9 +37,9 @@ public class SearchControl extends HttpServlet {
         String txtSearch = request.getParameter("txt");//giay chay bo
         
         DAO dao = new DAO();
-        List<Product> list = dao.searchByName(txtSearch);
-        List<Category> listC = dao.getAllCategory();
-        Product last = dao.getLast();
+        List<XeMay> list = dao.searchByName(txtSearch);
+        List<DanhMuc> listC = dao.getAllCategory();
+        XeMay last = dao.getLast();
         
         request.setAttribute("listP", list);
         request.setAttribute("listCC", listC);

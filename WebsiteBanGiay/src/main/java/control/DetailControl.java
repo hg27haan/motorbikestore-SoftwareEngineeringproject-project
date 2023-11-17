@@ -7,9 +7,9 @@ package control;
 
 import dao.DAO;
 import entity.Account;
-import entity.Category;
-import entity.Product;
-import entity.Review;
+import entity.DanhMuc;
+import entity.XeMay;
+import entity.FeedBack;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -38,17 +38,17 @@ public class DetailControl extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         String id = request.getParameter("pid");
         DAO dao = new DAO();
-        Product p = dao.getProductByID(id);
+        XeMay p = dao.getProductByID(id);
         
         int cateIDProductDetail = dao.getCateIDByProductID(id);
-        List<Product> listRelatedProduct = dao.getRelatedProduct(cateIDProductDetail);
+        List<XeMay> listRelatedProduct = dao.getRelatedProduct(cateIDProductDetail);
         
-        List<Review> listAllReview = dao.getAllReviewByProductID(id);
+        List<FeedBack> listAllReview = dao.getAllReviewByProductID(id);
         int countAllReview = listAllReview.size();
         
         List<Account> listAllAcount = dao.getAllAccount();
         
-        Product last = dao.getLast();
+        XeMay last = dao.getLast();
 
         request.setAttribute("detail", p);
         request.setAttribute("listRelatedProduct", listRelatedProduct);

@@ -8,8 +8,8 @@ package control;
 
 import dao.DAO;
 import entity.Account;
-import entity.Category;
-import entity.Product;
+import entity.DanhMuc;
+import entity.XeMay;
 import entity.Supplier;
 
 import java.io.IOException;
@@ -42,7 +42,7 @@ public class ManagerSupplierControl extends HttpServlet {
         DAO dao = new DAO();
 
         List<Supplier> listAllSupplier = dao.getAllSupplier();
-        List<Category> listAllCategory = dao.getAllCategory();
+        List<DanhMuc> listAllCategory = dao.getAllCategory();
 
 
         request.setAttribute("listAllSupplier", listAllSupplier);

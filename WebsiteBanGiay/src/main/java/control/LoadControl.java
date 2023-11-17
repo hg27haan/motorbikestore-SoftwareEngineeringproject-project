@@ -6,8 +6,8 @@
 package control;
 
 import dao.DAO;
-import entity.Category;
-import entity.Product;
+import entity.DanhMuc;
+import entity.XeMay;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.List;
@@ -35,8 +35,8 @@ public class LoadControl extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         String id = request.getParameter("pid");
         DAO dao = new DAO();
-        Product p = dao.getProductByID(id);
-        List<Category> listC = dao.getAllCategory();
+        XeMay p = dao.getProductByID(id);
+        List<DanhMuc> listC = dao.getAllCategory();
 
         request.setAttribute("detail", p);
         request.setAttribute("listCC", listC);

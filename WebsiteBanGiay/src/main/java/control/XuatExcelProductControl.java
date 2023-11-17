@@ -8,9 +8,9 @@ package control;
 import dao.DAO;
 
 import entity.Account;
-import entity.Category;
-import entity.Invoice;
-import entity.Product;
+import entity.DanhMuc;
+import entity.HoaDon;
+import entity.XeMay;
 
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -51,7 +51,7 @@ public class XuatExcelProductControl extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
       
         DAO dao = new DAO();
-        List<Product> list = dao.getAllProduct();
+        List<XeMay> list = dao.getAllProduct();
         
         System.out.print(list.get(0));
 
@@ -111,33 +111,37 @@ public class XuatExcelProductControl extends HttpServlet {
         
         int i=0;
         
-        for (Product pro : list) {
+        for (XeMay pro : list) {
         	i=i+1;
         			 row=workSheet.createRow(i);
         			 cell0=row.createCell(0);
-        		     cell0.setCellValue(pro.getId());
+        		     cell0.setCellValue(pro.getMaXe());
         		     cell1=row.createCell(1);
-        		     cell1.setCellValue(pro.getName());
+        		     cell1.setCellValue(pro.getTenXe());
         		     cell2=row.createCell(2);
-        		     cell2.setCellValue(pro.getImage());
+        		     cell2.setCellValue(pro.getHinhAnh1());
         		     cell3=row.createCell(3);
-        		     cell3.setCellValue(pro.getPrice());	
+        		     cell3.setCellValue(pro.getGiaTien());	
         		     cell4=row.createCell(4);
         		     cell4.setCellValue(pro.getTitle());	
         		     cell4=row.createCell(5);
-        		     cell4.setCellValue(pro.getDescription());	
+        		     cell4.setCellValue(pro.getGioiThieu());	
         		     cell4=row.createCell(6);
-        		     cell4.setCellValue(pro.getModel());	
+        		     cell4.setCellValue(pro.getKhoiLuong());	
         		     cell4=row.createCell(7);
-        		     cell4.setCellValue(pro.getColor());	
+        		     cell4.setCellValue(pro.getDaiRongCao());	
         		     cell4=row.createCell(8);
-        		     cell4.setCellValue(pro.getDelivery());	
+        		     cell4.setCellValue(pro.getDungTichXiLanh());	
         		     cell4=row.createCell(9);
-        		     cell4.setCellValue(pro.getImage2());	
+        		     cell4.setCellValue(pro.getTiSoNen());	
         		     cell4=row.createCell(10);
-        		     cell4.setCellValue(pro.getImage3());	
+        		     cell4.setCellValue(pro.getDungTichBinhXang());	
         		     cell4=row.createCell(11);
-        		     cell4.setCellValue(pro.getImage4());	
+        		     cell4.setCellValue(pro.getHinhAnh2());
+        		     cell4=row.createCell(12);
+        		     cell4.setCellValue(pro.getHinhAnh3());
+        		     cell4=row.createCell(13);
+        		     cell4.setCellValue(pro.getHinhAnh4());	
         }
                
         workbook.write(file);

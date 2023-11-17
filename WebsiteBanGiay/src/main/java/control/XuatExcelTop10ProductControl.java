@@ -8,10 +8,10 @@ package control;
 import dao.DAO;
 
 import entity.Account;
-import entity.Category;
-import entity.Invoice;
-import entity.Product;
-import entity.SoLuongDaBan;
+import entity.DanhMuc;
+import entity.HoaDon;
+import entity.XeMay;
+import entity.SoLuongXeDaBan;
 
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -52,8 +52,8 @@ public class XuatExcelTop10ProductControl extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
       
         DAO dao = new DAO();
-        List<Product> listAllProduct = dao.getAllProduct();
-        List<SoLuongDaBan> listTop10Product = dao.getTop10SanPhamBanChay();
+        List<XeMay> listAllProduct = dao.getAllProduct();
+        List<SoLuongXeDaBan> listTop10Product = dao.getTop10SanPhamBanChay();
         
   
 
@@ -111,34 +111,40 @@ public class XuatExcelTop10ProductControl extends HttpServlet {
         int i=0;
         
         
-        for (SoLuongDaBan soluong : listTop10Product) {
-        	   for (Product pro : listAllProduct) {
-        		   if(soluong.getProductID() == pro.getId()) {
+        for (SoLuongXeDaBan soluong : listTop10Product) {
+        	   for (XeMay pro : listAllProduct) {
+        		   if(soluong.getMaXe() == pro.getMaXe()) {
         			   	i=i+1;
              			 row=workSheet.createRow(i);
              			 cell0=row.createCell(0);
-             		     cell0.setCellValue(pro.getId());
-             		     cell1=row.createCell(1);
-             		     cell1.setCellValue(pro.getName());
-             		     cell2=row.createCell(2);
-             		     cell2.setCellValue(pro.getImage());
-             		     cell3=row.createCell(3);
-             		     cell3.setCellValue(pro.getPrice());	
-             		     cell4=row.createCell(4);
-             		     cell4.setCellValue(pro.getTitle());	
-             		     cell4=row.createCell(5);
-             		     cell4.setCellValue(pro.getDescription());	
-             		     cell4=row.createCell(6);
-             		     cell4.setCellValue(pro.getModel());	
-             		     cell4=row.createCell(7);
-             		     cell4.setCellValue(pro.getColor());	
-             		     cell4=row.createCell(8);
-             		     cell4.setCellValue(pro.getDelivery());	
-             		     cell4=row.createCell(9);
-             		     cell4.setCellValue(pro.getImage2());	
-             		     cell4=row.createCell(10);
-             		     cell4.setCellValue(pro.getImage3());	
-             		     cell4=row.createCell(11);
+            		     cell0.setCellValue(pro.getMaXe());
+            		     cell1=row.createCell(1);
+            		     cell1.setCellValue(pro.getTenXe());
+            		     cell2=row.createCell(2);
+            		     cell2.setCellValue(pro.getHinhAnh1());
+            		     cell3=row.createCell(3);
+            		     cell3.setCellValue(pro.getGiaTien());	
+            		     cell4=row.createCell(4);
+            		     cell4.setCellValue(pro.getTitle());	
+            		     cell4=row.createCell(5);
+            		     cell4.setCellValue(pro.getGioiThieu());	
+            		     cell4=row.createCell(6);
+            		     cell4.setCellValue(pro.getKhoiLuong());	
+            		     cell4=row.createCell(7);
+            		     cell4.setCellValue(pro.getDaiRongCao());	
+            		     cell4=row.createCell(8);
+            		     cell4.setCellValue(pro.getDungTichXiLanh());	
+            		     cell4=row.createCell(9);
+            		     cell4.setCellValue(pro.getTiSoNen());	
+            		     cell4=row.createCell(10);
+            		     cell4.setCellValue(pro.getDungTichBinhXang());	
+            		     cell4=row.createCell(11);
+            		     cell4.setCellValue(pro.getHinhAnh2());
+            		     cell4=row.createCell(12);
+            		     cell4.setCellValue(pro.getHinhAnh3());
+            		     cell4=row.createCell(13);
+            		     cell4.setCellValue(pro.getHinhAnh4());	
+            		     cell4=row.createCell(14);
              		     cell4.setCellValue(soluong.getSoLuongDaBan());	
         		   }	
                }

@@ -7,10 +7,10 @@ package control;
 
 import dao.DAO;
 import entity.Account;
-import entity.Cart;
-import entity.Category;
-import entity.Invoice;
-import entity.Product;
+import entity.GioHang;
+import entity.DanhMuc;
+import entity.HoaDon;
+import entity.XeMay;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.List;
@@ -82,7 +82,7 @@ public class StatisticControl extends HttpServlet {
         int allProduct = dao.countAllProduct();
         double sumAllInvoice = dao.sumAllInvoice();
         
-        List<Invoice> listAllInvoice = dao.getAllInvoice();
+        List<HoaDon> listAllInvoice = dao.getAllInvoice();
         List<Account> listAllAccount = dao.getAllAccount();
         
         request.setAttribute("listAllInvoice", listAllInvoice);

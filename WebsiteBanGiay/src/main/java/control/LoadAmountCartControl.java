@@ -7,7 +7,7 @@ package control;
 
 import dao.DAO;
 import entity.Account;
-import entity.Cart;
+import entity.GioHang;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -45,10 +45,9 @@ public class LoadAmountCartControl extends HttpServlet {
         }
         int accountID = a.getId();
         DAO dao = new DAO();
-        List<Cart> list = dao.getCartByAccountID(accountID);
+        List<GioHang> list = dao.getCartByAccountID(accountID);
         totalAmountCart = list.size();
-        
-        
+                
         //in list p day
         PrintWriter out = response.getWriter();
         out.println(totalAmountCart);

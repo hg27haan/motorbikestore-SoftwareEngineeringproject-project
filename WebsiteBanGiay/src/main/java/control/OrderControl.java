@@ -15,10 +15,10 @@ import dao.DAO;
 import entity.Account;
 import entity.Email;
 import entity.EmailUtils;
-import entity.Cart;
-import entity.Product;
-import entity.SoLuongDaBan;
-import entity.TongChiTieuBanHang;
+import entity.GioHang;
+import entity.XeMay;
+import entity.SoLuongXeDaBan;
+import entity.TongChiTieuMuaHang;
 
 /**
  * Servlet implementation class ForgotPasswordControl
@@ -35,13 +35,13 @@ public class OrderControl extends HttpServlet {
 	        }
 	        int accountID = a.getId();
 	        DAO dao = new DAO();
-	        List<Cart> list = dao.getCartByAccountID(accountID);
-	        List<Product> list2 = dao.getAllProduct();
+	        List<GioHang> list = dao.getCartByAccountID(accountID);
+	        List<XeMay> list2 = dao.getAllProduct();
 	        double totalMoney=0;
-	        for(Cart c : list) {
-				for(Product p : list2) {
-					if(c.getProductID()==p.getId()) {
-						totalMoney=totalMoney+(p.getPrice()*c.getAmount());
+	        for(GioHang c : list) {
+				for(XeMay p : list2) {
+					if(c.getMaXe()==p.getMaXe()) {
+						totalMoney=totalMoney+(p.getGiaTien()*c.getSoLuong());
 					}
 				}
 			}
@@ -49,13 +49,13 @@ public class OrderControl extends HttpServlet {
 	        
 	        double tongTienBanHangThem=0;
 	        int sell_ID;
-	        for (Cart c : list) {
-	            for (Product p : list2) {
-	                if (c.getProductID() == p.getId()) {
+	        for (GioHang c : list) {
+	            for (XeMay p : list2) {
+	                if (c.getMaXe() == p.getMaXe()) {
 	                    tongTienBanHangThem = 0;
-	                    sell_ID = dao.getSellIDByProductID(p.getId());
-	                    tongTienBanHangThem = tongTienBanHangThem + (p.getPrice() * c.getAmount());
-	                    TongChiTieuBanHang t2 = dao.checkTongChiTieuBanHangExist(sell_ID);
+	                    sell_ID = dao.getSellIDByProductID(p.getMaXe());
+	                    tongTienBanHangThem = tongTienBanHangThem + (p.getGiaTien() * c.getSoLuong());
+	                    TongChiTieuMuaHang t2 = dao.checkTongChiTieuBanHangExist(sell_ID);
 	                    if (t2 == null) {
 	                        dao.insertTongChiTieuBanHang(sell_ID, 0, tongTienBanHangThem);
 	                    } else {
@@ -66,22 +66,22 @@ public class OrderControl extends HttpServlet {
 	        }
 	        
 	        
-	        for(Cart c : list) {
-				for(Product p : list2) {
-					if(c.getProductID()==p.getId()) {
-						SoLuongDaBan s = dao.checkSoLuongDaBanExist(p.getId());
+	        for(GioHang c : list) {
+				for(XeMay p : list2) {
+					if(c.getMaXe()==p.getMaXe()) {
+						SoLuongXeDaBan s = dao.checkSoLuongDaBanExist(p.getMaXe());
 						if(s == null) {
-							dao.insertSoLuongDaBan(p.getId(), c.getAmount());
+							dao.insertSoLuongDaBan(p.getMaXe(), c.getSoLuong());
 						}
 						else {
-							dao.editSoLuongDaBan(p.getId(), c.getAmount());
+							dao.editSoLuongDaBan(p.getMaXe(), c.getSoLuong());
 						}	
 					}
 				}
 			}
 	        
 	        dao.insertInvoice(accountID, totalMoneyVAT);
-	        TongChiTieuBanHang t = dao.checkTongChiTieuBanHangExist(accountID);
+	        TongChiTieuMuaHang t = dao.checkTongChiTieuBanHangExist(accountID);
 	        if(t==null) {
 	        	dao.insertTongChiTieuBanHang(accountID,totalMoneyVAT,0);
 	        }
@@ -112,14 +112,14 @@ public class OrderControl extends HttpServlet {
 		        }
 		        int accountID = a.getId();
 		        DAO dao = new DAO();
-		        List<Cart> list = dao.getCartByAccountID(accountID);
-		        List<Product> list2 = dao.getAllProduct();
+		        List<GioHang> list = dao.getCartByAccountID(accountID);
+		        List<XeMay> list2 = dao.getAllProduct();
 					
 		        double totalMoney=0;
-		        for(Cart c : list) {
-					for(Product p : list2) {
-						if(c.getProductID()==p.getId()) {
-							totalMoney=totalMoney+(p.getPrice()*c.getAmount());
+		        for(GioHang c : list) {
+					for(XeMay p : list2) {
+						if(c.getMaXe()==p.getMaXe()) {
+							totalMoney=totalMoney+(p.getGiaTien()*c.getSoLuong());
 						}
 					}
 				}
@@ -138,10 +138,10 @@ public class OrderControl extends HttpServlet {
 				sb.append("Dia chi nhan hang cua ban la: <b>").append(deliveryAddress).append(" </b> <br>");
 				sb.append("So dien thoai khi nhan hang cua ban la: <b>").append(phoneNumber).append(" </b> <br>");
 				sb.append("Cac san pham ban dat la: <br>");
-				for(Cart c : list) {
-					for(Product p : list2) {
-						if(c.getProductID()==p.getId()) {
-							sb.append(p.getName()).append(" | ").append("Price:").append(p.getPrice()).append("$").append(" | ").append("Amount:").append(c.getAmount()).append(" | ").append("Size:").append(c.getSize()).append("<br>");
+				for(GioHang c : list) {
+					for(XeMay p : list2) {
+						if(c.getMaXe()==p.getMaXe()) {
+							sb.append(p.getTenXe()).append(" | ").append("Price:").append(p.getGiaTien()).append("$").append(" | ").append("Amount:").append(c.getSoLuong()).append("<br>");
 						}
 					}
 				}

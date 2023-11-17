@@ -8,10 +8,10 @@ package control;
 import dao.DAO;
 
 import entity.Account;
-import entity.Category;
-import entity.Invoice;
-import entity.Product;
-import entity.TongChiTieuBanHang;
+import entity.DanhMuc;
+import entity.HoaDon;
+import entity.XeMay;
+import entity.TongChiTieuMuaHang;
 
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -53,7 +53,7 @@ public class XuatExcelTop5EmployeeControl extends HttpServlet {
       
         DAO dao = new DAO();
         List<Account> listAllAccount = dao.getAllAccount();
-        List<TongChiTieuBanHang> listTop5NhanVien = dao.getTop5NhanVien();
+        List<TongChiTieuMuaHang> listTop5NhanVien = dao.getTop5NhanVien();
         
         int maximum=2147483647;
         int minimum=1;
@@ -85,15 +85,15 @@ public class XuatExcelTop5EmployeeControl extends HttpServlet {
         
         int i=0;
         
-        for (TongChiTieuBanHang top5 : listTop5NhanVien) {
+        for (TongChiTieuMuaHang top5 : listTop5NhanVien) {
         	  for (Account acc : listAllAccount) {
-        		  if(top5.getUserID()==acc.getId()) {
+        		  if(top5.getMaAccount()==acc.getId()) {
         			  	i=i+1;
 	 	     			 row=workSheet.createRow(i);
 	 	     			 cell0=row.createCell(0);
 	 	     		     cell0.setCellValue(acc.getId());
 	 	     		     cell1=row.createCell(1);
-	 	     		     cell1.setCellValue(acc.getUser());
+	 	     		     cell1.setCellValue(acc.getUsername());
 	 	     		     cell2=row.createCell(2);
 	 	     		     cell2.setCellValue(acc.getEmail());
 	 	     		     cell3=row.createCell(3);

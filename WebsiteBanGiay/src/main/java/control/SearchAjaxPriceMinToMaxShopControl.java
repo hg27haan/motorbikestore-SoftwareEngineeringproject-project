@@ -6,7 +6,7 @@
 package control;
 
 import dao.DAO;
-import entity.Product;
+import entity.XeMay;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.List;
@@ -37,9 +37,9 @@ public class SearchAjaxPriceMinToMaxShopControl extends HttpServlet {
         String priceMin = request.getParameter("priceMin");
         String priceMax = request.getParameter("priceMax");
         DAO dao = new DAO();
-        List<Product> list = dao.searchByPriceMinToMax(priceMin,priceMax);
+        List<XeMay> list = dao.searchByPriceMinToMax(priceMin,priceMax);
         PrintWriter out = response.getWriter();
-        for (Product o : list) {
+        for (XeMay o : list) {
         	out.println("  <!-- Grid column -->\r\n"
         			+ "              <div class=\"col-md-4 mb-5\">\r\n"
         			+ "\r\n"
@@ -48,11 +48,11 @@ public class SearchAjaxPriceMinToMaxShopControl extends HttpServlet {
         			+ "\r\n"
         			+ "                  <div class=\"view zoom overlay rounded z-depth-2\">\r\n"
         			+ "                    <img class=\"img-fluid w-100\"\r\n"
-        			+ "                      src=\""+o.getImage()+"\" alt=\"Sample\">\r\n"
-        			+ "                    <a href=\"detail?pid="+o.getId()+"\">\r\n"
+        			+ "                      src=\""+o.getHinhAnh1()+"\" alt=\"Sample\">\r\n"
+        			+ "                    <a href=\"detail?pid="+o.getMaXe()+"\">\r\n"
         			+ "                      <div class=\"mask\">\r\n"
         			+ "                        <img class=\"img-fluid w-100\"\r\n"
-        			+ "                          src=\""+o.getImage()+"\">\r\n"
+        			+ "                          src=\""+o.getHinhAnh1()+"\">\r\n"
         			+ "                        <div class=\"mask rgba-black-slight\"></div>\r\n"
         			+ "                      </div>\r\n"
         			+ "                    </a>\r\n"
@@ -60,8 +60,8 @@ public class SearchAjaxPriceMinToMaxShopControl extends HttpServlet {
         			+ "\r\n"
         			+ "                  <div class=\"text-center pt-4\">\r\n"
         			+ "\r\n"
-        			+ "                    <h5>"+o.getName()+"</h5>\r\n"
-        			+ "                    <p><span class=\"mr-1\"><strong>"+o.getPrice()+"$</strong></span></p>\r\n"
+        			+ "                    <h5>"+o.getTenXe()+"</h5>\r\n"
+        			+ "                    <p><span class=\"mr-1\"><strong>"+o.getGiaTien()+"$</strong></span></p>\r\n"
         			+ "\r\n"
         			+ "                  </div>\r\n"
         			+ "\r\n"

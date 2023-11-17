@@ -7,8 +7,8 @@ package control;
 
 import dao.DAO;
 import entity.Account;
-import entity.Category;
-import entity.Product;
+import entity.DanhMuc;
+import entity.XeMay;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.List;
@@ -38,7 +38,7 @@ public class ShopControl extends HttpServlet {
         //b1: get data from dao
         DAO dao = new DAO();
 //        List<Product> list = dao.getAllProduct();
-        List<Category> listC = dao.getAllCategory();
+        List<DanhMuc> listC = dao.getAllCategory();
 
        
         
@@ -49,7 +49,7 @@ public class ShopControl extends HttpServlet {
         int indexPage = Integer.parseInt(index);
         
       
-        List<Product> list = dao.getProductByIndex(indexPage);
+        List<XeMay> list = dao.getProductByIndex(indexPage);
 //        List<Category> listC = dao.getAllCategory();
         int allProduct = dao.countAllProduct();
         int endPage = allProduct/9;

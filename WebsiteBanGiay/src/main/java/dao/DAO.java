@@ -7,15 +7,15 @@ package dao;
 
 import context.DBContext;
 import entity.Account;
-import entity.Cart;
-import entity.Review;
-import entity.SoLuongDaBan;
-import entity.TongChiTieuBanHang;
+import entity.GioHang;
+import entity.FeedBack;
+import entity.SoLuongXeDaBan;
+import entity.TongChiTieuMuaHang;
 import entity.Supplier;
 //import entity.Account;
-import entity.Category;
-import entity.Invoice;
-import entity.Product;
+import entity.DanhMuc;
+import entity.HoaDon;
+import entity.XeMay;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -32,15 +32,15 @@ public class DAO {
     PreparedStatement ps = null;
     ResultSet rs = null;
 
-    public List<Product> getAllProduct() {
-        List<Product> list = new ArrayList<>();
+    public List<XeMay> getAllProduct() {
+        List<XeMay> list = new ArrayList<>();
         String query = "select * from Product";
         try {
             conn = new DBContext().getConnection();//mo ket noi voi sql
             ps = conn.prepareStatement(query);
             rs = ps.executeQuery();
             while (rs.next()) {
-                list.add(new Product(rs.getInt(1),
+                list.add(new XeMay(rs.getInt(1),
                         rs.getString(2),
                         rs.getString(3),
                         rs.getDouble(4),
@@ -51,15 +51,17 @@ public class DAO {
                         rs.getString(11),
                         rs.getString(12),
                         rs.getString(13),
-                        rs.getString(14)));
+                        rs.getString(14),
+                        rs.getString(15),
+                        rs.getString(16)));
             }
         } catch (Exception e) {
         }
         return list;
     }
     
-    public List<SoLuongDaBan> getTop10SanPhamBanChay() {
-        List<SoLuongDaBan> list = new ArrayList<>();
+    public List<SoLuongXeDaBan> getTop10SanPhamBanChay() {
+        List<SoLuongXeDaBan> list = new ArrayList<>();
         String query = "select top(10) *\r\n"
         		+ "from SoLuongDaBan\r\n"
         		+ "order by soLuongDaBan desc";
@@ -68,7 +70,7 @@ public class DAO {
             ps = conn.prepareStatement(query);
             rs = ps.executeQuery();
             while (rs.next()) {
-                list.add(new SoLuongDaBan(rs.getInt(1),
+                list.add(new SoLuongXeDaBan(rs.getInt(1),
                         rs.getInt(2)
                   ));
             }
@@ -77,15 +79,15 @@ public class DAO {
         return list;
     }
     
-    public List<Invoice> getAllInvoice() {
-        List<Invoice> list = new ArrayList<>();
+    public List<HoaDon> getAllInvoice() {
+        List<HoaDon> list = new ArrayList<>();
         String query = "select * from Invoice";
         try {
             conn = new DBContext().getConnection();//mo ket noi voi sql
             ps = conn.prepareStatement(query);
             rs = ps.executeQuery();
             while (rs.next()) {
-                list.add(new Invoice(rs.getInt(1),
+                list.add(new HoaDon(rs.getInt(1),
                         rs.getInt(2),
                         rs.getDouble(3),
                         rs.getDate(4)
@@ -234,8 +236,7 @@ public class DAO {
                         rs.getString(2),
                         rs.getString(3),
                         rs.getInt(4),
-                        rs.getInt(5),
-                		rs.getString(6)));
+                		rs.getString(5)));
             }
         } catch (Exception e) {
         }
@@ -262,8 +263,8 @@ public class DAO {
         return list;
     }
    
-    public List<TongChiTieuBanHang> getTop5KhachHang() {
-        List<TongChiTieuBanHang> list = new ArrayList<>();
+    public List<TongChiTieuMuaHang> getTop5KhachHang() {
+        List<TongChiTieuMuaHang> list = new ArrayList<>();
         String query = "select top(5) *\r\n"
         		+ "from TongChiTieuBanHang\r\n"
         		+ "order by TongChiTieu desc";
@@ -272,18 +273,16 @@ public class DAO {
             ps = conn.prepareStatement(query);
             rs = ps.executeQuery();
             while (rs.next()) {
-                list.add(new TongChiTieuBanHang(rs.getInt(1),
-                        rs.getDouble(2),
-                        rs.getDouble(3)
-                       ));
+                list.add(new TongChiTieuMuaHang(rs.getInt(1),
+                        rs.getDouble(2)));
             }
         } catch (Exception e) {
         }
         return list;
     }
     
-    public List<TongChiTieuBanHang> getTop5NhanVien() {
-        List<TongChiTieuBanHang> list = new ArrayList<>();
+    public List<TongChiTieuMuaHang> getTop5NhanVien() {
+        List<TongChiTieuMuaHang> list = new ArrayList<>();
         String query = "select top(5) *\r\n"
         		+ "from TongChiTieuBanHang\r\n"
         		+ "order by TongBanHang desc";
@@ -292,25 +291,23 @@ public class DAO {
             ps = conn.prepareStatement(query);
             rs = ps.executeQuery();
             while (rs.next()) {
-                list.add(new TongChiTieuBanHang(rs.getInt(1),
-                        rs.getDouble(2),
-                        rs.getDouble(3)
-                       ));
+                list.add(new TongChiTieuMuaHang(rs.getInt(1),
+                        rs.getDouble(2)));
             }
         } catch (Exception e) {
         }
         return list;
     }
 
-    public List<Product> getTop3() {
-        List<Product> list = new ArrayList<>();
+    public List<XeMay> getTop3() {
+        List<XeMay> list = new ArrayList<>();
         String query = "select top 3 * from Product";
         try {
             conn = new DBContext().getConnection();//mo ket noi voi sql
             ps = conn.prepareStatement(query);
             rs = ps.executeQuery();
             while (rs.next()) {
-                list.add(new Product(rs.getInt(1),
+                list.add(new XeMay(rs.getInt(1),
                         rs.getString(2),
                         rs.getString(3),
                         rs.getDouble(4),
@@ -321,15 +318,17 @@ public class DAO {
                         rs.getString(11),
                         rs.getString(12),
                         rs.getString(13),
-                        rs.getString(14)));
+                        rs.getString(14),
+                        rs.getString(15),
+                        rs.getString(16)));
             }
         } catch (Exception e) {
         }
         return list;
     }
 
-    public List<Product> getNext3Product(int amount) {
-        List<Product> list = new ArrayList<>();
+    public List<XeMay> getNext3Product(int amount) {
+        List<XeMay> list = new ArrayList<>();
         String query = "SELECT *\n"
                 + "  FROM Product\n"
                 + " ORDER BY id\n"
@@ -341,7 +340,7 @@ public class DAO {
             ps.setInt(1, amount);
             rs = ps.executeQuery();
             while (rs.next()) {
-                list.add(new Product(rs.getInt(1),
+                list.add(new XeMay(rs.getInt(1),
                         rs.getString(2),
                         rs.getString(3),
                         rs.getDouble(4),
@@ -352,15 +351,17 @@ public class DAO {
                         rs.getString(11),
                         rs.getString(12),
                         rs.getString(13),
-                        rs.getString(14)));
+                        rs.getString(14),
+                        rs.getString(15),
+                        rs.getString(16)));
             }
         } catch (Exception e) {
         }
         return list;
     }
     
-    public List<Product> getNext4NikeProduct(int amount) {
-        List<Product> list = new ArrayList<>();
+    public List<XeMay> getNext4NikeProduct(int amount) {
+        List<XeMay> list = new ArrayList<>();
         String query = "select * from Product\r\n"
         		+ "where cateID=2\r\n"
         		+ "order by id desc\r\n"
@@ -372,7 +373,7 @@ public class DAO {
             ps.setInt(1, amount);
             rs = ps.executeQuery();
             while (rs.next()) {
-                list.add(new Product(rs.getInt(1),
+                list.add(new XeMay(rs.getInt(1),
                         rs.getString(2),
                         rs.getString(3),
                         rs.getDouble(4),
@@ -383,15 +384,17 @@ public class DAO {
                         rs.getString(11),
                         rs.getString(12),
                         rs.getString(13),
-                        rs.getString(14)));
+                        rs.getString(14),
+                        rs.getString(15),
+                        rs.getString(16)));
             }
         } catch (Exception e) {
         }
         return list;
     }
     
-    public List<Product> getNext4AdidasProduct(int amount) {
-        List<Product> list = new ArrayList<>();
+    public List<XeMay> getNext4AdidasProduct(int amount) {
+        List<XeMay> list = new ArrayList<>();
         String query = "select * from Product\r\n"
         		+ "where cateID=1\r\n"
         		+ "order by id desc\r\n"
@@ -403,7 +406,7 @@ public class DAO {
             ps.setInt(1, amount);
             rs = ps.executeQuery();
             while (rs.next()) {
-                list.add(new Product(rs.getInt(1),
+                list.add(new XeMay(rs.getInt(1),
                         rs.getString(2),
                         rs.getString(3),
                         rs.getDouble(4),
@@ -414,15 +417,17 @@ public class DAO {
                         rs.getString(11),
                         rs.getString(12),
                         rs.getString(13),
-                        rs.getString(14)));
+                        rs.getString(14),
+                        rs.getString(15),
+                        rs.getString(16)));
             }
         } catch (Exception e) {
         }
         return list;
     }
     
-    public List<Product> getProductByCID(String cid) {
-        List<Product> list = new ArrayList<>();
+    public List<XeMay> getProductByCID(String cid) {
+        List<XeMay> list = new ArrayList<>();
         String query = "select * from Product\n"
                 + "where cateID = ?";
         try {
@@ -431,7 +436,7 @@ public class DAO {
             ps.setString(1, cid);
             rs = ps.executeQuery();
             while (rs.next()) {
-                list.add(new Product(rs.getInt(1),
+                list.add(new XeMay(rs.getInt(1),
                         rs.getString(2),
                         rs.getString(3),
                         rs.getDouble(4),
@@ -442,15 +447,17 @@ public class DAO {
                         rs.getString(11),
                         rs.getString(12),
                         rs.getString(13),
-                        rs.getString(14)));
+                        rs.getString(14),
+                        rs.getString(15),
+                        rs.getString(16)));
             }
         } catch (Exception e) {
         }
         return list;
     }
 
-    public List<Product> getProductBySellIDAndIndex(int id, int indexPage) {
-        List<Product> list = new ArrayList<>();
+    public List<XeMay> getProductBySellIDAndIndex(int id, int indexPage) {
+        List<XeMay> list = new ArrayList<>();
         String query = "select * from Product \r\n"
         		+ "where sell_ID = ?\r\n"
         		+ "order by [id]\r\n"
@@ -463,7 +470,7 @@ public class DAO {
             ps.setInt(2, (indexPage-1)*5);
             rs = ps.executeQuery();
             while (rs.next()) {
-                list.add(new Product(rs.getInt(1),
+                list.add(new XeMay(rs.getInt(1),
                         rs.getString(2),
                         rs.getString(3),
                         rs.getDouble(4),
@@ -474,15 +481,17 @@ public class DAO {
                         rs.getString(11),
                         rs.getString(12),
                         rs.getString(13),
-                        rs.getString(14)));
+                        rs.getString(14),
+                        rs.getString(15),
+                        rs.getString(16)));
             }
         } catch (Exception e) {
         }
         return list;
     }
     
-    public List<Product> getProductByIndex(int indexPage) {
-        List<Product> list = new ArrayList<>();
+    public List<XeMay> getProductByIndex(int indexPage) {
+        List<XeMay> list = new ArrayList<>();
         String query = "select * from Product \r\n"
         		+ "order by [id]\r\n"
         		+ "offset ? rows\r\n"
@@ -493,7 +502,7 @@ public class DAO {
             ps.setInt(1, (indexPage-1)*9);
             rs = ps.executeQuery();
             while (rs.next()) {
-                list.add(new Product(rs.getInt(1),
+                list.add(new XeMay(rs.getInt(1),
                         rs.getString(2),
                         rs.getString(3),
                         rs.getDouble(4),
@@ -504,15 +513,17 @@ public class DAO {
                         rs.getString(11),
                         rs.getString(12),
                         rs.getString(13),
-                        rs.getString(14)));
+                        rs.getString(14),
+                        rs.getString(15),
+                        rs.getString(16)));
             }
         } catch (Exception e) {
         }
         return list;
     }
 
-    public List<Product> searchByName(String txtSearch) {
-        List<Product> list = new ArrayList<>();
+    public List<XeMay> searchByName(String txtSearch) {
+        List<XeMay> list = new ArrayList<>();
         String query = "select * from Product\n"
                 + "where [name] like ?";
         try {
@@ -521,7 +532,7 @@ public class DAO {
             ps.setString(1, "%" + txtSearch + "%");
             rs = ps.executeQuery();
             while (rs.next()) {
-                list.add(new Product(rs.getInt(1),
+                list.add(new XeMay(rs.getInt(1),
                         rs.getString(2),
                         rs.getString(3),
                         rs.getDouble(4),
@@ -532,15 +543,17 @@ public class DAO {
                         rs.getString(11),
                         rs.getString(12),
                         rs.getString(13),
-                        rs.getString(14)));
+                        rs.getString(14),
+                        rs.getString(15),
+                        rs.getString(16)));
             }
         } catch (Exception e) {
         }
         return list;
     }
     
-    public List<Invoice> searchByNgayXuat(String ngayXuat) {
-        List<Invoice> list = new ArrayList<>();
+    public List<HoaDon> searchByNgayXuat(String ngayXuat) {
+        List<HoaDon> list = new ArrayList<>();
         String query = "select * from Invoice\r\n"
         		+ "where [ngayXuat] ='"+ngayXuat+"'";
         try {
@@ -549,7 +562,7 @@ public class DAO {
 //            ps.setString(1,ngayXuat);
             rs = ps.executeQuery();
             while (rs.next()) {
-                list.add(new Invoice(rs.getInt(1),
+                list.add(new HoaDon(rs.getInt(1),
                         rs.getInt(2),
                         rs.getDouble(3),
                         rs.getDate(4)
@@ -560,8 +573,8 @@ public class DAO {
         return list;
     }
     
-    public List<Product> searchPriceUnder100() {
-        List<Product> list = new ArrayList<>();
+    public List<XeMay> searchPriceUnder100() {
+        List<XeMay> list = new ArrayList<>();
         String query = "select * from Product\r\n"
         		+ "where [price] < 100";
         try {
@@ -569,7 +582,7 @@ public class DAO {
             ps = conn.prepareStatement(query);
             rs = ps.executeQuery();
             while (rs.next()) {
-                list.add(new Product(rs.getInt(1),
+                list.add(new XeMay(rs.getInt(1),
                         rs.getString(2),
                         rs.getString(3),
                         rs.getDouble(4),
@@ -580,15 +593,17 @@ public class DAO {
                         rs.getString(11),
                         rs.getString(12),
                         rs.getString(13),
-                        rs.getString(14)));
+                        rs.getString(14),
+                        rs.getString(15),
+                        rs.getString(16)));
             }
         } catch (Exception e) {
         }
         return list;
     }
     
-    public List<Product> searchPrice100To200() {
-        List<Product> list = new ArrayList<>();
+    public List<XeMay> searchPrice100To200() {
+        List<XeMay> list = new ArrayList<>();
         String query = "select * from Product\r\n"
         		+ "where [price] >= 100 and [price]<=200";
         try {
@@ -596,7 +611,7 @@ public class DAO {
             ps = conn.prepareStatement(query);
             rs = ps.executeQuery();
             while (rs.next()) {
-                list.add(new Product(rs.getInt(1),
+                list.add(new XeMay(rs.getInt(1),
                         rs.getString(2),
                         rs.getString(3),
                         rs.getDouble(4),
@@ -607,15 +622,17 @@ public class DAO {
                         rs.getString(11),
                         rs.getString(12),
                         rs.getString(13),
-                        rs.getString(14)));
+                        rs.getString(14),
+                        rs.getString(15),
+                        rs.getString(16)));
             }
         } catch (Exception e) {
         }
         return list;
     }
     
-    public List<Product> searchColorWhite() {
-        List<Product> list = new ArrayList<>();
+    public List<XeMay> searchColorWhite() {
+        List<XeMay> list = new ArrayList<>();
         String query = "select * from Product\r\n"
         		+ "where color = 'White'";
         try {
@@ -623,7 +640,7 @@ public class DAO {
             ps = conn.prepareStatement(query);
             rs = ps.executeQuery();
             while (rs.next()) {
-                list.add(new Product(rs.getInt(1),
+                list.add(new XeMay(rs.getInt(1),
                         rs.getString(2),
                         rs.getString(3),
                         rs.getDouble(4),
@@ -634,15 +651,17 @@ public class DAO {
                         rs.getString(11),
                         rs.getString(12),
                         rs.getString(13),
-                        rs.getString(14)));
+                        rs.getString(14),
+                        rs.getString(15),
+                        rs.getString(16)));
             }
         } catch (Exception e) {
         }
         return list;
     }
     
-    public List<Product> searchColorGray() {
-        List<Product> list = new ArrayList<>();
+    public List<XeMay> searchColorGray() {
+        List<XeMay> list = new ArrayList<>();
         String query = "select * from Product\r\n"
         		+ "where color = 'Gray'";
         try {
@@ -650,7 +669,7 @@ public class DAO {
             ps = conn.prepareStatement(query);
             rs = ps.executeQuery();
             while (rs.next()) {
-                list.add(new Product(rs.getInt(1),
+                list.add(new XeMay(rs.getInt(1),
                         rs.getString(2),
                         rs.getString(3),
                         rs.getDouble(4),
@@ -661,15 +680,17 @@ public class DAO {
                         rs.getString(11),
                         rs.getString(12),
                         rs.getString(13),
-                        rs.getString(14)));
+                        rs.getString(14),
+                        rs.getString(15),
+                        rs.getString(16)));
             }
         } catch (Exception e) {
         }
         return list;
     }
     
-    public List<Product> searchColorBlack() {
-        List<Product> list = new ArrayList<>();
+    public List<XeMay> searchColorBlack() {
+        List<XeMay> list = new ArrayList<>();
         String query = "select * from Product\r\n"
         		+ "where color = 'Black'";
         try {
@@ -677,7 +698,7 @@ public class DAO {
             ps = conn.prepareStatement(query);
             rs = ps.executeQuery();
             while (rs.next()) {
-                list.add(new Product(rs.getInt(1),
+                list.add(new XeMay(rs.getInt(1),
                         rs.getString(2),
                         rs.getString(3),
                         rs.getDouble(4),
@@ -688,15 +709,17 @@ public class DAO {
                         rs.getString(11),
                         rs.getString(12),
                         rs.getString(13),
-                        rs.getString(14)));
+                        rs.getString(14),
+                        rs.getString(15),
+                        rs.getString(16)));
             }
         } catch (Exception e) {
         }
         return list;
     }
     
-    public List<Product> searchColorYellow() {
-        List<Product> list = new ArrayList<>();
+    public List<XeMay> searchColorYellow() {
+        List<XeMay> list = new ArrayList<>();
         String query = "select * from Product\r\n"
         		+ "where color = 'Yellow'";
         try {
@@ -704,7 +727,7 @@ public class DAO {
             ps = conn.prepareStatement(query);
             rs = ps.executeQuery();
             while (rs.next()) {
-                list.add(new Product(rs.getInt(1),
+                list.add(new XeMay(rs.getInt(1),
                         rs.getString(2),
                         rs.getString(3),
                         rs.getDouble(4),
@@ -715,14 +738,16 @@ public class DAO {
                         rs.getString(11),
                         rs.getString(12),
                         rs.getString(13),
-                        rs.getString(14)));
+                        rs.getString(14),
+                        rs.getString(15),
+                        rs.getString(16)));
             }
         } catch (Exception e) {
         }
         return list;
     }
-    public List<Product> searchByPriceMinToMax(String priceMin,String priceMax) {
-        List<Product> list = new ArrayList<>();
+    public List<XeMay> searchByPriceMinToMax(String priceMin,String priceMax) {
+        List<XeMay> list = new ArrayList<>();
         String query = "select * from Product\r\n"
         		+ "where [price] >= ? and [price]<=?";
         try {
@@ -732,7 +757,7 @@ public class DAO {
             ps.setString(2, priceMax);
             rs = ps.executeQuery();
             while (rs.next()) {
-                list.add(new Product(rs.getInt(1),
+                list.add(new XeMay(rs.getInt(1),
                         rs.getString(2),
                         rs.getString(3),
                         rs.getDouble(4),
@@ -743,15 +768,17 @@ public class DAO {
                         rs.getString(11),
                         rs.getString(12),
                         rs.getString(13),
-                        rs.getString(14)));
+                        rs.getString(14),
+                        rs.getString(15),
+                        rs.getString(16)));
             }
         } catch (Exception e) {
         }
         return list;
     }
     
-    public List<Product> searchPriceAbove200() {
-        List<Product> list = new ArrayList<>();
+    public List<XeMay> searchPriceAbove200() {
+        List<XeMay> list = new ArrayList<>();
         String query = "select * from Product\r\n"
         		+ "where [price] > 200";
         try {
@@ -759,7 +786,7 @@ public class DAO {
             ps = conn.prepareStatement(query);
             rs = ps.executeQuery();
             while (rs.next()) {
-                list.add(new Product(rs.getInt(1),
+                list.add(new XeMay(rs.getInt(1),
                         rs.getString(2),
                         rs.getString(3),
                         rs.getDouble(4),
@@ -770,15 +797,17 @@ public class DAO {
                         rs.getString(11),
                         rs.getString(12),
                         rs.getString(13),
-                        rs.getString(14)));
+                        rs.getString(14),
+                        rs.getString(15),
+                        rs.getString(16)));
             }
         } catch (Exception e) {
         }
         return list;
     }
     
-    public List<Product> getRelatedProduct(int cateIDProductDetail) {
-        List<Product> list = new ArrayList<>();
+    public List<XeMay> getRelatedProduct(int cateIDProductDetail) {
+        List<XeMay> list = new ArrayList<>();
         String query = "select top 4 * from product\r\n"
         		+ "where [cateID] =?\r\n"
         		+ "order by id desc";
@@ -788,7 +817,7 @@ public class DAO {
             ps.setInt(1, cateIDProductDetail);
             rs = ps.executeQuery();
             while (rs.next()) {
-                list.add(new Product(rs.getInt(1),
+                list.add(new XeMay(rs.getInt(1),
                         rs.getString(2),
                         rs.getString(3),
                         rs.getDouble(4),
@@ -799,7 +828,9 @@ public class DAO {
                         rs.getString(11),
                         rs.getString(12),
                         rs.getString(13),
-                        rs.getString(14)));
+                        rs.getString(14),
+                        rs.getString(15),
+                        rs.getString(16)));
             }
         } catch (Exception e) {
         }
@@ -807,8 +838,8 @@ public class DAO {
     }
     
     
-    public List<Review> getAllReviewByProductID(String productId) {
-        List<Review> list = new ArrayList<>();
+    public List<FeedBack> getAllReviewByProductID(String productId) {
+        List<FeedBack> list = new ArrayList<>();
         String query = "select * from Review\r\n"
         		+ "where [productID] =?";
         try {
@@ -817,7 +848,7 @@ public class DAO {
             ps.setString(1, productId);
             rs = ps.executeQuery();
             while (rs.next()) {
-                list.add(new Review(rs.getInt(1),
+                list.add(new FeedBack(rs.getInt(1),
                         rs.getInt(2),
                         rs.getString(3),
                         rs.getDate(4)
@@ -828,7 +859,7 @@ public class DAO {
         return list;
     }
 
-    public Product getProductByID(String id) {
+    public XeMay getProductByID(String id) {
         String query = "select * from Product\n"
                 + "where id = ?";
         try {
@@ -837,7 +868,7 @@ public class DAO {
             ps.setString(1, id);
             rs = ps.executeQuery();
             while (rs.next()) {
-                return new Product(rs.getInt(1),
+                return new XeMay(rs.getInt(1),
                         rs.getString(2),
                         rs.getString(3),
                         rs.getDouble(4),
@@ -848,15 +879,17 @@ public class DAO {
                         rs.getString(11),
                         rs.getString(12),
                         rs.getString(13),
-                        rs.getString(14));
+                        rs.getString(14),
+                        rs.getString(15),
+                        rs.getString(16));
             }
         } catch (Exception e) {
         }
         return null;
     }
     
-    public List<Cart> getCartByAccountID(int accountID) {
-    	 List<Cart> list = new ArrayList<>();
+    public List<GioHang> getCartByAccountID(int accountID) {
+    	 List<GioHang> list = new ArrayList<>();
         String query = "select * from Cart where accountID = ?";
         try {
             conn = new DBContext().getConnection();//mo ket noi voi sql
@@ -864,18 +897,17 @@ public class DAO {
             ps.setInt(1, accountID);
             rs = ps.executeQuery();
             while (rs.next()) {
-                list.add(new Cart(rs.getInt(1),
+                list.add(new GioHang(rs.getInt(1),
                         rs.getInt(2),
                         rs.getInt(3),
-                        rs.getInt(4),
-                        rs.getString(5)));
+                        rs.getInt(4)));
             }
         } catch (Exception e) {
         }
         return list;
     }
 
-    public Cart checkCartExist(int accountID,int productID) {
+    public GioHang checkCartExist(int accountID,int productID) {
 
        String query = "select * from Cart\r\n"
        		+ "where [accountID] = ? and [productID] = ?";
@@ -886,11 +918,10 @@ public class DAO {
            ps.setInt(2, productID);
            rs = ps.executeQuery();
            while (rs.next()) {
-               return new Cart(rs.getInt(1),
+               return new GioHang(rs.getInt(1),
                        rs.getInt(2),
                        rs.getInt(3),
-                       rs.getInt(4),
-                       rs.getString(5));
+                       rs.getInt(4));
            }
        } catch (Exception e) {
        }
@@ -915,7 +946,7 @@ public class DAO {
         return 0;
     }
     
-    public TongChiTieuBanHang checkTongChiTieuBanHangExist(int userID) {
+    public TongChiTieuMuaHang checkTongChiTieuBanHangExist(int userID) {
 
         String query = "select * from TongChiTieuBanHang where [userID]=?";
         try {
@@ -925,17 +956,15 @@ public class DAO {
            
             rs = ps.executeQuery();
             while (rs.next()) {
-                return new TongChiTieuBanHang(rs.getInt(1),
-                        rs.getDouble(2),
-                        rs.getDouble(3)
-                        );
+                return new TongChiTieuMuaHang(rs.getInt(1),
+                        rs.getDouble(2));
             }
         } catch (Exception e) {
         }
        return null;
     }
     
-    public SoLuongDaBan checkSoLuongDaBanExist(int productID) {
+    public SoLuongXeDaBan checkSoLuongDaBanExist(int productID) {
 
         String query = "select * from SoLuongDaBan where productID = ?";
         try {
@@ -945,7 +974,7 @@ public class DAO {
            
             rs = ps.executeQuery();
             while (rs.next()) {
-                return new SoLuongDaBan(rs.getInt(1),
+                return new SoLuongXeDaBan(rs.getInt(1),
                         rs.getInt(2)
                        );
             }
@@ -956,15 +985,15 @@ public class DAO {
     
     
     
-    public List<Category> getAllCategory() {
-        List<Category> list = new ArrayList<>();
+    public List<DanhMuc> getAllCategory() {
+        List<DanhMuc> list = new ArrayList<>();
         String query = "select * from Category";
         try {
             conn = new DBContext().getConnection();//mo ket noi voi sql
             ps = conn.prepareStatement(query);
             rs = ps.executeQuery();
             while (rs.next()) {
-                list.add(new Category(rs.getInt(1),
+                list.add(new DanhMuc(rs.getInt(1),
                         rs.getString(2)));
             }
         } catch (Exception e) {
@@ -974,7 +1003,7 @@ public class DAO {
     
     
 //
-    public Product getLast() {
+    public XeMay getLast() {
         String query = "select top 1 * from Product\n"
                 + "order by id desc";
         try {
@@ -982,7 +1011,7 @@ public class DAO {
             ps = conn.prepareStatement(query);
             rs = ps.executeQuery();
             while (rs.next()) {
-                return new Product(rs.getInt(1),
+                return new XeMay(rs.getInt(1),
                         rs.getString(2),
                         rs.getString(3),
                         rs.getDouble(4),
@@ -993,22 +1022,24 @@ public class DAO {
                         rs.getString(9),
                         rs.getString(10),
                         rs.getString(11),
-                        rs.getString(12));
+                        rs.getString(12),
+                        rs.getString(15),
+                        rs.getString(16));
             }
         } catch (Exception e) {
         }
         return null;
     }
     
-    public List<Product> get8Last() {
-    	List<Product> list = new ArrayList<>();
+    public List<XeMay> get8Last() {
+    	List<XeMay> list = new ArrayList<>();
         String query = "select top 8 * from Product order by id desc";
         try {
             conn = new DBContext().getConnection();//mo ket noi voi sql
             ps = conn.prepareStatement(query);
             rs = ps.executeQuery();
             while (rs.next()) {
-            	list.add(new Product(rs.getInt(1),
+            	list.add(new XeMay(rs.getInt(1),
                         rs.getString(2),
                         rs.getString(3),
                         rs.getDouble(4),
@@ -1019,15 +1050,17 @@ public class DAO {
                         rs.getString(11),
                         rs.getString(12),
                         rs.getString(13),
-                        rs.getString(14)));
+                        rs.getString(14),
+                        rs.getString(15),
+                        rs.getString(16)));
             }
         } catch (Exception e) {
         }
         return list;
     }
     
-    public List<Product> get4NikeLast() {
-    	List<Product> list = new ArrayList<>();
+    public List<XeMay> get4NikeLast() {
+    	List<XeMay> list = new ArrayList<>();
         String query = "select top 4 * from Product\r\n"
         		+ "where cateID = 2\r\n"
         		+ "order by id desc";
@@ -1036,7 +1069,7 @@ public class DAO {
             ps = conn.prepareStatement(query);
             rs = ps.executeQuery();
             while (rs.next()) {
-            	list.add(new Product(rs.getInt(1),
+            	list.add(new XeMay(rs.getInt(1),
                         rs.getString(2),
                         rs.getString(3),
                         rs.getDouble(4),
@@ -1047,15 +1080,17 @@ public class DAO {
                         rs.getString(11),
                         rs.getString(12),
                         rs.getString(13),
-                        rs.getString(14)));
+                        rs.getString(14),
+                        rs.getString(15),
+                        rs.getString(16)));
             }
         } catch (Exception e) {
         }
         return list;
     }
     
-    public List<Product> get4AdidasLast() {
-    	List<Product> list = new ArrayList<>();
+    public List<XeMay> get4AdidasLast() {
+    	List<XeMay> list = new ArrayList<>();
         String query = "select top 4 * from Product\r\n"
         		+ "where cateID = 1\r\n"
         		+ "order by id desc";
@@ -1064,7 +1099,7 @@ public class DAO {
             ps = conn.prepareStatement(query);
             rs = ps.executeQuery();
             while (rs.next()) {
-            	list.add(new Product(rs.getInt(1),
+            	list.add(new XeMay(rs.getInt(1),
                         rs.getString(2),
                         rs.getString(3),
                         rs.getDouble(4),
@@ -1075,7 +1110,9 @@ public class DAO {
                         rs.getString(11),
                         rs.getString(12),
                         rs.getString(13),
-                        rs.getString(14)));
+                        rs.getString(14),
+                        rs.getString(15),
+                        rs.getString(16)));
             }
         } catch (Exception e) {
         }
@@ -1097,8 +1134,7 @@ public class DAO {
                         rs.getString(2),
                         rs.getString(3),
                         rs.getInt(4),
-                        rs.getInt(5),
-                		rs.getString(6));
+                		rs.getString(5));
             }
         } catch (Exception e) {
         }
@@ -1118,8 +1154,7 @@ public class DAO {
                         rs.getString(2),
                         rs.getString(3),
                         rs.getInt(4),
-                        rs.getInt(5),
-                		rs.getString(6));
+                		rs.getString(5));
             }
         } catch (Exception e) {
         }
@@ -1139,15 +1174,14 @@ public class DAO {
                         rs.getString(2),
                         rs.getString(3),
                         rs.getInt(4),
-                        rs.getInt(5),
-                		rs.getString(6));
+                		rs.getString(5));
             }
         } catch (Exception e) {
         }
         return null;
     }
     
-    public Review getNewReview(int accountID, int productID) {
+    public FeedBack getNewReview(int accountID, int productID) {
         String query = "select top 1 * from Review\r\n"
         		+ "where accountID = ? and productID = ?\r\n"
         		+ "order by maReview desc";
@@ -1158,7 +1192,7 @@ public class DAO {
             ps.setInt(2, productID);
             rs = ps.executeQuery();
             while (rs.next()) {
-                return new Review(rs.getInt(1),
+                return new FeedBack(rs.getInt(1),
                         rs.getInt(2),
                         rs.getString(3),
                         rs.getDate(4));

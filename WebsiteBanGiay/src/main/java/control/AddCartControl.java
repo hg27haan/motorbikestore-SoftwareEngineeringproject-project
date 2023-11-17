@@ -7,7 +7,7 @@ package control;
 
 import dao.DAO;
 import entity.Account;
-import entity.Cart;
+import entity.GioHang;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -48,11 +48,11 @@ public class AddCartControl extends HttpServlet {
         String size = request.getParameter("size");
         
         DAO dao = new DAO();
-        Cart cartExisted = dao.checkCartExist(accountID,productID);
+        GioHang cartExisted = dao.checkCartExist(accountID,productID);
         int amountExisted;
         String sizeExisted;
         if(cartExisted != null) {
-        	 amountExisted = cartExisted.getAmount();
+        	 amountExisted = cartExisted.getSoLuong();
         	 dao.editAmountAndSizeCart(accountID,productID, (amountExisted+amount), size);
         	 request.setAttribute("mess", "Da tang so luong san pham!");
         	 request.getRequestDispatcher("managerCart").forward(request, response);

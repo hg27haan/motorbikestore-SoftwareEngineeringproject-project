@@ -8,9 +8,9 @@ package control;
 import dao.DAO;
 
 import entity.Account;
-import entity.Category;
-import entity.Invoice;
-import entity.Product;
+import entity.DanhMuc;
+import entity.HoaDon;
+import entity.XeMay;
 
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -91,13 +91,12 @@ public class XuatExcelAccountControl extends HttpServlet {
         			 cell0=row.createCell(0);
         		     cell0.setCellValue(acc.getId());
         		     cell1=row.createCell(1);
-        		     cell1.setCellValue(acc.getUser());
+        		     cell1.setCellValue(acc.getUsername());
+
         		     cell2=row.createCell(2);
-        		     cell2.setCellValue(acc.getIsSell());
+        		     cell2.setCellValue(acc.getIsAdmin());	
         		     cell3=row.createCell(3);
-        		     cell3.setCellValue(acc.getIsAdmin());	
-        		     cell4=row.createCell(4);
-        		     cell4.setCellValue(acc.getEmail());	
+        		     cell3.setCellValue(acc.getEmail());	
         }
                
         workbook.write(file);

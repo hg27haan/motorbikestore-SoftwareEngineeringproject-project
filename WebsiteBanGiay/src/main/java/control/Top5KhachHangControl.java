@@ -8,9 +8,9 @@ package control;
 
 import dao.DAO;
 import entity.Account;
-import entity.Category;
-import entity.Product;
-import entity.TongChiTieuBanHang;
+import entity.DanhMuc;
+import entity.XeMay;
+import entity.TongChiTieuMuaHang;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -42,7 +42,7 @@ public class Top5KhachHangControl extends HttpServlet {
         DAO dao = new DAO();
 
         List<Account> listAllAccount = dao.getAllAccount();
-        List<TongChiTieuBanHang> listTop5KhachHang = dao.getTop5KhachHang();
+        List<TongChiTieuMuaHang> listTop5KhachHang = dao.getTop5KhachHang();
 
 
         request.setAttribute("listAllAccount", listAllAccount);
