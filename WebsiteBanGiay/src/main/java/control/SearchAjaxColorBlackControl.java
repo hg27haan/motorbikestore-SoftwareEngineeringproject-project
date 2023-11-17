@@ -6,7 +6,7 @@
 package control;
 
 import dao.DAO;
-import entity.Product;
+import entity.XeMay;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.List;
@@ -36,9 +36,9 @@ public class SearchAjaxColorBlackControl extends HttpServlet {
         request.setCharacterEncoding("UTF-8");
       
         DAO dao = new DAO();
-        List<Product> list = dao.searchColorBlack();
+        List<XeMay> list = dao.searchColorBlack();
         PrintWriter out = response.getWriter();
-        for (Product o : list) {
+        for (XeMay o : list) {
         	out.println("  <!-- Grid column -->\r\n"
         			+ "              <div class=\"col-md-4 mb-5\">\r\n"
         			+ "\r\n"

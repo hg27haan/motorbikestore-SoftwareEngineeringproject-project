@@ -33,23 +33,27 @@ public class EditControl extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         request.setCharacterEncoding("UTF-8");
-        String pid = request.getParameter("id");
-        String pname = request.getParameter("name");
-        String pimage = request.getParameter("image");
+        String pmaXe = request.getParameter("maXe");
+        String ptenXe = request.getParameter("tenXe");
+        String phinhAnh1 = request.getParameter("hinhAnh1");
         
-        String pimage2 = request.getParameter("image2");
-        String pimage3 = request.getParameter("image3");
-        String pimage4 = request.getParameter("image4");
-        String pmodel = request.getParameter("model");
-        String pcolor = request.getParameter("color");
-        String pdelivery = request.getParameter("delivery");
+        String phinhAnh2 = request.getParameter("hinhAnh2");
+        String phinhAnh3 = request.getParameter("hinhAnh3");
+        String phinhAnh4 = request.getParameter("hinhAnh4");
         
-        String pprice = request.getParameter("price");
+        String pkhoiLuong = request.getParameter("khoiLuong");
+        String pdaixRongxCao = request.getParameter("daixRongxCao");
+        String pdungTichXiLanh = request.getParameter("dungTichXiLanh");
+        String ptiSoNen = request.getParameter("tiSoNen");
+        String pdungTichBinhXang = request.getParameter("dungTichBinhXang");
+        
+        String pgiaTien = request.getParameter("giaTien");
         String ptitle = request.getParameter("title");
-        String pdescription = request.getParameter("description");
-        String pcategory = request.getParameter("category");
+        String pgioiThieu = request.getParameter("gioiThieu");
+        String pdanhMuc = request.getParameter("danhMuc");
         DAO dao = new DAO();
-        dao.editProduct(pname, pimage, pprice, ptitle, pdescription, pcategory, pmodel, pcolor, pdelivery, pimage2, pimage3, pimage4, pid);
+        dao.editProduct(ptenXe, phinhAnh1, pgiaTien, ptitle, pgioiThieu, pdanhMuc, pkhoiLuong, 
+        		pdaixRongxCao, pdungTichXiLanh, ptiSoNen, pdungTichBinhXang, phinhAnh2, phinhAnh3, phinhAnh4, pmaXe);
        request.setAttribute("mess", "Edited!");
        request.getRequestDispatcher("manager").forward(request, response);
 //        response.sendRedirect("manager");

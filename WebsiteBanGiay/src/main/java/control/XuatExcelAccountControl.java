@@ -8,9 +8,9 @@ package control;
 import dao.DAO;
 
 import entity.Account;
-import entity.Category;
-import entity.Invoice;
-import entity.Product;
+import entity.DanhMuc;
+import entity.HoaDon;
+import entity.XeMay;
 
 import java.io.FileOutputStream;
 import java.io.IOException;

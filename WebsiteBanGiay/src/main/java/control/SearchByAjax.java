@@ -6,7 +6,7 @@
 package control;
 
 import dao.DAO;
-import entity.Product;
+import entity.XeMay;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.List;
@@ -36,9 +36,9 @@ public class SearchByAjax extends HttpServlet {
         request.setCharacterEncoding("UTF-8");
         String txtSearch = request.getParameter("txt");//giay chay bo
         DAO dao = new DAO();
-        List<Product> list = dao.searchByName(txtSearch);
+        List<XeMay> list = dao.searchByName(txtSearch);
         PrintWriter out = response.getWriter();
-        for (Product o : list) {
+        for (XeMay o : list) {
             out.println("<div class=\"product col-12 col-md-6 col-lg-4\">\n"
                     + "                                <div class=\"card\">\n"
                     + "                                    <img class=\"card-img-top\" src=\""+o.getImage()+"\" alt=\"Card image cap\">\n"

@@ -6,8 +6,8 @@
 package control;
 
 import dao.DAO;
-import entity.Category;
-import entity.Product;
+import entity.DanhMuc;
+import entity.XeMay;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.List;
@@ -36,14 +36,14 @@ public class HomeControl extends HttpServlet {
         //b1: get data from dao
         DAO dao = new DAO();
 //        List<Product> list = dao.getAllProduct();
-        List<Category> listC = dao.getAllCategory();
-        List<Product> list = dao.getTop3();
-        List<Product> list8Last = dao.get8Last();
-        List<Product> list4NikeLast = dao.get4NikeLast();
-        List<Product> list4AdidasLast = dao.get4AdidasLast();
+        List<DanhMuc> listC = dao.getAllCategory();
+        List<XeMay> list = dao.getTop3();
+        List<XeMay> list8Last = dao.get8Last();
+        List<XeMay> list4NikeLast = dao.get4NikeLast();
+        List<XeMay> list4AdidasLast = dao.get4AdidasLast();
         
         
-        Product last = dao.getLast();
+        XeMay last = dao.getLast();
         
         //b2: set data to jsp
         request.setAttribute("listP", list);

@@ -6,8 +6,8 @@
 package control;
 
 import dao.DAO;
-import entity.Category;
-import entity.Product;
+import entity.DanhMuc;
+import entity.XeMay;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.List;
@@ -36,10 +36,10 @@ public class CategoryShopControl extends HttpServlet {
         String cateID = request.getParameter("cid");
         //da lay dc category id ve roi
         DAO dao = new DAO();
-        List<Product> list = dao.getProductByCID(cateID);
+        List<XeMay> list = dao.getProductByCID(cateID);
         //in list p day
         PrintWriter out = response.getWriter();
-        for(Product o : list) {
+        for(XeMay o : list) {
         	out.println("  <!-- Grid column -->\r\n"
         			+ "              <div class=\"col-md-4 mb-5\">\r\n"
         			+ "\r\n"

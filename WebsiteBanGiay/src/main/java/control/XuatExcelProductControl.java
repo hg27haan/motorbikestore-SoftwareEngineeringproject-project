@@ -8,9 +8,9 @@ package control;
 import dao.DAO;
 
 import entity.Account;
-import entity.Category;
-import entity.Invoice;
-import entity.Product;
+import entity.DanhMuc;
+import entity.HoaDon;
+import entity.XeMay;
 
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -51,7 +51,7 @@ public class XuatExcelProductControl extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
       
         DAO dao = new DAO();
-        List<Product> list = dao.getAllProduct();
+        List<XeMay> list = dao.getAllProduct();
         
         System.out.print(list.get(0));
 
@@ -111,7 +111,7 @@ public class XuatExcelProductControl extends HttpServlet {
         
         int i=0;
         
-        for (Product pro : list) {
+        for (XeMay pro : list) {
         	i=i+1;
         			 row=workSheet.createRow(i);
         			 cell0=row.createCell(0);

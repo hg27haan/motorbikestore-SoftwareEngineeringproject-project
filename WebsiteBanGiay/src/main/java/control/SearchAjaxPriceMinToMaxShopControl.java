@@ -6,7 +6,7 @@
 package control;
 
 import dao.DAO;
-import entity.Product;
+import entity.XeMay;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.List;
@@ -37,9 +37,9 @@ public class SearchAjaxPriceMinToMaxShopControl extends HttpServlet {
         String priceMin = request.getParameter("priceMin");
         String priceMax = request.getParameter("priceMax");
         DAO dao = new DAO();
-        List<Product> list = dao.searchByPriceMinToMax(priceMin,priceMax);
+        List<XeMay> list = dao.searchByPriceMinToMax(priceMin,priceMax);
         PrintWriter out = response.getWriter();
-        for (Product o : list) {
+        for (XeMay o : list) {
         	out.println("  <!-- Grid column -->\r\n"
         			+ "              <div class=\"col-md-4 mb-5\">\r\n"
         			+ "\r\n"

@@ -7,7 +7,7 @@ package control;
 
 import dao.DAO;
 import entity.Account;
-import entity.Invoice;
+import entity.HoaDon;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.List;
@@ -36,11 +36,11 @@ public class SearchByAjaxHoaDon extends HttpServlet {
         request.setCharacterEncoding("UTF-8");
         String ngayXuat = request.getParameter("ngayXuat");
         DAO dao = new DAO();
-        List<Invoice> listInvoiceByDate = dao.searchByNgayXuat(ngayXuat);
+        List<HoaDon> listInvoiceByDate = dao.searchByNgayXuat(ngayXuat);
         List<Account> listAllAccount = dao.getAllAccount();
         PrintWriter out = response.getWriter(); 
         double tongGia;
-        for (Invoice o : listInvoiceByDate) {
+        for (HoaDon o : listInvoiceByDate) {
         	for (Account a : listAllAccount) {
         		if(o.getAccountID() == a.getId()) {	
         			tongGia=Math.round((o.getTongGia()) * 100.0) / 100.0;

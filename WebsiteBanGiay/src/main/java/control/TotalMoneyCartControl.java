@@ -7,9 +7,9 @@ package control;
 
 import dao.DAO;
 import entity.Account;
-import entity.Cart;
-import entity.Category;
-import entity.Product;
+import entity.GioHang;
+import entity.DanhMuc;
+import entity.XeMay;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.List;
@@ -41,12 +41,12 @@ public class TotalMoneyCartControl extends HttpServlet {
         Account a = (Account) session.getAttribute("acc");
         int accountID = a.getId();
         DAO dao = new DAO();
-        List<Cart> list = dao.getCartByAccountID(accountID);
-        List<Product> list2 = dao.getAllProduct();
+        List<GioHang> list = dao.getCartByAccountID(accountID);
+        List<XeMay> list2 = dao.getAllProduct();
         
         double totalMoney=0;
-        for(Cart o : list) {
-        	for(Product p : list2) {
+        for(GioHang o : list) {
+        	for(XeMay p : list2) {
         		if(o.getProductID()==p.getId()) {
         			totalMoney=totalMoney+p.getPrice()*o.getAmount();
         		}

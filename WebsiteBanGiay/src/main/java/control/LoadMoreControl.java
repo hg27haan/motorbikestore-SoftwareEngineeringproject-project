@@ -6,7 +6,7 @@
 package control;
 
 import dao.DAO;
-import entity.Product;
+import entity.XeMay;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.List;
@@ -36,10 +36,10 @@ public class LoadMoreControl extends HttpServlet {
         String amount = request.getParameter("exits");
         int iamount = Integer.parseInt(amount);
         DAO dao = new DAO();
-        List<Product> list = dao.getNext3Product(iamount);
+        List<XeMay> list = dao.getNext3Product(iamount);
         PrintWriter out = response.getWriter();
 
-        for (Product o : list) {
+        for (XeMay o : list) {
             out.println("<div class=\"product col-12 col-md-6 col-lg-4\">\n"
                     + "                                <div class=\"card\">\n"
                     + "                                    <img class=\"card-img-top\" src=\""+o.getImage()+"\" alt=\"Card image cap\">\n"

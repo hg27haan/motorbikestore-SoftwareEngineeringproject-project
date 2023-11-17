@@ -8,10 +8,10 @@ package control;
 import dao.DAO;
 
 import entity.Account;
-import entity.Category;
-import entity.Invoice;
-import entity.Product;
-import entity.SoLuongDaBan;
+import entity.DanhMuc;
+import entity.HoaDon;
+import entity.XeMay;
+import entity.SoLuongXeDaBan;
 
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -52,8 +52,8 @@ public class XuatExcelTop10ProductControl extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
       
         DAO dao = new DAO();
-        List<Product> listAllProduct = dao.getAllProduct();
-        List<SoLuongDaBan> listTop10Product = dao.getTop10SanPhamBanChay();
+        List<XeMay> listAllProduct = dao.getAllProduct();
+        List<SoLuongXeDaBan> listTop10Product = dao.getTop10SanPhamBanChay();
         
   
 
@@ -111,8 +111,8 @@ public class XuatExcelTop10ProductControl extends HttpServlet {
         int i=0;
         
         
-        for (SoLuongDaBan soluong : listTop10Product) {
-        	   for (Product pro : listAllProduct) {
+        for (SoLuongXeDaBan soluong : listTop10Product) {
+        	   for (XeMay pro : listAllProduct) {
         		   if(soluong.getProductID() == pro.getId()) {
         			   	i=i+1;
              			 row=workSheet.createRow(i);

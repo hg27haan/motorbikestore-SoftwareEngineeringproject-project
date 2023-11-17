@@ -7,8 +7,8 @@ package control;
 
 import dao.DAO;
 import entity.Account;
-import entity.Product;
-import entity.Review;
+import entity.XeMay;
+import entity.FeedBack;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -53,7 +53,7 @@ public class AddReviewControl extends HttpServlet {
         DAO dao = new DAO();
         dao.insertReview(accountID, productID, contentReview);
       
-        Review newReview = new Review();
+        FeedBack newReview = new FeedBack();
         newReview = dao.getNewReview(accountID, productID);
         PrintWriter out = response.getWriter();
 
@@ -65,7 +65,7 @@ public class AddReviewControl extends HttpServlet {
             		+ "                <div class=\"d-flex justify-content-between\">\r\n"
             		+ "                  <p class=\"mt-1 mb-2\">\r\n"
             		+ "                    <strong>"+a.getUser()+"</strong>\r\n"
-            		+ "                    <span>– </span><span>"+newReview.getDateReview()+"</span>\r\n"
+            		+ "                    <span>ï¿½ </span><span>"+newReview.getDateReview()+"</span>\r\n"
             		+ "                  </p>\r\n"
             		+ "                </div>\r\n"
             		+ "                <p class=\"mb-0\">"+newReview.getContentReview()+"</p>\r\n"

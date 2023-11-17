@@ -7,8 +7,8 @@ package control;
 
 import dao.DAO;
 import entity.Account;
-import entity.Category;
-import entity.Product;
+import entity.DanhMuc;
+import entity.XeMay;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.List;
@@ -50,8 +50,8 @@ public class ManagerControl extends HttpServlet {
         int indexPage = Integer.parseInt(index);
         
         DAO dao = new DAO();
-        List<Product> list = dao.getProductBySellIDAndIndex(id, indexPage);
-        List<Category> listC = dao.getAllCategory();
+        List<XeMay> list = dao.getProductBySellIDAndIndex(id, indexPage);
+        List<DanhMuc> listC = dao.getAllCategory();
         int allProductBySellID = dao.countAllProductBySellID(id);
         int endPage = allProductBySellID/5;
         if(allProductBySellID % 5 != 0) {
@@ -64,7 +64,7 @@ public class ManagerControl extends HttpServlet {
         request.setAttribute("listCC", listC);
         request.setAttribute("listP", list);
    //     request.getRequestDispatcher("ManagerProduct.jsp").forward(request, response);
-        request.getRequestDispatcher("QuanLySanPham.jsp").forward(request, response);
+        request.getRequestDispatcher("QuanLyXeMay.jsp").forward(request, response);
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

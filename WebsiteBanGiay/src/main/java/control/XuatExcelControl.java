@@ -8,9 +8,9 @@ package control;
 import dao.DAO;
 
 import entity.Account;
-import entity.Category;
-import entity.Invoice;
-import entity.Product;
+import entity.DanhMuc;
+import entity.HoaDon;
+import entity.XeMay;
 
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -54,7 +54,7 @@ public class XuatExcelControl extends HttpServlet {
        
         DAO dao = new DAO();
         
-        List<Invoice> list = dao.searchByNgayXuat(ngayXuat);
+        List<HoaDon> list = dao.searchByNgayXuat(ngayXuat);
         List<Account> listAllAccount = dao.getAllAccount();
         
         int maximum=2147483647;
@@ -87,7 +87,7 @@ public class XuatExcelControl extends HttpServlet {
         double tongGia;
         int i=0;
         
-        for (Invoice o : list) {
+        for (HoaDon o : list) {
         	i=i+1;
         	for (Account a : listAllAccount) {
         		if(o.getAccountID()==a.getId()) {

@@ -8,9 +8,9 @@ package control;
 import dao.DAO;
 
 import entity.Account;
-import entity.Category;
-import entity.Invoice;
-import entity.Product;
+import entity.DanhMuc;
+import entity.HoaDon;
+import entity.XeMay;
 import entity.Supplier;
 
 import java.io.FileOutputStream;
@@ -53,7 +53,7 @@ public class XuatExcelSupplierControl extends HttpServlet {
       
         DAO dao = new DAO();
         List<Supplier> listAllSupplier = dao.getAllSupplier();
-        List<Category> listAllCategory = dao.getAllCategory();
+        List<DanhMuc> listAllCategory = dao.getAllCategory();
         
         int maximum=2147483647;
         int minimum=1;
@@ -91,7 +91,7 @@ public class XuatExcelSupplierControl extends HttpServlet {
         int i=0;
         
         for (Supplier supplier : listAllSupplier) {
-        	 for (Category category : listAllCategory) {
+        	 for (DanhMuc category : listAllCategory) {
         		 if(supplier.getCateID()==category.getCid()) {
         			 i=i+1;
         			 row=workSheet.createRow(i);

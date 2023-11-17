@@ -8,10 +8,10 @@ package control;
 import dao.DAO;
 
 import entity.Account;
-import entity.Category;
-import entity.Invoice;
-import entity.Product;
-import entity.TongChiTieuBanHang;
+import entity.DanhMuc;
+import entity.HoaDon;
+import entity.XeMay;
+import entity.TongChiTieuMuaHang;
 
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -53,7 +53,7 @@ public class XuatExcelTop5CustomerControl extends HttpServlet {
       
         DAO dao = new DAO();
         List<Account> listAllAccount = dao.getAllAccount();
-        List<TongChiTieuBanHang> listTop5KhachHang = dao.getTop5KhachHang();
+        List<TongChiTieuMuaHang> listTop5KhachHang = dao.getTop5KhachHang();
         
         int maximum=2147483647;
         int minimum=1;
@@ -85,7 +85,7 @@ public class XuatExcelTop5CustomerControl extends HttpServlet {
         
         int i=0;
         
-        for (TongChiTieuBanHang top5 : listTop5KhachHang) {
+        for (TongChiTieuMuaHang top5 : listTop5KhachHang) {
         	  for (Account acc : listAllAccount) {
         		  if(top5.getUserID()==acc.getId()) {
         			  	i=i+1;
