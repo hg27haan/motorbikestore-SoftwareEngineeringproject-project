@@ -55,8 +55,8 @@ public class LoginControl extends HttpServlet {
             throws ServletException, IOException {
 //        processRequest(request, response);
     	 response.setContentType("text/html;charset=UTF-8");
-         String username = request.getParameter("user");
-         String password = request.getParameter("pass");
+         String username = request.getParameter("username");
+         String password = request.getParameter("password");
          String remember =request.getParameter("remember");
          
          DAO dao = new DAO();

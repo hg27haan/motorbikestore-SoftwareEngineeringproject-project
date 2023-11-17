@@ -130,10 +130,10 @@ public class DAO {
     
     public double totalMoneyDay(int day) {
         String query = "select \r\n"
-        		+ "	SUM(tongGia) \r\n"
-        		+ "from Invoice\r\n"
-        		+ "where DATEPART(dw,[ngayXuat]) = ?\r\n"
-        		+ "Group by ngayXuat ";
+        		+ "	SUM(tongTien) \r\n"
+        		+ "from HoaDon\r\n"
+        		+ "where DATEPART(dw,[ngayThanhToan]) = ?\r\n"
+        		+ "Group by ngayThanhToan ";
         try {
             conn = new DBContext().getConnection();//mo ket noi voi sql
             ps = conn.prepareStatement(query);
@@ -148,9 +148,9 @@ public class DAO {
     }
     
     public double totalMoneyMonth(int month) {
-        String query = "select SUM(tongGia) from Invoice\r\n"
-        		+ "where MONTH(ngayXuat)=?\r\n"
-        		+ "Group by MONTH(ngayXuat)";
+        String query = "select SUM(tongTien) from HoaDon\r\n"
+        		+ "where MONTH(ngayThanhToan)=?\r\n"
+        		+ "Group by MONTH(ngayThanhToan)";
         try {
             conn = new DBContext().getConnection();//mo ket noi voi sql
             ps = conn.prepareStatement(query);
@@ -234,8 +234,7 @@ public class DAO {
                         rs.getString(2),
                         rs.getString(3),
                         rs.getInt(4),
-                        rs.getInt(5),
-                		rs.getString(6)));
+                		rs.getString(5)));
             }
         } catch (Exception e) {
         }
@@ -899,7 +898,7 @@ public class DAO {
     
     public int checkAccountAdmin(int userID) {
 
-        String query = "select isAdmin from Account where [uID]=?";
+        String query = "select isAdmin from Account where [maAccount]=?";
         try {
             conn = new DBContext().getConnection();//mo ket noi voi sql
             ps = conn.prepareStatement(query);
@@ -1084,8 +1083,8 @@ public class DAO {
 
     public Account login(String user, String pass) {
         String query = "select * from Account\n"
-                + "where [user] = ?\n"
-                + "and pass = ?";
+                + "where [username] = ?\n"
+                + "and password = ?";
         try {
             conn = new DBContext().getConnection();//mo ket noi voi sql
             ps = conn.prepareStatement(query);
@@ -1097,8 +1096,7 @@ public class DAO {
                         rs.getString(2),
                         rs.getString(3),
                         rs.getInt(4),
-                        rs.getInt(5),
-                		rs.getString(6));
+                		rs.getString(5));
             }
         } catch (Exception e) {
         }
@@ -1118,8 +1116,7 @@ public class DAO {
                         rs.getString(2),
                         rs.getString(3),
                         rs.getInt(4),
-                        rs.getInt(5),
-                		rs.getString(6));
+                		rs.getString(5));
             }
         } catch (Exception e) {
         }
@@ -1127,7 +1124,7 @@ public class DAO {
     }
     
     public Account checkAccountExistByUsernameAndEmail(String username, String email) {
-        String query = "select * from Account where [user]=? and [email]=?";
+        String query = "select * from Account where [username]=? and [email]=?";
         try {
             conn = new DBContext().getConnection();//mo ket noi voi sql
             ps = conn.prepareStatement(query);
@@ -1139,8 +1136,7 @@ public class DAO {
                         rs.getString(2),
                         rs.getString(3),
                         rs.getInt(4),
-                        rs.getInt(5),
-                		rs.getString(6));
+                		rs.getString(5));
             }
         } catch (Exception e) {
         }

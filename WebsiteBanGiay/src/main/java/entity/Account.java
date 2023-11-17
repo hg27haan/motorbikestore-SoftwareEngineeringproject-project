@@ -8,9 +8,8 @@ package entity;
 
 public class Account {
     private int id;
-    private String user;
-    private String pass;
-    private int isSell;
+    private String username;
+    private String password;
     private int isAdmin;
     private String email;
 
@@ -31,32 +30,27 @@ public class Account {
         this.id = id;
     }
 
-    public String getUser() {
-        return user;
+    public String getUsername() {
+        return username;
     }
 
-    public void setUser(String user) {
-        this.user = user;
+    public void setUsername(String user) {
+        this.username = user;
     }
 
-    public String getPass() {
-        return pass;
+    public String getPassword() {
+        return password;
     }
 
-    public void setPass(String pass) {
-        this.pass = pass;
+    public void setPassword(String pass) {
+        this.password = pass;
     }
 
-    public int getIsSell() {
-        return isSell;
-    }
-
-    public Account(int id, String user, String pass, int isSell, int isAdmin, String email) {
+    public Account(int id, String user, String pass, int isAdmin, String email) {
 		
 		this.id = id;
-		this.user = user;
-		this.pass = pass;
-		this.isSell = isSell;
+		this.username = user;
+		this.password = pass;
 		this.isAdmin = isAdmin;
 		this.email = email;
 	}
@@ -67,13 +61,9 @@ public class Account {
 
 	@Override
 	public String toString() {
-		return "Account [id=" + id + ", user=" + user + ", pass=" + pass + ", isSell=" + isSell + ", isAdmin=" + isAdmin
+		return "Account [id=" + id + ", user=" + username + ", pass=" + password + ", isAdmin=" + isAdmin
 				+ ", email=" + email + "]";
 	}
-
-	public void setIsSell(int isSell) {
-        this.isSell = isSell;
-    }
 
     public int getIsAdmin() {
         return isAdmin;
