@@ -19,7 +19,7 @@ public class SoLuongXeDaBan {
 	@Override
 	public String toString() 
 	{
-		return "SoLuongDaBan [maXe=" + getMaXe() + ", soLuongDaBan=" + getSoLuongDaBan() + "]";
+		return "SoLuongXeDaBan [maXe=" + getMaXe() + ", soLuongDaBan=" + getSoLuongDaBan() + "]";
 	}
 	
 	public int getMaXe() 
