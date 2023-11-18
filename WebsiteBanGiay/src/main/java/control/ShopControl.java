@@ -49,7 +49,7 @@ public class ShopControl extends HttpServlet {
         int indexPage = Integer.parseInt(index);
         
       
-        List<XeMay> list = dao.getXeMayByIndex(indexPage);
+        List<XeMay> listXeMay = dao.getXeMayByIndex(indexPage);
 //        List<Category> listC = dao.getAllCategory();
         int allProduct = dao.countAllXeMay();
         int endPage = allProduct/9;
@@ -61,7 +61,7 @@ public class ShopControl extends HttpServlet {
         request.setAttribute("tag", indexPage);
         request.setAttribute("endPage", endPage);
         request.setAttribute("listCC", listDanhMuc);
-        request.setAttribute("listP", list);
+        request.setAttribute("listP", listXeMay);
         
         
         

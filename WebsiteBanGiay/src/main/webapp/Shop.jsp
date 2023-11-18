@@ -8,7 +8,7 @@
    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
-  <title>Material Design Bootstrap</title>
+  <title>Danh mục sản phẩm</title>
   <!-- Roboto Font -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700&display=swap">
   <!-- Font Awesome -->
@@ -55,11 +55,11 @@
             <!-- Section: Categories -->
             <section>
 
-              <h5>Categories</h5>
+              <h5>Danh mục</h5>
 
               <div class="text-muted small text-uppercase mb-5">
 			<c:forEach items="${listCC}" var="o">
-                <p class="mb-3"><a onclick="load(${o.cid})" class="card-link-secondary">${o.cname}</a></p>
+                <p class="mb-3"><a onclick="load(${o.maDanhMuc})" class="card-link-secondary">${o.tenDanhMuc}</a></p>
               </c:forEach>
               </div>
 
@@ -69,7 +69,7 @@
             <!-- Section: Filters -->
             <section>
 
-              <h5 class="pt-2 mb-4">Filters</h5>
+              <h5 class="pt-2 mb-4">Bộ lọc</h5>
 
               <section class="mb-4">
 
@@ -84,7 +84,7 @@
               <!-- Section: Price -->
               <section class="mb-4">
 
-                <h6 class="font-weight-bold mb-3">Price</h6>
+                <h6 class="font-weight-bold mb-3">Giá</h6>
 
                 <div class="form-check pl-0 mb-3">
                   <input onchange="searchByPriceUnder100()" type="radio" class="form-check-input" id="under100" name="materialExampleRadios">
@@ -124,7 +124,7 @@
               <!-- Section: Color -->
               <section class="mb-4">
 
-                <h6 class="font-weight-bold mb-3">Color</h6>
+                <h6 class="font-weight-bold mb-3">Màu sắc</h6>
 
                 <div class="btn-group btn-group-toggle btn-color-group d-block mt-n2 ml-n2" data-toggle="buttons">
                   <label class="btn rounded-circle white border-inset-grey p-3 m-2">
@@ -186,7 +186,7 @@
                 <div class="d-flex flex-wrap">
                   <div class="select-outline position-relative w-100">
                     <select class="mdb-select md-outline md-form" searchable="Search here..">
-                      <option value="" disabled selected>Choose category</option>
+                      <option value="" disabled selected>Chọn danh mục</option>
                       <option value="1">Category 1</option>
                       <option value="2">Category 2</option>
                       <option value="3">Category 3</option>
@@ -194,7 +194,7 @@
                       <option value="5">Category 5</option>
                     </select>
                     <label>Tất cả sản phẩm</label>
-                    <button class="btn-save btn btn-primary btn-sm mt-2">Save</button>
+                    <button class="btn-save btn btn-primary btn-sm mt-2">Lưu</button>
                   </div>
                 </div>
               </div>
@@ -234,11 +234,11 @@
 
                   <div class="view zoom overlay rounded z-depth-2">
                     <img class="img-fluid w-100"
-                      src="${o.image }" alt="Sample">
-                    <a href="detail?pid=${o.id}">
+                      src="${o.hinhAnh1}" alt="Sample">
+                    <a href="detail?pid=${o.maXe}">
                       <div class="mask">
                         <img class="img-fluid w-100"
-                          src="${o.image }">
+                          src="${o.hinhAnh1 }">
                         <div class="mask rgba-black-slight"></div>
                       </div>
                     </a>
@@ -246,8 +246,8 @@
 
                   <div class="text-center pt-4">
 
-                    <h5>${o.name }</h5>
-                    <p><span class="mr-1"><strong>${o.price }$</strong></span></p>
+                    <h5>${o.tenXe }</h5>
+                    <p><span class="mr-1"><strong>${o.giaTien }$</strong></span></p>
 
                   </div>
 
