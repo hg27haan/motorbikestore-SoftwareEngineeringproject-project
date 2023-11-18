@@ -34,7 +34,7 @@ public class DAO {
 
     public List<XeMay> getAllProduct() {
         List<XeMay> list = new ArrayList<>();
-        String query = "select * from Product";
+        String query = "select * from XeMay";
         try {
             conn = new DBContext().getConnection();//mo ket noi voi sql
             ps = conn.prepareStatement(query);
@@ -46,14 +46,14 @@ public class DAO {
                         rs.getDouble(4),
                         rs.getString(5),
                         rs.getString(6),
+                        rs.getString(8),
                         rs.getString(9),
                         rs.getString(10),
                         rs.getString(11),
                         rs.getString(12),
                         rs.getString(13),
                         rs.getString(14),
-                        rs.getString(15),
-                        rs.getString(16)));
+                        rs.getString(15)));
             }
         } catch (Exception e) {
         }
@@ -63,7 +63,7 @@ public class DAO {
     public List<SoLuongXeDaBan> getTop10SanPhamBanChay() {
         List<SoLuongXeDaBan> list = new ArrayList<>();
         String query = "select top(10) *\r\n"
-        		+ "from SoLuongDaBan\r\n"
+        		+ "from SoLuongXeDaBan\r\n"
         		+ "order by soLuongDaBan desc";
         try {
             conn = new DBContext().getConnection();//mo ket noi voi sql
@@ -81,7 +81,7 @@ public class DAO {
     
     public List<HoaDon> getAllInvoice() {
         List<HoaDon> list = new ArrayList<>();
-        String query = "select * from Invoice";
+        String query = "select * from HoaDon";
         try {
             conn = new DBContext().getConnection();//mo ket noi voi sql
             ps = conn.prepareStatement(query);
@@ -132,10 +132,10 @@ public class DAO {
     
     public double totalMoneyDay(int day) {
         String query = "select \r\n"
-        		+ "	SUM(tongGia) \r\n"
-        		+ "from Invoice\r\n"
-        		+ "where DATEPART(dw,[ngayXuat]) = ?\r\n"
-        		+ "Group by ngayXuat ";
+        		+ "	SUM(tongTien) \r\n"
+        		+ "from HoaDon\r\n"
+        		+ "where DATEPART(dw,[ngayThanhToan]) = ?\r\n"
+        		+ "Group by ngayThanhToan ";
         try {
             conn = new DBContext().getConnection();//mo ket noi voi sql
             ps = conn.prepareStatement(query);
@@ -150,9 +150,9 @@ public class DAO {
     }
     
     public double totalMoneyMonth(int month) {
-        String query = "select SUM(tongGia) from Invoice\r\n"
-        		+ "where MONTH(ngayXuat)=?\r\n"
-        		+ "Group by MONTH(ngayXuat)";
+        String query = "select SUM(tongTien) from HoaDon\r\n"
+        		+ "where MONTH(ngayThanhToan)=?\r\n"
+        		+ "Group by MONTH(ngayThanhToan)";
         try {
             conn = new DBContext().getConnection();//mo ket noi voi sql
             ps = conn.prepareStatement(query);
@@ -167,7 +167,7 @@ public class DAO {
     }
     
     public int countAllProduct() {
-        String query = "select count(*) from Product";
+        String query = "select count(*) from XeMay";
         try {
             conn = new DBContext().getConnection();//mo ket noi voi sql
             ps = conn.prepareStatement(query);
@@ -181,7 +181,7 @@ public class DAO {
     }
     
     public double sumAllInvoice() {
-        String query = "select SUM(tongGia) from Invoice";
+        String query = "select SUM(tongTien) from HoaDon";
         try {
             conn = new DBContext().getConnection();//mo ket noi voi sql
             ps = conn.prepareStatement(query);
@@ -195,7 +195,7 @@ public class DAO {
     }
     
     public int countAllReview() {
-        String query = "select count(*) from Review";
+        String query = "select count(*) from FeedBack";
         try {
             conn = new DBContext().getConnection();//mo ket noi voi sql
             ps = conn.prepareStatement(query);
@@ -266,7 +266,7 @@ public class DAO {
     public List<TongChiTieuMuaHang> getTop5KhachHang() {
         List<TongChiTieuMuaHang> list = new ArrayList<>();
         String query = "select top(5) *\r\n"
-        		+ "from TongChiTieuBanHang\r\n"
+        		+ "from TongChiTieuMuaHang\r\n"
         		+ "order by TongChiTieu desc";
         try {
             conn = new DBContext().getConnection();//mo ket noi voi sql
@@ -930,7 +930,7 @@ public class DAO {
     
     public int checkAccountAdmin(int userID) {
 
-        String query = "select isAdmin from Account where [uID]=?";
+        String query = "select isAdmin from Account where [maAccount]=?";
         try {
             conn = new DBContext().getConnection();//mo ket noi voi sql
             ps = conn.prepareStatement(query);
@@ -1121,8 +1121,8 @@ public class DAO {
 
     public Account login(String user, String pass) {
         String query = "select * from Account\n"
-                + "where [user] = ?\n"
-                + "and pass = ?";
+                + "where [username] = ?\n"
+                + "and password = ?";
         try {
             conn = new DBContext().getConnection();//mo ket noi voi sql
             ps = conn.prepareStatement(query);
@@ -1143,7 +1143,7 @@ public class DAO {
 
     public Account checkAccountExist(String user) {
         String query = "select * from Account\n"
-                + "where [user] = ?\n";
+                + "where [username] = ?\n";
         try {
             conn = new DBContext().getConnection();//mo ket noi voi sql
             ps = conn.prepareStatement(query);
@@ -1162,7 +1162,7 @@ public class DAO {
     }
     
     public Account checkAccountExistByUsernameAndEmail(String username, String email) {
-        String query = "select * from Account where [user]=? and [email]=?";
+        String query = "select * from Account where [username]=? and [email]=?";
         try {
             conn = new DBContext().getConnection();//mo ket noi voi sql
             ps = conn.prepareStatement(query);
@@ -1382,7 +1382,7 @@ public class DAO {
     
     public void insertAccount(String user, String pass, String isSell,
     		String isAdmin, String email) {
-        String query = "insert Account([user], pass, isSell, isAdmin, email)\r\n"
+        String query = "insert Account([username], pass, isSell, isAdmin, email)\r\n"
         		+ "values(?,?,?,?,?)";
         try {
             conn = new DBContext().getConnection();//mo ket noi voi sql

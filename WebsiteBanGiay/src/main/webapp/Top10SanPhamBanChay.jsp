@@ -146,14 +146,14 @@
               <tbody>
                  <c:forEach items="${listTop10Product}" var="t">
 	                  <c:forEach items="${listAllProduct}" var="o">
-			                  <c:if test="${t.productID==o.id }">
+			                  <c:if test="${t.maXe==o.maXe }">
 						                <tr>
-						                   <td>${o.id}</td>
-						                    <td>${o.name}</td>
+						                   <td>${o.maXe}</td>
+						                    <td>${o.tenXe}</td>
 						                     <td>
-						                          <img src="${o.image}">
+						                          <img src="${o.hinhAnh1}">
 						                    </td>
-						                     <td>${o.price} $</td>
+						                     <td>${o.giaTien} $</td>
 						                      <td>${t.soLuongDaBan }</td>
 						                </tr>
 			                	</c:if>

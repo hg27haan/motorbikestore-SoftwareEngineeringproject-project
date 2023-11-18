@@ -130,11 +130,11 @@
               <tbody>
                	<c:forEach items="${listTop5KhachHang}" var="t">
 		                <c:forEach items="${listAllAccount}" var="o">
-			                <c:if test="${t.userID==o.id }">
+			                <c:if test="${t.maAccount==o.id}">
 			                    <c:if test="${t.tongChiTieu!=0.0 }">
 			                <tr>
 			                   <td>${o.id}</td>
-			               		<td>${o.user}</td>
+			               		<td>${o.username}</td>
 			                   <td>${o.email}</td>
 			                   <td>${t.tongChiTieu}</td>    
 			                </tr>

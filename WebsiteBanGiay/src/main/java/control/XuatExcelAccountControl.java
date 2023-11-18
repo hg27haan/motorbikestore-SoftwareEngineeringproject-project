@@ -61,7 +61,7 @@ public class XuatExcelAccountControl extends HttpServlet {
         int randomNum =  rn.nextInt(range) + minimum;
 
         
-        FileOutputStream file=new FileOutputStream("C:\\ExcelWebBanGiay\\"+"tai-khoan-"+Integer.toString(randomNum)+".xlsx");
+        FileOutputStream file=new FileOutputStream("D:\\ExcelWebBanGiay\\"+"tai-khoan-"+Integer.toString(randomNum)+".xlsx");
         XSSFWorkbook workbook=new XSSFWorkbook();
         XSSFSheet workSheet=workbook.createSheet("1");
         XSSFRow row;
@@ -77,7 +77,7 @@ public class XuatExcelAccountControl extends HttpServlet {
         cell1=row.createCell(1);
         cell1.setCellValue("Username");
         cell2=row.createCell(2);
-        cell2.setCellValue("Là người bán hàng");
+        cell2.setCellValue("Password");
         cell3=row.createCell(3);
         cell3.setCellValue("Là Admin");
         cell4=row.createCell(4);
@@ -88,15 +88,17 @@ public class XuatExcelAccountControl extends HttpServlet {
         for (Account acc : list) {
         	i=i+1;
         			 row=workSheet.createRow(i);
-        			 cell0=row.createCell(0);
-        		     cell0.setCellValue(acc.getId());
-        		     cell1=row.createCell(1);
-        		     cell1.setCellValue(acc.getUsername());
 
-        		     cell2=row.createCell(2);
-        		     cell2.setCellValue(acc.getIsAdmin());	
-        		     cell3=row.createCell(3);
-        		     cell3.setCellValue(acc.getEmail());	
+						 cell0=row.createCell(0); 
+						 cell0.setCellValue(acc.getId());
+						 cell1=row.createCell(1); 
+						 cell1.setCellValue(acc.getUsername());
+						 cell2=row.createCell(2); 
+						 cell2.setCellValue(acc.getPassword());
+						 cell3=row.createCell(3); 
+						 cell3.setCellValue(acc.getIsAdmin());
+						 cell4=row.createCell(4); 
+						 cell4.setCellValue(acc.getEmail());
         }
                
         workbook.write(file);

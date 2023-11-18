@@ -142,7 +142,7 @@
                 <tr>
                   <th scope="col">ID</th>
                   <th scope="col">Username</th>
-                  <th scope="col">Là người bán hàng</th>
+                  <th scope="col">Password</th>
                   <th scope="col">Là Admin</th>
                   <th scope="col">Email</th>
                 </tr>
@@ -152,8 +152,8 @@
                 <tr>
 
                    <td>${o.id}</td>
-               		<td>${o.user}</td>
-                   <td>${o.isSell}</td>
+               		<td>${o.username}</td>
+                   <td>${o.password}</td>
                    <td>${o.isAdmin}</td>
                    <td>${o.email}</td>
                    <td>
