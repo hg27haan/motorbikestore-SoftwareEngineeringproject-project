@@ -274,9 +274,7 @@ public class DAO {
             rs = ps.executeQuery();
             while (rs.next()) {
                 list.add(new TongChiTieuMuaHang(rs.getInt(1),
-                        rs.getDouble(2),
-                        rs.getDouble(3)
-                       ));
+                        rs.getDouble(2)));
             }
         } catch (Exception e) {
         }
@@ -294,9 +292,7 @@ public class DAO {
             rs = ps.executeQuery();
             while (rs.next()) {
                 list.add(new TongChiTieuMuaHang(rs.getInt(1),
-                        rs.getDouble(2),
-                        rs.getDouble(3)
-                       ));
+                        rs.getDouble(2)));
             }
         } catch (Exception e) {
         }
@@ -474,18 +470,20 @@ public class DAO {
             ps.setInt(2, (indexPage-1)*5);
             rs = ps.executeQuery();
             while (rs.next()) {
-                list.add(new XeMay(rs.getInt(1),
-                        rs.getString(2),
-                        rs.getString(3),
-                        rs.getDouble(4),
-                        rs.getString(5),
-                        rs.getString(6),
-                        rs.getString(9),
-                        rs.getString(10),
-                        rs.getString(11),
-                        rs.getString(12),
-                        rs.getString(13),
-                        rs.getString(14)));
+            	 list.add(new XeMay(rs.getInt(1),
+                         rs.getString(2),
+                         rs.getString(3),
+                         rs.getDouble(4),
+                         rs.getString(5),
+                         rs.getString(6),
+                         rs.getString(8),
+                         rs.getString(9),
+                         rs.getString(10),
+                         rs.getString(11),
+                         rs.getString(12),
+                         rs.getString(13),
+                         rs.getString(14),
+                         rs.getString(15)));
             }
         } catch (Exception e) {
         }
@@ -642,18 +640,20 @@ public class DAO {
             ps = conn.prepareStatement(query);
             rs = ps.executeQuery();
             while (rs.next()) {
-                list.add(new XeMay(rs.getInt(1),
-                        rs.getString(2),
-                        rs.getString(3),
-                        rs.getDouble(4),
-                        rs.getString(5),
-                        rs.getString(6),
-                        rs.getString(9),
-                        rs.getString(10),
-                        rs.getString(11),
-                        rs.getString(12),
-                        rs.getString(13),
-                        rs.getString(14)));
+            	 list.add(new XeMay(rs.getInt(1),
+                         rs.getString(2),
+                         rs.getString(3),
+                         rs.getDouble(4),
+                         rs.getString(5),
+                         rs.getString(6),
+                         rs.getString(8),
+                         rs.getString(9),
+                         rs.getString(10),
+                         rs.getString(11),
+                         rs.getString(12),
+                         rs.getString(13),
+                         rs.getString(14),
+                         rs.getString(15)));
             }
         } catch (Exception e) {
         }
@@ -669,18 +669,20 @@ public class DAO {
             ps = conn.prepareStatement(query);
             rs = ps.executeQuery();
             while (rs.next()) {
-                list.add(new XeMay(rs.getInt(1),
-                        rs.getString(2),
-                        rs.getString(3),
-                        rs.getDouble(4),
-                        rs.getString(5),
-                        rs.getString(6),
-                        rs.getString(9),
-                        rs.getString(10),
-                        rs.getString(11),
-                        rs.getString(12),
-                        rs.getString(13),
-                        rs.getString(14)));
+            	 list.add(new XeMay(rs.getInt(1),
+                         rs.getString(2),
+                         rs.getString(3),
+                         rs.getDouble(4),
+                         rs.getString(5),
+                         rs.getString(6),
+                         rs.getString(8),
+                         rs.getString(9),
+                         rs.getString(10),
+                         rs.getString(11),
+                         rs.getString(12),
+                         rs.getString(13),
+                         rs.getString(14),
+                         rs.getString(15)));
             }
         } catch (Exception e) {
         }
@@ -696,18 +698,20 @@ public class DAO {
             ps = conn.prepareStatement(query);
             rs = ps.executeQuery();
             while (rs.next()) {
-                list.add(new XeMay(rs.getInt(1),
-                        rs.getString(2),
-                        rs.getString(3),
-                        rs.getDouble(4),
-                        rs.getString(5),
-                        rs.getString(6),
-                        rs.getString(9),
-                        rs.getString(10),
-                        rs.getString(11),
-                        rs.getString(12),
-                        rs.getString(13),
-                        rs.getString(14)));
+            	 list.add(new XeMay(rs.getInt(1),
+                         rs.getString(2),
+                         rs.getString(3),
+                         rs.getDouble(4),
+                         rs.getString(5),
+                         rs.getString(6),
+                         rs.getString(8),
+                         rs.getString(9),
+                         rs.getString(10),
+                         rs.getString(11),
+                         rs.getString(12),
+                         rs.getString(13),
+                         rs.getString(14),
+                         rs.getString(15)));
             }
         } catch (Exception e) {
         }
@@ -723,18 +727,20 @@ public class DAO {
             ps = conn.prepareStatement(query);
             rs = ps.executeQuery();
             while (rs.next()) {
-                list.add(new XeMay(rs.getInt(1),
-                        rs.getString(2),
-                        rs.getString(3),
-                        rs.getDouble(4),
-                        rs.getString(5),
-                        rs.getString(6),
-                        rs.getString(9),
-                        rs.getString(10),
-                        rs.getString(11),
-                        rs.getString(12),
-                        rs.getString(13),
-                        rs.getString(14)));
+            	 list.add(new XeMay(rs.getInt(1),
+                         rs.getString(2),
+                         rs.getString(3),
+                         rs.getDouble(4),
+                         rs.getString(5),
+                         rs.getString(6),
+                         rs.getString(8),
+                         rs.getString(9),
+                         rs.getString(10),
+                         rs.getString(11),
+                         rs.getString(12),
+                         rs.getString(13),
+                         rs.getString(14),
+                         rs.getString(15)));
             }
         } catch (Exception e) {
         }
@@ -951,9 +957,7 @@ public class DAO {
             rs = ps.executeQuery();
             while (rs.next()) {
                 return new TongChiTieuMuaHang(rs.getInt(1),
-                        rs.getDouble(2),
-                        rs.getDouble(3)
-                        );
+                        rs.getDouble(2));
             }
         } catch (Exception e) {
         }
