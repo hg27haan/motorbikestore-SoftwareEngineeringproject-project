@@ -93,28 +93,28 @@
                   <figure class="view overlay rounded z-depth-1 main-img" style="max-height: 450px;">
                     <a href="https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Vertical/15a.jpg"
                       data-size="710x823">
-                      <img src="${detail.image}"
+                      <img src="${detail.hinhAnh1}"
                         class="img-fluid z-depth-1" style="margin-top: -90px;">
                     </a>
                   </figure>
                   <figure class="view overlay rounded z-depth-1" style="visibility: hidden;">
                     <a href="https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Vertical/12a.jpg"
                       data-size="710x823">
-                      <img src="${detail.image2}"
+                      <img src="${detail.hinhAnh2}"
                         class="img-fluid z-depth-1">
                     </a>
                   </figure>
                   <figure class="view overlay rounded z-depth-1" style="visibility: hidden;">
                     <a href="https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Vertical/13a.jpg"
                       data-size="710x823">
-                      <img src="${detail.image3}"
+                      <img src="${detail.hinhAnh3}"
                         class="img-fluid z-depth-1">
                     </a>
                   </figure>
                   <figure class="view overlay rounded z-depth-1" style="visibility: hidden;">
                     <a href="https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Vertical/14a.jpg"
                       data-size="710x823">
-                      <img src="${detail.image4}"
+                      <img src="${detail.hinhAnh4}"
                         class="img-fluid z-depth-1">
                     </a>
                   </figure>
@@ -123,28 +123,28 @@
                   <div class="row">
                     <div class="col-3">
                       <div class="view overlay rounded z-depth-1 gallery-item hoverable" >
-                        <img src="${detail.image}"
+                        <img src="${detail.hinhAnh1}"
                           class="img-fluid">
                         <div class="mask rgba-white-slight"></div>
                       </div>
                     </div>
                     <div class="col-3">
                       <div class="view overlay rounded z-depth-1 gallery-item hoverable">
-                        <img src="${detail.image2}"
+                        <img src="${detail.hinhAnh2}"
                           class="img-fluid">
                         <div class="mask rgba-white-slight"></div>
                       </div>
                     </div>
                     <div class="col-3">
                       <div class="view overlay rounded z-depth-1 gallery-item hoverable">
-                        <img src="${detail.image3}" 
+                        <img src="${detail.hinhAnh3}" 
                         class="img-fluid">
                         <div class="mask rgba-white-slight"></div>
                       </div>
                     </div>
                     <div class="col-3">
                       <div class="view overlay rounded z-depth-1 gallery-item hoverable">
-                        <img src="${detail.image4}" 
+                        <img src="${detail.hinhAnh4}" 
                          class="img-fluid">
                         <div class="mask rgba-white-slight"></div>
                       </div>
@@ -160,32 +160,40 @@
 
             <h5>${detail.name}</h5>
         
-            <p><span class="mr-1"><strong>$${String.format("%.02f",detail.price*0.9) }</strong></span><span
-                    class="text-grey"><strong><s>$${detail.price }</s></strong></span></p>
+            <p><span class="mr-1"><strong>$${String.format("%.02f",detail.giaTien*0.9) }</strong></span><span
+                    class="text-grey"><strong><s>$${detail.giaTien }</s></strong></span></p>
             
                     
-            <p class="pt-1">${detail.description}</p>
+            <p class="pt-1">${detail.gioiThieu}</p>
             <div class="table-responsive">
               <table class="table table-sm table-borderless mb-0">
                 <tbody>
                   <tr>
-                    <th class="pl-0 w-25" scope="row"><strong>Model</strong></th>
-                    <td>${detail.model }</td>
+                    <th class="pl-0 w-25" scope="row"><strong>Khối lượng</strong></th>
+                    <td>${detail.khoiLuong}</td>
                   </tr>
                   <tr>
-                    <th class="pl-0 w-25" scope="row"><strong>Color</strong></th>
-                    <td>${detail.color }</td>
+                    <th class="pl-0 w-25" scope="row"><strong>Dài x Rộng x Cao</strong></th>
+                    <td>${detail.daiRongCao }</td>
                   </tr>
                   <tr>
-                    <th class="pl-0 w-25" scope="row"><strong>Delivery</strong></th>
-                    <td>${detail.delivery }</td>
+                    <th class="pl-0 w-25" scope="row"><strong>Dung tích xi lanh</strong></th>
+                    <td>${detail.dungTichXiLanh }</td>
+                  </tr>
+                  <tr>
+                    <th class="pl-0 w-25" scope="row"><strong>Tỉ số nén</strong></th>
+                    <td>${detail.tiSoNen }</td>
+                  </tr>
+                  <tr>
+                    <th class="pl-0 w-25" scope="row"><strong>Dung tích bình xăng</strong></th>
+                    <td>${detail.dungTichBinhXang}</td>
                   </tr>
                 </tbody>
               </table>
             </div>
             <hr>
             
-            <form action="addCart?pid=${detail.id }" method="post">
+            <form action="addCart?pid=${detail.maXe }" method="post">
             <div class="table-responsive mb-2">
               <table class="table table-sm table-borderless">
                 <tbody>
@@ -262,8 +270,8 @@
           <div class="tab-pane fade show active" id="description" role="tabpanel" aria-labelledby="description-tab">
             <h5>Product Description</h5>
             
-            <h6>$${String.format("%.02f",detail.price*0.9) }</h6>
-            <p class="pt-1">${detail.description}</p>
+            <h6>$${String.format("%.02f",detail.giaTien*0.9) }</h6>
+            <p class="pt-1">${detail.gioiThieu}</p>
           </div>
           <div class="tab-pane fade" id="info" role="tabpanel" aria-labelledby="info-tab">
             <h5>Additional Information</h5>
@@ -283,7 +291,7 @@
             </table>
           </div>
           <div class="tab-pane fade" id="reviews" role="tabpanel" aria-labelledby="reviews-tab">
-            <h5><span>${countAllReview }</span> review for <span>${detail.name }</span></h5>
+            <h5><span>${countAllReview }</span> review for <span>${detail.tenXe }</span></h5>
             
              <h5 class="mt-4">Add a review</h5>
             <p></p>
@@ -310,14 +318,14 @@
                 <div class="d-flex justify-content-between">
                   <p class="mt-1 mb-2">
                   <c:forEach items="${listAllAcount}" var="a">
-                  <c:if test="${r.accountID == a.id }">
-                    <strong>${a.user } </strong>
+                  <c:if test="${r.maAccount == a.maAccount }">
+                    <strong>${a.username } </strong>
                     </c:if>
                      </c:forEach>
-                    <span>– </span><span>${r.dateReview }</span>
+                    <span>– </span><span>${r.ngayDanhGia }</span>
                   </p>
                 </div>
-                <p class="mb-0">${r.contentReview }</p>
+                <p class="mb-0">${r.noiDung }</p>
               </div>
             </div>
             <hr>    

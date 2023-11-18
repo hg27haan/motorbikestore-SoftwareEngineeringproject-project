@@ -11,10 +11,10 @@
         <div class="collapse navbar-collapse justify-content-end" id="navbarsExampleDefault">
             <ul class="navbar-nav m-auto">
             <li class="nav-item">
-                        <a class="nav-link" href="home">Home</a>
+                        <a class="nav-link" href="home">TRANG CHỦ</a>
                     </li> 
             <li class="nav-item">
-                        <a class="nav-link" href="shop">Shop</a>
+                        <a class="nav-link" href="shop">CỬA HÀNG</a>
                     </li> 
                 
                <%--  <c:if test="${sessionScope.acc.isSell == 1}">
@@ -27,22 +27,22 @@
                         <a class="nav-link" href="#">Hello ${sessionScope.acc.username}</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="logout">Logout</a>
+                        <a class="nav-link" href="logout">ĐĂNG XUẤT</a>
                     </li> 
                 </c:if>
                 <c:if test="${sessionScope.acc == null}">
                     <li class="nav-item">
-                        <a class="nav-link" href="login">Login</a>
+                        <a class="nav-link" href="login">ĐĂNG NHẬP</a>
                     </li>
                 </c:if>
                 <c:if test="${sessionScope.acc == null}">
                     <li class="nav-item">
-                        <a class="nav-link" href="forgotPassword">Forgot Password</a>
+                        <a class="nav-link" href="forgotPassword">QUÊN MẬT KHẨU</a>
                     </li>
                 </c:if>
                 <c:if test="${sessionScope.acc != null}">
                     <li class="nav-item">
-                        <a class="nav-link" href="EditProfile.jsp">Edit Profile</a>
+                        <a class="nav-link" href="EditProfile.jsp">CHỈNH SỬA TÀI KHOẢN</a>
                     </li>
                 </c:if>
                <%--  <c:if test="${sessionScope.acc.isAdmin == 1}">
