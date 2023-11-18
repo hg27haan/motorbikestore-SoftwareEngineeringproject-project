@@ -29,19 +29,19 @@
 	integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU"
 	crossorigin="anonymous">
 <link href="css/login.css" rel="stylesheet" type="text/css" />
-<title>Edit Profile</title>
+<title>Chinh sua tai khoan</title>
 </head>
 <body>
 <jsp:include page="Menu.jsp"></jsp:include>
 <div id="logreg-forms">
             <form class="form-signin" action="editProfile" method="post">
-                <h1 class="h3 mb-3 font-weight-normal" style="text-align: center"> Edit Profile</h1>
+                <h1 class="h3 mb-3 font-weight-normal" style="text-align: center">CHINH SUA TAI KHOAN</h1>
                 <p class="text-success">${mess}</p>
                 <p class="text-danger">${error}</p>
                 <label for="username">Username</label>
-                <input name="username" type="text" id="username" class="form-control" value="${sessionScope.acc.user }" required="" autofocus="">
+                <input name="username" type="text" id="username" class="form-control" value="${sessionScope.acc.username }" required="" autofocus="">
                 <label for="password">Password</label>
-                <input name="password" type="password" id="password" class="form-control" value="${sessionScope.acc.pass }" required="" autofocus="">
+                <input name="password" type="password" id="password" class="form-control" value="${sessionScope.acc.password }" required="" autofocus="">
                 <label for="email">Email</label>
                 <input name="email" type="text" id="email" class="form-control" value="${sessionScope.acc.email }" required="" autofocus="">
                 <button class="btn btn-success btn-block" type="submit"><i class="fas fa-sign-in-alt"></i> Edit</button> 
