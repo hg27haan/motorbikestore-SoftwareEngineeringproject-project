@@ -38,7 +38,7 @@ public class ShopControl extends HttpServlet {
         //b1: get data from dao
         DAO dao = new DAO();
 //        List<Product> list = dao.getAllProduct();
-        List<DanhMuc> listC = dao.getAllCategory();
+        List<DanhMuc> listDanhMuc = dao.getAllDanhMuc();
 
        
         
@@ -49,9 +49,9 @@ public class ShopControl extends HttpServlet {
         int indexPage = Integer.parseInt(index);
         
       
-        List<XeMay> list = dao.getProductByIndex(indexPage);
+        List<XeMay> list = dao.getXeMayByIndex(indexPage);
 //        List<Category> listC = dao.getAllCategory();
-        int allProduct = dao.countAllProduct();
+        int allProduct = dao.countAllXeMay();
         int endPage = allProduct/9;
         if(allProduct % 9 != 0) {
         	endPage++;
@@ -60,7 +60,7 @@ public class ShopControl extends HttpServlet {
         
         request.setAttribute("tag", indexPage);
         request.setAttribute("endPage", endPage);
-        request.setAttribute("listCC", listC);
+        request.setAttribute("listCC", listDanhMuc);
         request.setAttribute("listP", list);
         
         

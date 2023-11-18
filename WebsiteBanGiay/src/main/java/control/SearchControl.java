@@ -37,12 +37,12 @@ public class SearchControl extends HttpServlet {
         String txtSearch = request.getParameter("txt");//giay chay bo
         
         DAO dao = new DAO();
-        List<XeMay> list = dao.searchByName(txtSearch);
-        List<DanhMuc> listC = dao.getAllCategory();
+        List<XeMay> list = dao.searchBytenXe(txtSearch);
+        List<DanhMuc> listDanhMuc = dao.getAllDanhMuc();
         XeMay last = dao.getLast();
         
         request.setAttribute("listP", list);
-        request.setAttribute("listCC", listC);
+        request.setAttribute("listCC", listDanhMuc);
         request.setAttribute("p", last);
         request.setAttribute("txtS", txtSearch);
         request.getRequestDispatcher("Home.jsp").forward(request, response);

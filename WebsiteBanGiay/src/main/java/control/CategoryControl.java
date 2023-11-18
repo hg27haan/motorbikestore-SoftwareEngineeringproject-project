@@ -33,22 +33,22 @@ public class CategoryControl extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        String cateID = request.getParameter("cid");
+        String maDanhMuc = request.getParameter("cid"); // cateID đổi thành maDanhMuc
         //da lay dc category id ve roi
         DAO dao = new DAO();
-        List<XeMay> list = dao.getProductByCID(cateID);
+        List<XeMay> list = dao.getXeMayBymaDanhMuc(maDanhMuc);
         //in list p day
         PrintWriter out = response.getWriter();
         for(XeMay o : list) {
         	out.println(" <div class=\"product col-12 col-md-6 col-lg-4\">\r\n"
         			+ "                                <div class=\"card\">\r\n"
-        			+ "                                    <img class=\"card-img-top\" src=\""+o.getImage()+"\" alt=\"Card image cap\">\r\n"
+        			+ "                                    <img class=\"card-img-top\" src=\""+o.getHinhAnh1()+"\" alt=\"Card image cap\">\r\n"
         			+ "                                    <div class=\"card-body\">\r\n"
-        			+ "                                        <h4 class=\"card-title show_txt\"><a href=\"detail?pid="+o.getId()+"\" title=\"View Product\">"+o.getName()+"</a></h4>\r\n"
+        			+ "                                        <h4 class=\"card-title show_txt\"><a href=\"detail?pid="+o.getMaXe()+"\" title=\"View Product\">"+o.getTenXe()+"</a></h4>\r\n"
         			+ "                                        <p class=\"card-text show_txt\">"+o.getTitle()+"</p>\r\n"
         			+ "                                        <div class=\"row\">\r\n"
         			+ "                                            <div class=\"col\">\r\n"
-        			+ "                                                <p class=\"btn btn-danger btn-block\">"+o.getPrice()+" $</p>\r\n"
+        			+ "                                                <p class=\"btn btn-danger btn-block\">"+o.getGiaTien()+" $</p>\r\n"
         			+ "                                            </div>\r\n"
         			+ "                                            <div class=\"col\">\r\n"
         			+ "                                                <a href=\"#\" class=\"btn btn-success btn-block\">Add to cart</a>\r\n"

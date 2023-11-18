@@ -46,15 +46,15 @@ public class AddReviewControl extends HttpServlet {
         	response.sendRedirect("login");
         	return;
         }
-        int accountID = a.getId();
-        String contentReview = request.getParameter("contentReview");
-        int productID = Integer.parseInt(request.getParameter("productID"));
+        int maAccount = a.getMaAccount();
+        String noiDung = request.getParameter("contentReview"); // contentReview đổi thành noiDung
+        int maXe = Integer.parseInt(request.getParameter("productID"));
         
         DAO dao = new DAO();
-        dao.insertReview(accountID, productID, contentReview);
+        dao.insertFeedBack(maAccount, maXe, noiDung);
       
-        FeedBack newReview = new FeedBack();
-        newReview = dao.getNewReview(accountID, productID);
+        FeedBack newFeedBack = new FeedBack();
+        newFeedBack = dao.getNewFeedBack(maAccount, maXe);
         PrintWriter out = response.getWriter();
 
         
@@ -64,11 +64,11 @@ public class AddReviewControl extends HttpServlet {
             		+ "              <div class=\"media-body\">\r\n"
             		+ "                <div class=\"d-flex justify-content-between\">\r\n"
             		+ "                  <p class=\"mt-1 mb-2\">\r\n"
-            		+ "                    <strong>"+a.getUser()+"</strong>\r\n"
-            		+ "                    <span>� </span><span>"+newReview.getDateReview()+"</span>\r\n"
+            		+ "                    <strong>"+a.getUsername()+"</strong>\r\n"
+            		+ "                    <span>� </span><span>"+newFeedBack.getNgayDanhGia()+"</span>\r\n"
             		+ "                  </p>\r\n"
             		+ "                </div>\r\n"
-            		+ "                <p class=\"mb-0\">"+newReview.getContentReview()+"</p>\r\n"
+            		+ "                <p class=\"mb-0\">"+newFeedBack.getNoiDung()+"</p>\r\n"
             		+ "              </div>\r\n"
             		+ "            </div>\r\n"
             		+ "            <hr>    ");

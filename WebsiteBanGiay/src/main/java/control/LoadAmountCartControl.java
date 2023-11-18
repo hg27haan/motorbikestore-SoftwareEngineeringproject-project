@@ -35,23 +35,23 @@ public class LoadAmountCartControl extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        int totalAmountCart =0;
+        int totalsoLuongGioHang =0;
         HttpSession session = request.getSession();
         Account a = (Account) session.getAttribute("acc");
         if(a == null) {
         	PrintWriter out = response.getWriter();
-            out.println(totalAmountCart);
+            out.println(totalsoLuongGioHang);
         	return;
         }
-        int accountID = a.getId();
+        int maAccount = a.getMaAccount();
         DAO dao = new DAO();
-        List<GioHang> list = dao.getCartByAccountID(accountID);
-        totalAmountCart = list.size();
+        List<GioHang> list = dao.getGioHangBymaAccount(maAccount);
+        totalsoLuongGioHang = list.size();
         
         
         //in list p day
         PrintWriter out = response.getWriter();
-        out.println(totalAmountCart);
+        out.println(totalsoLuongGioHang);
 
 //        List<Category> listC = dao.getAllCategory();
 //        Product last = dao.getLast();

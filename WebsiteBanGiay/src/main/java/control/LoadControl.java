@@ -33,13 +33,13 @@ public class LoadControl extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        String id = request.getParameter("pid");
+        String maXe = request.getParameter("pid");
         DAO dao = new DAO();
-        XeMay p = dao.getProductByID(id);
-        List<DanhMuc> listC = dao.getAllCategory();
+        XeMay p = dao.getXeMayBymaXe(maXe);
+        List<DanhMuc> listDanhMuc = dao.getAllDanhMuc();
 
         request.setAttribute("detail", p);
-        request.setAttribute("listCC", listC);
+        request.setAttribute("listCC", listDanhMuc);
         request.getRequestDispatcher("Edit.jsp").forward(request, response);
     }
 

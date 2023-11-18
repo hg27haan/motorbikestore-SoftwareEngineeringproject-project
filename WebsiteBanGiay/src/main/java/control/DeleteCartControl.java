@@ -30,10 +30,10 @@ public class DeleteCartControl extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        int productID = Integer.parseInt(request.getParameter("productID"));
+        int maXe = Integer.parseInt(request.getParameter("productID"));
         DAO dao = new DAO();
-        dao.deleteCart(productID);
-        request.setAttribute("mess", "Da xoa san pham khoi gio hang!");
+        dao.deleteGioHang(maXe);
+        request.setAttribute("mess", "Đã xóa Sản Phẩm khỏi giỏ hàng!");
         request.getRequestDispatcher("managerCart").forward(request, response);
     }
 

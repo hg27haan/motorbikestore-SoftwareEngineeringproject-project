@@ -40,12 +40,12 @@ public class AddAmountCartControl extends HttpServlet {
         	response.sendRedirect("login");
         	return;
         }
-        int accountID = a.getId();
-        int productID = Integer.parseInt(request.getParameter("productID"));
-        int amount = Integer.parseInt(request.getParameter("amount"));
-        amount+=1;
+        int maAccount = a.getMaAccount(); // accountID đổi thành maAccount
+        int maXe = Integer.parseInt(request.getParameter("productID")); // productID đổi thành maXe
+        int soLuong = Integer.parseInt(request.getParameter("amount")); // amount đổi thành soLuong
+        soLuong+=1;
         DAO dao = new DAO();
-        dao.editAmountCart(accountID, productID, amount);
+        dao.editsoLuongGioHang(maAccount, maXe, soLuong);
         request.setAttribute("mess", "Da tang so luong!");
         request.getRequestDispatcher("managerCart").forward(request, response);
     }

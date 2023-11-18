@@ -36,30 +36,30 @@ public class AddCartControl extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         request.setCharacterEncoding("UTF-8"); 
-        int productID = Integer.parseInt(request.getParameter("pid"));
+        int maXe = Integer.parseInt(request.getParameter("pid"));
         HttpSession session = request.getSession();
         Account a = (Account) session.getAttribute("acc");
         if(a == null) {
         	response.sendRedirect("login");
         	return;
         }
-        int accountID = a.getId();
-        int amount = Integer.parseInt(request.getParameter("quantity"));
-        String size = request.getParameter("size");
+        int maAccount = a.getMaAccount();
+        int soLuong = Integer.parseInt(request.getParameter("quantity"));
+        
+        // String size = request.getParameter("size");
         
         DAO dao = new DAO();
-        GioHang cartExisted = dao.checkCartExist(accountID,productID);
-        int amountExisted;
-        String sizeExisted;
-        if(cartExisted != null) {
-        	 amountExisted = cartExisted.getAmount();
-        	 dao.editAmountAndSizeCart(accountID,productID, (amountExisted+amount), size);
-        	 request.setAttribute("mess", "Da tang so luong san pham!");
+        GioHang gioHangExisted = dao.checkGioHangExist(maAccount, maXe);
+        int soLuongExisted;
+        if(gioHangExisted != null) {
+        	 soLuongExisted = gioHangExisted.getSoLuong();
+        	 dao.editsoLuongGioHang(maAccount, maXe, (soLuongExisted + soLuong));
+        	 request.setAttribute("mess", "Đã tăng số lượng Sản Phẩm!");
         	 request.getRequestDispatcher("managerCart").forward(request, response);
         }
         else {
-        	  dao.insertCart(accountID, productID, amount, size);
-        	  request.setAttribute("mess", "Da them san pham vao gio hang!");
+        	  dao.insertGioHang(maAccount, maXe, soLuong);
+        	  request.setAttribute("mess", "Đã thêm Sản Phẩm vào giỏ hàng!");
         	  request.getRequestDispatcher("managerCart").forward(request, response);
         }
       

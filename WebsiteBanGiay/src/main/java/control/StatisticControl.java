@@ -41,14 +41,14 @@ public class StatisticControl extends HttpServlet {
         
         HttpSession session = request.getSession();
         Account a = (Account) session.getAttribute("acc");
-        int uID;
+        int maAccount;
         DAO dao = new DAO();
         if(a == null) {
         	response.sendRedirect("login");
         	return;
         }
-        uID= a.getId();
- 	   int checkIsAdmin = dao.checkAccountAdmin(uID);
+        maAccount= a.getMaAccount();
+ 	   int checkIsAdmin = dao.checkAccountAdmin(maAccount);
        if(checkIsAdmin == 0)
        {
        		response.sendRedirect("login");
@@ -79,7 +79,7 @@ public class StatisticControl extends HttpServlet {
         double totalMoneyMonth12 = dao.totalMoneyMonth(12);
         
         int allReview = dao.countAllReview();
-        int allProduct = dao.countAllProduct();
+        int allProduct = dao.countAllXeMay();
         double sumAllInvoice = dao.sumAllInvoice();
         
         List<HoaDon> listAllInvoice = dao.getAllInvoice();

@@ -37,13 +37,13 @@ public class EditProfileControl extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         HttpSession session = request.getSession();
         Account a = (Account) session.getAttribute("acc");
-        int id = a.getId();
+        int maAccount = a.getMaAccount();
         String username = request.getParameter("username");
         String password = request.getParameter("password");
         String email = request.getParameter("email");
         DAO dao = new DAO();
 
-        dao.editProfile(username, password, email, id);
+        dao.editProfile(username, password, email, maAccount);
         
         request.setAttribute("mess", "Cap nhat tai khoan thanh cong! Hay dang nhap bang tai khoan moi!");
 

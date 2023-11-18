@@ -38,23 +38,23 @@ public class DetailControl extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         String maXe = request.getParameter("pmaXe");
         DAO dao = new DAO();
-        XeMay x = dao.getProductByID(maXe);
+        XeMay p = dao.getXeMayBymaXe(maXe);
         
         int maDanhMucXeMayDetail = dao.getmaDanhMucBymaXe(maXe);
-        List<XeMay> listRelatedProduct = dao.getRelatedProduct(maDanhMucXeMayDetail);
+        List<XeMay> listRelatedXeMay = dao.getRelatedXeMay(maDanhMucXeMayDetail);
         
-        List<FeedBack> listAllReview = dao.getAllReviewByProductID(id);
-        int countAllReview = listAllReview.size();
+        List<FeedBack> listAllFeedBack = dao.getAllFeedBackBymaXe(maXe);
+        int countAllFeedBack = listAllFeedBack.size();
         
         List<Account> listAllAcount = dao.getAllAccount();
         
         XeMay last = dao.getLast();
 
         request.setAttribute("detail", p);
-        request.setAttribute("listRelatedProduct", listRelatedProduct);
-        request.setAttribute("listAllReview", listAllReview);
+        request.setAttribute("listRelatedProduct", listRelatedXeMay);
+        request.setAttribute("listAllReview", listAllFeedBack);
         request.setAttribute("listAllAcount", listAllAcount);
-        request.setAttribute("countAllReview", countAllReview);
+        request.setAttribute("countAllReview", countAllFeedBack);
         request.setAttribute("p", last);
         request.getRequestDispatcher("DetailProduct.jsp").forward(request, response);
     }
