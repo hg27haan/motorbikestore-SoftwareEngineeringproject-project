@@ -79,7 +79,7 @@ public class DAO {
         return list;
     }
     
-    public List<HoaDon> getAllInvoice() {
+    public List<HoaDon> getAllHoaDon() {
         List<HoaDon> list = new ArrayList<>();
         String query = "select * from HoaDon";
         try {
@@ -166,7 +166,7 @@ public class DAO {
         return 0;
     }
     
-    public int countAllProduct() {
+    public int countAllXeMay() {
         String query = "select count(*) from XeMay";
         try {
             conn = new DBContext().getConnection();//mo ket noi voi sql
@@ -180,7 +180,7 @@ public class DAO {
         return 0;
     }
     
-    public double sumAllInvoice() {
+    public double sumAllHoaDon() {
         String query = "select SUM(tongTien) from HoaDon";
         try {
             conn = new DBContext().getConnection();//mo ket noi voi sql
@@ -194,7 +194,7 @@ public class DAO {
         return 0;
     }
     
-    public int countAllReview() {
+    public int countAllFeedback() {
         String query = "select count(*) from FeedBack";
         try {
             conn = new DBContext().getConnection();//mo ket noi voi sql

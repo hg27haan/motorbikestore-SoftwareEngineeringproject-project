@@ -78,19 +78,19 @@ public class StatisticControl extends HttpServlet {
         double totalMoneyMonth11 = dao.totalMoneyMonth(11);
         double totalMoneyMonth12 = dao.totalMoneyMonth(12);
         
-        int allReview = dao.countAllReview();
-        int allProduct = dao.countAllProduct();
-        double sumAllInvoice = dao.sumAllInvoice();
+        int allFeedback = dao.countAllFeedback();
+        int allXeMay = dao.countAllXeMay();
+        double sumAllHoaDon = dao.sumAllHoaDon();
         
-        List<HoaDon> listAllInvoice = dao.getAllInvoice();
+        List<HoaDon> listAllHoaDon = dao.getAllHoaDon();
         List<Account> listAllAccount = dao.getAllAccount();
         
-        request.setAttribute("listAllInvoice", listAllInvoice);
+        request.setAttribute("listAllHoaDon", listAllHoaDon);
         request.setAttribute("listAllAccount", listAllAccount);
-        request.setAttribute("sumAllInvoice", sumAllInvoice);
+        request.setAttribute("sumAllHoaDon", sumAllHoaDon);
         
-        request.setAttribute("allReview", allReview);
-        request.setAttribute("allProduct", allProduct);
+        request.setAttribute("allFeedback", allFeedback);
+        request.setAttribute("allXeMay", allXeMay);
         
         request.setAttribute("totalMoney1", totalMoney1);
         request.setAttribute("totalMoney2", totalMoney2);

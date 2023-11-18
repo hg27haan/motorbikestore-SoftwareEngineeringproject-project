@@ -117,7 +117,7 @@
                   </div>
                 </div>
                 <div class="align-self-center">
-                  <h2 class="h1 mb-0">${allProduct }</h2>
+                  <h2 class="h1 mb-0">${allXeMay }</h2>
                 </div>
               </div>
             </div>
@@ -139,7 +139,7 @@
                   </div>
                 </div>
                 <div class="align-self-center">
-                  <h2 class="h1 mb-0">${allReview }</h2>
+                  <h2 class="h1 mb-0">${allFeedback }</h2>
                 </div>
               </div>
             </div>
@@ -153,7 +153,7 @@
               <div class="d-flex justify-content-between p-md-1">
                 <div class="d-flex flex-row">
                   <div class="align-self-center">
-                    <h2 class="h1 mb-0 me-4">$${sumAllInvoice }</h2>
+                    <h2 class="h1 mb-0 me-4">$${sumAllHoaDon }</h2>
                   </div>
                   <div>
                     <h4>Total Sales</h4>
