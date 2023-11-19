@@ -65,7 +65,7 @@ public class DAO {
     public List<SoLuongXeDaBan> getTop10SanPhamBanChay() {
         List<SoLuongXeDaBan> list = new ArrayList<>();
         String query = "select top(10) *\r\n"
-        		+ "from SoLuongDaBan\r\n"
+        		+ "from SoLuongXeDaBan\r\n"
         		+ "order by soLuongDaBan desc";
         try {
             conn = new DBContext().getConnection();//mo ket noi voi sql
@@ -82,10 +82,25 @@ public class DAO {
         }
         return list;
     }
-    
+    public List<DanhMuc> getAllCategory() {
+        List<DanhMuc> list = new ArrayList<>();
+        String query = "select * from DanhMuc";
+        try {
+            conn = new DBContext().getConnection();//mo ket noi voi sql
+            ps = conn.prepareStatement(query);
+            rs = ps.executeQuery();
+            while (rs.next()) {
+                list.add(new DanhMuc(rs.getInt(1),rs.getString(2)));
+            }
+        } catch (Exception e) {
+        	e.printStackTrace();
+            System.out.println("Có lỗi");
+        }
+        return list;
+    }
     public List<HoaDon> getAllInvoice() {
         List<HoaDon> list = new ArrayList<>();
-        String query = "select * from Invoice";
+        String query = "select * from HoaDon";
         try {
             conn = new DBContext().getConnection();//mo ket noi voi sql
             ps = conn.prepareStatement(query);
@@ -197,7 +212,7 @@ public class DAO {
     }
     
     public double sumAllInvoice() {
-        String query = "select SUM(tongGia) from Invoice";
+        String query = "select SUM(tongGia) from sumAllInvoice";
         try {
             conn = new DBContext().getConnection();//mo ket noi voi sql
             ps = conn.prepareStatement(query);
@@ -206,8 +221,8 @@ public class DAO {
                return rs.getDouble(1);
             }
         } catch (Exception e) {
-        	e.printStackTrace();
-            System.out.println("Có lỗi");
+        	//e.printStackTrace();
+            //System.out.println("Có lỗi");
         }
         return 0;
     }
@@ -222,8 +237,8 @@ public class DAO {
                return rs.getInt(1);
             }
         } catch (Exception e) {
-        	e.printStackTrace();
-            System.out.println("Có lỗi");
+        	//e.printStackTrace();
+            //System.out.println("Có lỗi");
         }
         return 0;
     }
@@ -261,8 +276,8 @@ public class DAO {
                 		rs.getString(5)));
             }
         } catch (Exception e) {
-        	e.printStackTrace();
-            System.out.println("Có lỗi");
+        	//e.printStackTrace();
+            //System.out.println("Có lỗi");
         }
         return list;
     }
@@ -292,8 +307,8 @@ public class DAO {
     public List<TongChiTieuMuaHang> getTop5KhachHang() {
         List<TongChiTieuMuaHang> list = new ArrayList<>();
         String query = "select top(5) *\r\n"
-        		+ "from TongChiTieuBanHang\r\n"
-        		+ "order by TongChiTieu desc";
+        		+ "from TongChiTieuMuaHang\r\n"
+        		+ "order by tongChiTieu desc";
         try {
             conn = new DBContext().getConnection();//mo ket noi voi sql
             ps = conn.prepareStatement(query);
@@ -428,7 +443,35 @@ public class DAO {
         }
         return list;
     }
-    
+    public List<XeMay> getAllProduct() {
+        List<XeMay> list = new ArrayList<>();
+        String query = "select * from XeMay";
+        try {
+            conn = new DBContext().getConnection();//mo ket noi voi sql
+            ps = conn.prepareStatement(query);
+            rs = ps.executeQuery();
+            while (rs.next()) {
+                list.add(new XeMay(rs.getInt(1),
+                        rs.getString(2),
+                        rs.getString(3),
+                        rs.getDouble(4),
+                        rs.getString(5),
+                        rs.getString(6),
+                        rs.getString(8),
+                        rs.getString(9),
+                        rs.getString(10),
+                        rs.getString(11),
+                        rs.getString(12),
+                        rs.getString(13),
+                        rs.getString(14),
+                        rs.getString(15)));
+            }
+        } catch (Exception e) {
+        	e.printStackTrace();
+            System.out.println("Có lỗi");
+        }
+        return list;
+    }
     public List<XeMay> getNext4AirBladeProduct(int soLuong) {
         List<XeMay> list = new ArrayList<>();
         String query = "select * from XeMay\r\n"
@@ -498,7 +541,7 @@ public class DAO {
 
     public List<XeMay> getProductBySellIDAndIndex(int id, int indexPage) {
         List<XeMay> list = new ArrayList<>();
-        String query = "select * from Product \r\n"
+        String query = "select * from XeMay \r\n"
         		+ "where sell_ID = ?\r\n"
         		+ "order by [id]\r\n"
         		+ "offset ? rows\r\n"
@@ -600,12 +643,11 @@ public class DAO {
     
     public List<HoaDon> searchByNgayXuat(String ngayXuat) {
         List<HoaDon> list = new ArrayList<>();
-        String query = "select * from Invoice\r\n"
-        		+ "where [ngayXuat] ='"+ngayXuat+"'";
+        String query = "select * from HoaDon\r\n"
+        		+ "where [ngayThanhToan] ='"+ngayXuat+"'";
         try {
             conn = new DBContext().getConnection();//mo ket noi voi sql
             ps = conn.prepareStatement(query);
-//            ps.setString(1,ngayXuat);
             rs = ps.executeQuery();
             while (rs.next()) {
                 list.add(new HoaDon(rs.getInt(1),

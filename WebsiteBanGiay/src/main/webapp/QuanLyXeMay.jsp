@@ -112,7 +112,7 @@
         <div class="card-header py-3 row">
           <div class="col-sm-3">
           <h5 class="mb-0 text-left" id="">
-            <strong>Quản lý sản phẩm</strong>
+            <strong>Quản lý xe máy</strong>
           </h5>
           </div>
            <div class="col-sm-9 text-right">
@@ -247,7 +247,7 @@
                                 <label>Category</label>
                                 <select name="category" class="form-select" aria-label="Default select example">
                                     <c:forEach items="${listCC}" var="o">
-                                        <option value="${o.cid}">${o.cname}</option>
+                                        <option value="${o.maDanhMuc}">${o.tenDanhMuc}</option>
                                     </c:forEach>
                                 </select>
                             </div>

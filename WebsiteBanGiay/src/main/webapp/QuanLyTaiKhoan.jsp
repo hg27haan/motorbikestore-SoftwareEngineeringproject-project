@@ -142,7 +142,7 @@
                 <tr>
                   <th scope="col">ID</th>
                   <th scope="col">Username</th>
-                  <th scope="col">Là người bán hàng</th>
+                  <th scope="col">Password</th>
                   <th scope="col">Là Admin</th>
                   <th scope="col">Email</th>
                 </tr>
@@ -151,13 +151,13 @@
                 <c:forEach items="${listA}" var="o">
                 <tr>
 
-                   <td>${o.id}</td>
-               		<td>${o.user}</td>
-                   <td>${o.isSell}</td>
+                   <td>${o.maAccount}</td>
+               		<td>${o.username}</td>
+               		<td>${o.password}</td>
                    <td>${o.isAdmin}</td>
                    <td>${o.email}</td>
                    <td>
-                     	   <a href="deleteAccount?id=${o.id}"><button type="button" class="btn btn-danger"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></button></a>
+                     	   <a href="deleteAccount?id=${o.maAccount}"><button type="button" class="btn btn-danger"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></button></a>
                    </td>
                 </tr>
                 </c:forEach>

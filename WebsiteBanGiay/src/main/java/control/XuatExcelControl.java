@@ -36,27 +36,16 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 @WebServlet(name = "XuatExcelControl", urlPatterns = {"/xuatExcelControl"})
 public class XuatExcelControl extends HttpServlet {
-
-    /**
-     * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
-     * methods.
-     *
-     * @param request servlet request
-     * @param response servlet response
-     * @throws ServletException if a servlet-specific error occurs
-     * @throws IOException if an I/O error occurs
-     */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
       
-        String ngayXuat = request.getParameter("dateHoaDon");  
-       
+        String ngayXuat = request.getParameter("dateHoaDon"); 
         DAO dao = new DAO();
         
         List<HoaDon> list = dao.searchByNgayXuat(ngayXuat);
         List<Account> listAllAccount = dao.getAllAccount();
-        
+        //DatTenFile
         int maximum=2147483647;
         int minimum=1;
         
@@ -90,13 +79,13 @@ public class XuatExcelControl extends HttpServlet {
         for (HoaDon o : list) {
         	i=i+1;
         	for (Account a : listAllAccount) {
-        		if(o.getAccountID()==a.getId()) {
-        			tongGia=Math.round((o.getTongGia()) * 100.0) / 100.0;
+        		if(o.getMaAccount()==a.getMaAccount()) {
+        			tongGia=Math.round((o.getTongTien()) * 100.0) / 100.0;
         			 row=workSheet.createRow(i);
         			 cell0=row.createCell(0);
-        		     cell0.setCellValue(o.getMaHD());
+        		     cell0.setCellValue(o.getMaHoaDon());
         		     cell1=row.createCell(1);
-        		     cell1.setCellValue(a.getUser());
+        		     cell1.setCellValue(a.getUsername());
         		     cell2=row.createCell(2);
         		     cell2.setCellValue(tongGia);
         		     cell3=row.createCell(3);
@@ -107,50 +96,23 @@ public class XuatExcelControl extends HttpServlet {
         workbook.write(file);
         workbook.close();
         file.close();
-        
         request.setAttribute("mess", "Đã xuất file Excel thành công!");
         request.getRequestDispatcher("hoaDon").forward(request, response);
 
        
     }
-
-    // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
-    /**
-     * Handles the HTTP <code>GET</code> method.
-     *
-     * @param request servlet request
-     * @param response servlet response
-     * @throws ServletException if a servlet-specific error occurs
-     * @throws IOException if an I/O error occurs
-     */
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         processRequest(request, response);
     }
-
-    /**
-     * Handles the HTTP <code>POST</code> method.
-     *
-     * @param request servlet request
-     * @param response servlet response
-     * @throws ServletException if a servlet-specific error occurs
-     * @throws IOException if an I/O error occurs
-     */
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         processRequest(request, response);
     }
-
-    /**
-     * Returns a short description of the servlet.
-     *
-     * @return a String containing servlet description
-     */
     @Override
     public String getServletInfo() {
         return "Short description";
-    }// </editor-fold>
-
+    }
 }

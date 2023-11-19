@@ -143,14 +143,14 @@
                 <c:forEach items="${listAllInvoice}" var="i">
                 <tr>
                   <th scope="row"></th>
-                  <td>${i.maHD }</td>
+                  <td>${i.maHoaDon }</td>
                   <c:forEach items="${listAllAccount}" var="a">
-                  <c:if test="${i.accountID==a.id }">
-                  <td>${a.user }</td>
+                  <c:if test="${i.maAccount==a.maAccount }">
+                  <td>${a.username }</td>
                   </c:if>
                   </c:forEach>
-                  <td>${String.format("%.02f",i.tongGia) }</td>
-                  <td>${i.ngayXuat }</td> 
+                  <td>${String.format("%.02f",i.tongTien) }</td>
+                  <td>${i.ngayThanhToan }</td> 
                 </tr>
                  </c:forEach>
               </tbody>
