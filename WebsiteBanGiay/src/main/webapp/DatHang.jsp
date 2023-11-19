@@ -36,8 +36,8 @@
                 <input name="phoneNumber" type="text" id="phoneNumber" class="form-control" placeholder="Phone number" required="" autofocus="">
                 <label for="email">Email</label>
                 <input name="email" type="text" id="email" class="form-control" placeholder="email" required="" autofocus="">
-                <label for="deliveryAddress">Delivery Address</label>
-                <input name="deliveryAddress" type="text" id="deliveryAddress" class="form-control" placeholder="Delivery Address" required="" autofocus="">
+<!--                 <label for="deliveryAddress">Delivery Address</label> -->
+<!--                 <input name="deliveryAddress" type="text" id="deliveryAddress" class="form-control" placeholder="Delivery Address" required="" autofocus=""> -->
                
                 <button class="btn btn-success btn-block" type="submit"><i class="fas fa-american-sign-language-interpreting"></i>Dat Hang</button>
                 

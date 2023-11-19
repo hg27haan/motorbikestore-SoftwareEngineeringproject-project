@@ -43,10 +43,10 @@ public class ManagerCartControl extends HttpServlet {
         	response.sendRedirect("login");
         	return;
         }
-        int accountID = a.getId();
+        int accountID = a.getMaAccount();
         DAO dao = new DAO();
-        List<GioHang> list = dao.getCartByAccountID(accountID);
-        List<XeMay> list2 = dao.getAllProduct();
+        List<GioHang> list = dao.getGioHangBymaAccount(accountID);
+        List<XeMay> list2 = dao.getAllXeMay();
       
         request.setAttribute("listCart", list);
         request.setAttribute("listProduct", list2);
@@ -54,8 +54,8 @@ public class ManagerCartControl extends HttpServlet {
         double totalMoney=0;
         for(GioHang o : list) {
         	for(XeMay p : list2) {
-        		if(o.getProductID()==p.getId()) {
-        			totalMoney=totalMoney+(p.getPrice()*o.getAmount());
+        		if(o.getMaXe() == p.getMaXe()) {
+        			totalMoney=totalMoney+(p.getGiaTien()*o.getSoLuong());
         		}
         	}
         }

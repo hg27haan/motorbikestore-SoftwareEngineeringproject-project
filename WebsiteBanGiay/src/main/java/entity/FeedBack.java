@@ -11,10 +11,10 @@ public class FeedBack {
 	public FeedBack(int maAccount, int maXe, String noiDung, Date ngayDanhGia) 
 	{
 		
-		this.setMaAccount(maAccount);
-		this.setMaXe(maXe);
-		this.setNoiDung(noiDung);
-		this.setNgayDanhGia(ngayDanhGia);
+		this.maAccount = maAccount;
+		this.maXe = maXe;
+		this.noiDung = noiDung;
+		this.ngayDanhGia = ngayDanhGia;
 	}
 	
 	public FeedBack() 

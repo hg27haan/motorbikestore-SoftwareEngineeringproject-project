@@ -39,13 +39,13 @@ public class SubAmountCartControl extends HttpServlet {
         	response.sendRedirect("login");
         	return;
         }
-        int accountID = a.getId();
+        int accountID = a.getMaAccount();
         int productID = Integer.parseInt(request.getParameter("productID"));
         int amount = Integer.parseInt(request.getParameter("amount"));
         amount-=1;
         DAO dao = new DAO();
-        dao.editAmountCart(accountID, productID, amount);
-        request.setAttribute("mess", "Da giam so luong!");
+        dao.editsoLuongGioHang(accountID, productID, amount);
+        request.setAttribute("mess", "Đã giảm số lượng!");
         request.getRequestDispatcher("managerCart").forward(request, response);
     }
 

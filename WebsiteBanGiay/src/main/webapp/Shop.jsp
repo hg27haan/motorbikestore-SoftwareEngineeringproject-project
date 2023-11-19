@@ -88,18 +88,15 @@
 
                 <div class="form-check pl-0 mb-3">
                   <input onchange="searchByPriceUnder100()" type="radio" class="form-check-input" id="under100" name="materialExampleRadios">
-                  <label class="form-check-label small text-uppercase card-link-secondary" for="under100">Under
-                    $100</label>
+                  <label class="form-check-label small text-uppercase card-link-secondary" for="under100">Dưới 14.000.000 VND</label>
                 </div>
                 <div class="form-check pl-0 mb-3">
                   <input onchange="searchByPrice100To200()" type="radio" class="form-check-input" id="100200" name="materialExampleRadios">
-                  <label class="form-check-label small text-uppercase card-link-secondary" for="100200">$100 to
-                    $200</label>
+                  <label class="form-check-label small text-uppercase card-link-secondary" for="100200">Từ 14.000.000 VND đến 20.000.000 VND</label>
                 </div>
                 <div class="form-check pl-0 mb-3">
                   <input onchange="searchByPriceAbove200()" type="radio" class="form-check-input" id="200above" name="materialExampleRadios">
-                  <label class="form-check-label small text-uppercase card-link-secondary" for="200above">$200 &
-                    Above</label>
+                  <label class="form-check-label small text-uppercase card-link-secondary" for="200above">Trên 20.000.000 VND</label>
                 </div>
                 <form>
                   <div class="d-flex align-items-center mt-4 pb-1">
@@ -122,44 +119,44 @@
              
 
               <!-- Section: Color -->
-              <section class="mb-4">
+<!--               <section class="mb-4"> -->
 
-                <h6 class="font-weight-bold mb-3">Màu sắc</h6>
+<!--                 <h6 class="font-weight-bold mb-3">Màu sắc</h6> -->
 
-                <div class="btn-group btn-group-toggle btn-color-group d-block mt-n2 ml-n2" data-toggle="buttons">
-                  <label class="btn rounded-circle white border-inset-grey p-3 m-2">
-                    <input onchange="searchByColorWhite()" type="checkbox" autocomplete="off">
-                  </label>
-                  <label class="btn rounded-circle grey p-3 m-2">
-                    <input onchange="searchByColorGray()" type="checkbox" autocomplete="off">
-                  </label>
-                  <label class="btn rounded-circle black p-3 m-2">
-                    <input onchange="searchByColorBlack()" type="checkbox" autocomplete="off">
-                  </label>
-                  <label class="btn rounded-circle green p-3 m-2">
-                    <input type="checkbox" autocomplete="off">
-                  </label>
-                  <label class="btn rounded-circle blue p-3 m-2">
-                    <input type="checkbox" autocomplete="off">
-                  </label>
-                  <label class="btn rounded-circle purple p-3 m-2">
-                    <input type="checkbox" autocomplete="off">
-                  </label>
-                  <label class="btn rounded-circle yellow p-3 m-2">
-                    <input onchange="searchByColorYellow()" type="checkbox" autocomplete="off">
-                  </label>
-                  <label class="btn rounded-circle indigo p-3 m-2">
-                    <input type="checkbox" checked autocomplete="off">
-                  </label>
-                  <label class="btn rounded-circle red p-3 m-2">
-                    <input type="checkbox" autocomplete="off">
-                  </label>
-                  <label class="btn rounded-circle orange p-3 m-2">
-                    <input type="checkbox" autocomplete="off">
-                  </label>
-                </div>
+<!--                 <div class="btn-group btn-group-toggle btn-color-group d-block mt-n2 ml-n2" data-toggle="buttons"> -->
+<!--                   <label class="btn rounded-circle white border-inset-grey p-3 m-2"> -->
+<!--                     <input onchange="searchByColorWhite()" type="checkbox" autocomplete="off"> -->
+<!--                   </label> -->
+<!--                   <label class="btn rounded-circle grey p-3 m-2"> -->
+<!--                     <input onchange="searchByColorGray()" type="checkbox" autocomplete="off"> -->
+<!--                   </label> -->
+<!--                   <label class="btn rounded-circle black p-3 m-2"> -->
+<!--                     <input onchange="searchByColorBlack()" type="checkbox" autocomplete="off"> -->
+<!--                   </label> -->
+<!--                   <label class="btn rounded-circle green p-3 m-2"> -->
+<!--                     <input type="checkbox" autocomplete="off"> -->
+<!--                   </label> -->
+<!--                   <label class="btn rounded-circle blue p-3 m-2"> -->
+<!--                     <input type="checkbox" autocomplete="off"> -->
+<!--                   </label> -->
+<!--                   <label class="btn rounded-circle purple p-3 m-2"> -->
+<!--                     <input type="checkbox" autocomplete="off"> -->
+<!--                   </label> -->
+<!--                   <label class="btn rounded-circle yellow p-3 m-2"> -->
+<!--                     <input onchange="searchByColorYellow()" type="checkbox" autocomplete="off"> -->
+<!--                   </label> -->
+<!--                   <label class="btn rounded-circle indigo p-3 m-2"> -->
+<!--                     <input type="checkbox" checked autocomplete="off"> -->
+<!--                   </label> -->
+<!--                   <label class="btn rounded-circle red p-3 m-2"> -->
+<!--                     <input type="checkbox" autocomplete="off"> -->
+<!--                   </label> -->
+<!--                   <label class="btn rounded-circle orange p-3 m-2"> -->
+<!--                     <input type="checkbox" autocomplete="off"> -->
+<!--                   </label> -->
+<!--                 </div> -->
 
-              </section>
+<!--               </section> -->
               <!-- Section: Color -->
 
             </section>
@@ -178,10 +175,10 @@
           <section class="mb-3">
 
             <div class="row d-flex justify-content-around align-items-center">
-              <div class="col-12 col-md-3 text-center text-md-left">
-                <a href="#!" class="text-reset"><i class="fas fa-th-list fa-lg mr-1"></i></a href="#!">
-                <a href="#!" class="text-reset"><i class="fas fa-th-large fa-lg"></i></a href="#!">
-              </div>
+<!--               <div class="col-12 col-md-3 text-center text-md-left"> -->
+<!--                 <a href="#!" class="text-reset"><i class="fas fa-th-list fa-lg mr-1"></i></a href="#!"> -->
+<!--                 <a href="#!" class="text-reset"><i class="fas fa-th-large fa-lg"></i></a href="#!"> -->
+<!--               </div> -->
               <div class="col-12 col-md-5">
                 <div class="d-flex flex-wrap">
                   <div class="select-outline position-relative w-100">
@@ -235,7 +232,7 @@
                   <div class="view zoom overlay rounded z-depth-2">
                     <img class="img-fluid w-100"
                       src="${o.hinhAnh1}" alt="Sample">
-                    <a href="detail?pid=${o.maXe}">
+                    <a href="detail?pmaXe=${o.maXe}">
                       <div class="mask">
                         <img class="img-fluid w-100"
                           src="${o.hinhAnh1 }">
@@ -401,70 +398,70 @@
             }
         });
     }
-    function searchByColorWhite(){
-        $.ajax({
-            url: "/WebsiteBanGiay/searchAjaxColorWhite",
-            type: "get", //send it through get method
-            data: {
+//     function searchByColorWhite(){
+//         $.ajax({
+//             url: "/WebsiteBanGiay/searchAjaxColorWhite",
+//             type: "get", //send it through get method
+//             data: {
                
-            },
-            success: function (data) {
-                var row = document.getElementById("content");
-                row.innerHTML = data;
-            },
-            error: function (xhr) {
-                //Do Something to handle error
-            }
-        });
-    }
-    function searchByColorGray(){
-        $.ajax({
-            url: "/WebsiteBanGiay/searchAjaxColorGray",
-            type: "get", //send it through get method
-            data: {
+//             },
+//             success: function (data) {
+//                 var row = document.getElementById("content");
+//                 row.innerHTML = data;
+//             },
+//             error: function (xhr) {
+//                 //Do Something to handle error
+//             }
+//         });
+//     }
+//     function searchByColorGray(){
+//         $.ajax({
+//             url: "/WebsiteBanGiay/searchAjaxColorGray",
+//             type: "get", //send it through get method
+//             data: {
                
-            },
-            success: function (data) {
-                var row = document.getElementById("content");
-                row.innerHTML = data;
-            },
-            error: function (xhr) {
-                //Do Something to handle error
-            }
-        });
-    }
-    function searchByColorBlack(){
-        $.ajax({
-            url: "/WebsiteBanGiay/searchAjaxColorBlack",
-            type: "get", //send it through get method
-            data: {
+//             },
+//             success: function (data) {
+//                 var row = document.getElementById("content");
+//                 row.innerHTML = data;
+//             },
+//             error: function (xhr) {
+//                 //Do Something to handle error
+//             }
+//         });
+//     }
+//     function searchByColorBlack(){
+//         $.ajax({
+//             url: "/WebsiteBanGiay/searchAjaxColorBlack",
+//             type: "get", //send it through get method
+//             data: {
                
-            },
-            success: function (data) {
-                var row = document.getElementById("content");
-                row.innerHTML = data;
-            },
-            error: function (xhr) {
-                //Do Something to handle error
-            }
-        });
-    }
-    function searchByColorYellow(){
-        $.ajax({
-            url: "/WebsiteBanGiay/searchAjaxColorYellow",
-            type: "get", //send it through get method
-            data: {
+//             },
+//             success: function (data) {
+//                 var row = document.getElementById("content");
+//                 row.innerHTML = data;
+//             },
+//             error: function (xhr) {
+//                 //Do Something to handle error
+//             }
+//         });
+//     }
+//     function searchByColorYellow(){
+//         $.ajax({
+//             url: "/WebsiteBanGiay/searchAjaxColorYellow",
+//             type: "get", //send it through get method
+//             data: {
                
-            },
-            success: function (data) {
-                var row = document.getElementById("content");
-                row.innerHTML = data;
-            },
-            error: function (xhr) {
-                //Do Something to handle error
-            }
-        });
-    }
+//             },
+//             success: function (data) {
+//                 var row = document.getElementById("content");
+//                 row.innerHTML = data;
+//             },
+//             error: function (xhr) {
+//                 //Do Something to handle error
+//             }
+//         });
+//     }
     function loadAmountCart(){
     	 $.ajax({
              url: "/WebsiteBanGiay/loadAllAmountCart",

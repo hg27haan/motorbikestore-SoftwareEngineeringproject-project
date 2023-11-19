@@ -158,7 +158,7 @@
           </div>
           <div class="col-md-6">
 
-            <h5>${detail.name}</h5>
+            <h5>${detail.tenXe}</h5>
         
             <p><span class="mr-1"><strong>$${String.format("%.02f",detail.giaTien*0.9) }</strong></span><span
                     class="text-grey"><strong><s>$${detail.giaTien }</s></strong></span></p>
@@ -199,7 +199,9 @@
                 <tbody>
                   <tr>
                     <td class="pl-0 pb-0 w-25">Quantity</td>
-                    <td class="pb-0">Select size</td>
+                    
+                    <!--  <td class="pb-0">Select size</td> -->
+                    
                   </tr>
                   <tr>
                     <td class="pl-0">
@@ -213,25 +215,27 @@
                       </div>
                       </div>
                     </td>
-                    <td>
-                      <div class="mt-1">
-                        <div class="form-check form-check-inline pl-0">
-                          <input type="radio" class="form-check-input" id="small" value="small" name="size" checked>
-                          <label class="form-check-label small text-uppercase card-link-secondary"
-                            for="small">Small</label>
-                        </div>
-                        <div class="form-check form-check-inline pl-0">
-                          <input type="radio" class="form-check-input" id="medium" value="medium" name="size">
-                          <label class="form-check-label small text-uppercase card-link-secondary"
-                            for="medium">Medium</label>
-                        </div>
-                        <div class="form-check form-check-inline pl-0">
-                          <input type="radio" class="form-check-input" id="large" value="large" name="size">
-                          <label class="form-check-label small text-uppercase card-link-secondary"
-                            for="large">Large</label>
-                        </div>
-                      </div>
-                    </td>
+                    
+<!--                     <td> -->
+<!--                       <div class="mt-1"> -->
+<!--                         <div class="form-check form-check-inline pl-0"> -->
+<!--                           <input type="radio" class="form-check-input" id="small" value="small" name="size" checked> -->
+<!--                           <label class="form-check-label small text-uppercase card-link-secondary" -->
+<!--                             for="small">Small</label> -->
+<!--                         </div> -->
+<!--                         <div class="form-check form-check-inline pl-0"> -->
+<!--                           <input type="radio" class="form-check-input" id="medium" value="medium" name="size"> -->
+<!--                           <label class="form-check-label small text-uppercase card-link-secondary" -->
+<!--                             for="medium">Medium</label> -->
+<!--                         </div> -->
+<!--                         <div class="form-check form-check-inline pl-0"> -->
+<!--                           <input type="radio" class="form-check-input" id="large" value="large" name="size"> -->
+<!--                           <label class="form-check-label small text-uppercase card-link-secondary" -->
+<!--                             for="large">Large</label> -->
+<!--                         </div> -->
+<!--                       </div> -->
+<!--                     </td> -->
+
                   </tr>
                 </tbody>
               </table>
@@ -257,13 +261,15 @@
             <a class="nav-link active show" id="description-tab" data-toggle="tab" href="#description" role="tab"
               aria-controls="description" aria-selected="true">Description</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" id="info-tab" data-toggle="tab" href="#info" role="tab" aria-controls="info"
-              aria-selected="false">Information</a>
-          </li>
+          
+<!--           <li class="nav-item"> -->
+<!--             <a class="nav-link" id="info-tab" data-toggle="tab" href="#info" role="tab" aria-controls="info" -->
+<!--               aria-selected="false">Information</a> -->
+<!--           </li> -->
+
           <li class="nav-item">
             <a class="nav-link" id="reviews-tab" data-toggle="tab" href="#reviews" role="tab" aria-controls="reviews"
-              aria-selected="false">Reviews (${countAllReview })</a>
+              aria-selected="false">FeedBacks (${countAllReview })</a>
           </li>
         </ul>
         <div class="tab-content" id="advancedTabContent">
@@ -273,37 +279,39 @@
             <h6>$${String.format("%.02f",detail.giaTien*0.9) }</h6>
             <p class="pt-1">${detail.gioiThieu}</p>
           </div>
-          <div class="tab-pane fade" id="info" role="tabpanel" aria-labelledby="info-tab">
-            <h5>Additional Information</h5>
-            <table class="table table-striped table-bordered mt-3">
-              <thead>
-                <tr>
-                  <th scope="row" class="w-150 dark-grey-text h6">Weight</th>
-                  <td><em>0.3 kg</em></td>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <th scope="row" class="w-150 dark-grey-text h6">Dimensions</th>
-                  <td><em>50 × 60 cm</em></td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
+          
+<!--           <div class="tab-pane fade" id="info" role="tabpanel" aria-labelledby="info-tab"> -->
+<!--             <h5>Additional Information</h5> -->
+<!--             <table class="table table-striped table-bordered mt-3"> -->
+<!--               <thead> -->
+<!--                 <tr> -->
+<!--                   <th scope="row" class="w-150 dark-grey-text h6">Weight</th> -->
+<!--                   <td><em>0.3 kg</em></td> -->
+<!--                 </tr> -->
+<!--               </thead> -->
+<!--               <tbody> -->
+<!--                 <tr> -->
+<!--                   <th scope="row" class="w-150 dark-grey-text h6">Dimensions</th> -->
+<!--                   <td><em>50 × 60 cm</em></td> -->
+<!--                 </tr> -->
+<!--               </tbody> -->
+<!--             </table> -->
+<!--           </div> -->
+
           <div class="tab-pane fade" id="reviews" role="tabpanel" aria-labelledby="reviews-tab">
-            <h5><span>${countAllReview }</span> review for <span>${detail.tenXe }</span></h5>
+            <h5><span>${countAllReview }</span> FeedBack for <span>${detail.tenXe }</span></h5>
             
-             <h5 class="mt-4">Add a review</h5>
+             <h5 class="mt-4">Add a FeedBack</h5>
             <p></p>
       
             <div>
               <!-- Your review -->
               <div class="md-form md-outline">
                 <textarea id="form76" class="md-textarea form-control pr-6" rows="4"></textarea>
-                <label for="form76">Your review</label>
+                <label for="form76">Your FeedBack</label>
               </div>
               <div class="text-right pb-2">
-                <button type="button" class="btn btn-primary" onclick="addReview(${detail.id})">Add a review</button>
+                <button type="button" class="btn btn-primary" onclick="addReview(${detail.maXe})">Add a FeedBack</button>
               </div>
             </div>
             
@@ -361,12 +369,12 @@
 
               <div class="view zoom overlay z-depth-2 rounded">
                 <img class="img-fluid w-100"
-                  src="${o.image }" alt="Sample">
+                  src="${o.hinhAnh1 }" alt="Sample">
                   <h4 class="mb-0"><span class="badge badge-primary badge-pill badge-news">Sale 10%</span></h4>
-                <a href="detail?pid=${o.id}">
+                <a href="detail?pmaXe=${o.maXe}">
                   <div class="mask">
                     <img class="img-fluid w-100"
-                      src="${o.image }">
+                      src="${o.hinhAnh1 }">
                     <div class="mask rgba-black-slight"></div>
                   </div>
                 </a>
@@ -375,8 +383,8 @@
               <div class="pt-4">
 
                 <h5>${o.title }</h5>
-                <p><span class="text-danger mr-1"><strong>${String.format("%.02f",o.price*0.9) }$</strong></span><span
-                    class="text-grey"><strong><s>${o.price }$</s></strong></span></p>
+                <p><span class="text-danger mr-1"><strong>${String.format("%.02f",o.giaTien*0.9) }$</strong></span><span
+                    class="text-grey"><strong><s>${o.giaTien }$</s></strong></span></p>
                     
                
 
@@ -417,14 +425,14 @@
                              });
                         },false); 
         
-        function addReview(pID){
-           var cntReview = document.getElementById("form76").value;
+        function addReview(pmaXe){
+           var noiDung = document.getElementById("form76").value;
             $.ajax({
                 url: "/WebsiteBanGiay/addReview",
                 type: "get", //send it through get method
                 data: {
-                	productID: pID,
-                	contentReview: cntReview
+                	productID: pmaXe,
+                	contentReview: noiDung
                 },
                 success: function (data) {
                     var row = document.getElementById("reviews");

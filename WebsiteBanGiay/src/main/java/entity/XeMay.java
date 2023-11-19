@@ -13,7 +13,7 @@ public class XeMay {
     private int maXe;
     private String tenXe;
     private String hinhAnh1;
-    private double giaTien;
+    private Double giaTien;
     private String title;
     private String gioiThieu;
     private String khoiLuong;
@@ -25,7 +25,7 @@ public class XeMay {
     private String hinhAnh3;
     private String hinhAnh4;
     
-	public XeMay(int maXe, String tenXe, String hinhAnh1, double giaTien, String title, 
+	public XeMay(int maXe, String tenXe, String hinhAnh1, Double giaTien, String title, 
 			String gioiThieu, String khoiLuong, String daiRongCao, String dungTichXiLanh, 
 			String tiSoNen, String dungTichBinhXang, String hinhAnh2, String hinhAnh3, String hinhAnh4) 
 	{		
@@ -91,12 +91,12 @@ public class XeMay {
 		this.hinhAnh1 = hinhAnh1;
 	}
 	
-	public double getGiaTien() 
+	public Double getGiaTien() 
 	{
 		return giaTien;
 	}
 	
-	public void setGiaTien(double giaTien) 
+	public void setGiaTien(Double giaTien) 
 	{
 		this.giaTien = giaTien;
 	}

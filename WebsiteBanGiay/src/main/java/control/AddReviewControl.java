@@ -65,7 +65,7 @@ public class AddReviewControl extends HttpServlet {
             		+ "                <div class=\"d-flex justify-content-between\">\r\n"
             		+ "                  <p class=\"mt-1 mb-2\">\r\n"
             		+ "                    <strong>"+a.getUsername()+"</strong>\r\n"
-            		+ "                    <span>� </span><span>"+newFeedBack.getNgayDanhGia()+"</span>\r\n"
+            		+ "                    <span>– </span><span>"+newFeedBack.getNgayDanhGia()+"</span>\r\n"
             		+ "                  </p>\r\n"
             		+ "                </div>\r\n"
             		+ "                <p class=\"mb-0\">"+newFeedBack.getNoiDung()+"</p>\r\n"

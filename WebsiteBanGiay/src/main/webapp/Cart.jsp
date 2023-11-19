@@ -42,15 +42,19 @@
                                                     <th scope="col" class="border-0 bg-light">
                                                         <div class="py-2 text-uppercase">Đơn Giá</div>
                                                     </th>
-                                                     <th scope="col" class="border-0 bg-light">
-                                                        <div class="py-2 text-uppercase">Màu Sắc</div>
-                                                    </th>
-                                                     <th scope="col" class="border-0 bg-light">
-                                                        <div class="py-2 text-uppercase">Delivery</div>
-                                                    </th>
-                                                     <th scope="col" class="border-0 bg-light">
-                                                        <div class="py-2 text-uppercase">Kích Thước</div>
-                                                    </th>
+                                                    
+<!--                                                      <th scope="col" class="border-0 bg-light"> -->
+<!--                                                         <div class="py-2 text-uppercase">Màu Sắc</div> -->
+<!--                                                     </th> -->
+
+<!--                                                      <th scope="col" class="border-0 bg-light"> -->
+<!--                                                         <div class="py-2 text-uppercase">Delivery</div> -->
+<!--                                                     </th> -->
+
+<!--                                                      <th scope="col" class="border-0 bg-light"> -->
+<!--                                                         <div class="py-2 text-uppercase">Kích Thước</div> -->
+<!--                                                     </th> -->
+
                                                     <th scope="col" class="border-0 bg-light">
                                                         <div class="py-2 text-uppercase">Số Lượng</div>
                                                     </th>
@@ -62,32 +66,33 @@
                                             <tbody>
                                             <c:forEach items="${listCart}" var="o">
                                              <c:forEach items="${listProduct}" var="p">
-                                                <c:if test="${o.productID == p.id}">
+                                                <c:if test="${o.maXe == p.maXe}">
                                                 <tr>
                                                     <th scope="row">
                                                         <div class="p-2">
                                                         
-                                                            <img src="${p.image}" alt="" width="70" class="img-fluid rounded shadow-sm">
+                                                            <img src="${p.hinhAnh1}" alt="" width="70" class="img-fluid rounded shadow-sm">
                                                           
                                                             <div class="ml-3 d-inline-block align-middle">
-                                                                <h5 class="mb-0"> <a href="#" class="text-dark d-inline-block">${p.name}</a></h5><span class="text-muted font-weight-normal font-italic"></span>
+                                                                <h5 class="mb-0"> <a href="#" class="text-dark d-inline-block">${p.tenXe}</a></h5><span class="text-muted font-weight-normal font-italic"></span>
                                                             </div>
                                                         </div>
                                                     </th>
-                                                    <td class="align-middle"><strong>${p.price}$</strong></td>
-                                                    <td class="align-middle"><strong>${p.color}</strong></td>
-                                                    <td class="align-middle"><strong>${p.delivery}</strong></td>
+                                                    <td class="align-middle"><strong>${p.giaTien}$</strong></td>
                                                     
-                     <td class="align-middle">
-                     	<strong>${o.size}</strong>
-                    </td>
+<%--                                                     <td class="align-middle"><strong>${p.color}</strong></td> --%>
+<%--                                                     <td class="align-middle"><strong>${p.delivery}</strong></td> --%>
+                                                    
+<!--                      <td class="align-middle"> -->
+<%--                      	<strong>${o.size}</strong> --%>
+<!--                     </td> -->
                     
                                                     <td class="align-middle">
-                                                        <a href="subAmountCart?productID=${o.productID}&amount=${o.amount}"><button class="btnSub">-</button></a> 
-                                                        <strong>${o.amount}</strong>
-                                                        <a href="addAmountCart?productID=${o.productID}&amount=${o.amount}"><button class="btnAdd">+</button></a>
+                                                        <a href="subAmountCart?productID=${o.maXe}&amount=${o.soLuong}"><button class="btnSub">-</button></a> 
+                                                        <strong>${o.soLuong}</strong>
+                                                        <a href="addAmountCart?productID=${o.maXe}&amount=${o.soLuong}"><button class="btnAdd">+</button></a>
                                                     </td>
-                                                    <td class="align-middle"><a href="deleteCart?productID=${o.productID }" class="text-dark">
+                                                    <td class="align-middle"><a href="deleteCart?productID=${o.maXe }" class="text-dark">
                                                             <button type="button" class="btn btn-danger">Delete</button>
                                                         </a>
                                                     </td>
@@ -109,12 +114,12 @@
     
                                 <div class="p-4">
                                     <ul class="list-unstyled mb-4" id="contentTotalMoney">
-                                       <!--  <li class="d-flex justify-content-between py-3 border-bottom"><strong class="text-muted">Tổng tiền hàng</strong><strong>100 $</strong></li>
-                                        <li class="d-flex justify-content-between py-3 border-bottom"><strong class="text-muted">Phí vận chuyển</strong><strong>Free ship</strong></li>
-                                        <li class="d-flex justify-content-between py-3 border-bottom"><strong class="text-muted">VAT</strong><strong>10 $</strong></li>
-                                        <li class="d-flex justify-content-between py-3 border-bottom"><strong class="text-muted">Tổng thanh toán</strong>
-                                            <h5 class="font-weight-bold">110 $</h5>
-                                        </li> -->
+                                         <li class="d-flex justify-content-between py-3 border-bottom"><strong class="text-muted">Tổng tiền hàng</strong><strong>100 $</strong></li>
+<!--                                         <li class="d-flex justify-content-between py-3 border-bottom"><strong class="text-muted">Phí vận chuyển</strong><strong>Free ship</strong></li> -->
+                                         <li class="d-flex justify-content-between py-3 border-bottom"><strong class="text-muted">VAT</strong><strong>10 $</strong></li>
+                                         <li class="d-flex justify-content-between py-3 border-bottom"><strong class="text-muted">Tổng thanh toán</strong> 
+                                            <h5 class="font-weight-bold">110 $</h5> 
+                                        </li> 
                                     </ul><a href="order" class="btn btn-dark rounded-pill py-2 btn-block text-white">Thanh Toán</a>
                                 </div>
                             </div>

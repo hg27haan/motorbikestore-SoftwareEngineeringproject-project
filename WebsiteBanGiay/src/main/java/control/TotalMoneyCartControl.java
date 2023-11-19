@@ -39,16 +39,16 @@ public class TotalMoneyCartControl extends HttpServlet {
         request.setCharacterEncoding("UTF-8");
         HttpSession session = request.getSession();
         Account a = (Account) session.getAttribute("acc");
-        int accountID = a.getId();
+        int accountID = a.getMaAccount();
         DAO dao = new DAO();
-        List<GioHang> list = dao.getCartByAccountID(accountID);
-        List<XeMay> list2 = dao.getAllProduct();
+        List<GioHang> list = dao.getGioHangBymaAccount(accountID);
+        List<XeMay> list2 = dao.getAllXeMay();
         
         double totalMoney=0;
         for(GioHang o : list) {
         	for(XeMay p : list2) {
-        		if(o.getProductID()==p.getId()) {
-        			totalMoney=totalMoney+p.getPrice()*o.getAmount();
+        		if(o.getMaXe()==p.getMaXe()) {
+        			totalMoney=totalMoney+p.getGiaTien()*o.getSoLuong();
         		}
         	}
         }

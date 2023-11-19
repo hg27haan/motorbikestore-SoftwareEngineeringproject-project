@@ -81,7 +81,7 @@ public class OrderControl extends HttpServlet {
 			}
 	        
 	        dao.insertHoaDon(maAccount, totalMoneyVAT);
-	        TongChiTieuMuaHang t = dao.checkTongChiTieuBanHangExist(maAccount);
+	        TongChiTieuMuaHang t = dao.checkTongChiTieuMuaHangExist(maAccount);
 	        if(t==null) {
 	        	dao.insertTongChiTieuMuaHang(maAccount,totalMoneyVAT);
 	        }
@@ -128,14 +128,14 @@ public class OrderControl extends HttpServlet {
 		        
 		        //old code
 				Email email =new Email();
-				email.setFrom("2113302@student.hcmute.edu.vn"); //chinh lai email quan tri tai day [chu y dung email con hoat dong]
-				email.setFromPassword("K_Haruto111103"); //mat khau email tren
+				email.setFrom("21133021@student.hcmute.edu.vn"); //chinh lai email quan tri tai day [chu y dung email con hoat dong]
+				email.setFromPassword("K_Haruto1103"); //mat khau email tren
 				email.setTo(emailAddress);
 				email.setSubject("Dat hang thanh cong tu Fashion Family");
 				StringBuilder sb = new StringBuilder();
 				sb.append("Dear ").append(name).append("<br>");
 				sb.append("Ban vua dat dang tu Fashion Family. <br> ");
-				sb.append("Dia chi nhan hang cua ban la: <b>").append(deliveryAddress).append(" </b> <br>");
+				sb.append("Dia chi nhan hang cua ban la: 1 Võ Văn Ngân (Cửa Hàng) <b>").append(" </b> <br>");
 				sb.append("So dien thoai khi nhan hang cua ban la: <b>").append(phoneNumber).append(" </b> <br>");
 				sb.append("Cac san pham ban dat la: <br>");
 				for(GioHang c : list) {

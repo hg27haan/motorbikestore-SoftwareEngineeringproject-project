@@ -56,6 +56,8 @@ public class DAO {
                         rs.getString(15)));
             }
         } catch (Exception e) {
+        	e.printStackTrace();
+            System.out.println("Có lỗi");
         }
         return list;
     }
@@ -75,6 +77,8 @@ public class DAO {
                   ));
             }
         } catch (Exception e) {
+        	e.printStackTrace();
+            System.out.println("Có lỗi");
         }
         return list;
     }
@@ -94,6 +98,8 @@ public class DAO {
                        ));
             }
         } catch (Exception e) {
+        	e.printStackTrace();
+            System.out.println("Có lỗi");
         }
         return list;
     }
@@ -109,6 +115,8 @@ public class DAO {
                return rs.getInt(1);
             }
         } catch (Exception e) {
+        	e.printStackTrace();
+            System.out.println("Có lỗi");
         }
         return 0;
     }
@@ -126,6 +134,8 @@ public class DAO {
                return rs.getInt(1);
             }
         } catch (Exception e) {
+        	e.printStackTrace();
+            System.out.println("Có lỗi");
         }
         return 0;
     }
@@ -145,6 +155,8 @@ public class DAO {
                return rs.getDouble(1);
             }
         } catch (Exception e) {
+        	e.printStackTrace();
+            System.out.println("Có lỗi");
         }
         return 0;
     }
@@ -162,6 +174,8 @@ public class DAO {
                return rs.getDouble(1);
             }
         } catch (Exception e) {
+        	e.printStackTrace();
+            System.out.println("Có lỗi");
         }
         return 0;
     }
@@ -176,6 +190,8 @@ public class DAO {
                return rs.getInt(1);
             }
         } catch (Exception e) {
+        	e.printStackTrace();
+            System.out.println("Có lỗi");
         }
         return 0;
     }
@@ -190,6 +206,8 @@ public class DAO {
                return rs.getDouble(1);
             }
         } catch (Exception e) {
+        	e.printStackTrace();
+            System.out.println("Có lỗi");
         }
         return 0;
     }
@@ -204,6 +222,8 @@ public class DAO {
                return rs.getInt(1);
             }
         } catch (Exception e) {
+        	e.printStackTrace();
+            System.out.println("Có lỗi");
         }
         return 0;
     }
@@ -220,6 +240,8 @@ public class DAO {
                return rs.getInt(1);
             }
         } catch (Exception e) {
+        	e.printStackTrace();
+            System.out.println("Có lỗi");
         }
         return 0;
     }
@@ -239,6 +261,8 @@ public class DAO {
                 		rs.getString(5)));
             }
         } catch (Exception e) {
+        	e.printStackTrace();
+            System.out.println("Có lỗi");
         }
         return list;
     }
@@ -259,6 +283,8 @@ public class DAO {
                 		rs.getInt(6)));
             }
         } catch (Exception e) {
+        	e.printStackTrace();
+            System.out.println("Có lỗi");
         }
         return list;
     }
@@ -277,6 +303,8 @@ public class DAO {
                         rs.getDouble(2)));
             }
         } catch (Exception e) {
+        	e.printStackTrace();
+            System.out.println("Có lỗi");
         }
         return list;
     }
@@ -295,6 +323,8 @@ public class DAO {
                         rs.getDouble(2)));
             }
         } catch (Exception e) {
+        	e.printStackTrace();
+            System.out.println("Có lỗi");
         }
         return list;
     }
@@ -323,6 +353,8 @@ public class DAO {
                         rs.getString(15)));
             }
         } catch (Exception e) {
+        	e.printStackTrace();
+            System.out.println("Có lỗi");
         }
         return list;
     }
@@ -356,6 +388,8 @@ public class DAO {
                         rs.getString(15)));
             }
         } catch (Exception e) {
+        	e.printStackTrace();
+            System.out.println("Có lỗi");
         }
         return list;
     }
@@ -363,7 +397,7 @@ public class DAO {
     public List<XeMay> getNext4VisionProduct(int soLuong) {
         List<XeMay> list = new ArrayList<>();
         String query = "select * from XeMay\r\n"
-        		+ "where cateID=2\r\n"
+        		+ "where maDanhMuc=2\r\n"
         		+ "order by maXe desc\r\n"
         		+ "offset ? rows\r\n"
         		+ "fetch next 4 rows only";
@@ -389,6 +423,8 @@ public class DAO {
                         rs.getString(15)));
             }
         } catch (Exception e) {
+        	e.printStackTrace();
+            System.out.println("Có lỗi");
         }
         return list;
     }
@@ -422,6 +458,8 @@ public class DAO {
                         rs.getString(15)));
             }
         } catch (Exception e) {
+        	e.printStackTrace();
+            System.out.println("Có lỗi");
         }
         return list;
     }
@@ -452,6 +490,8 @@ public class DAO {
                         rs.getString(15)));
             }
         } catch (Exception e) {
+        	e.printStackTrace();
+            System.out.println("Có lỗi");
         }
         return list;
     }
@@ -486,6 +526,8 @@ public class DAO {
                          rs.getString(15)));
             }
         } catch (Exception e) {
+        	e.printStackTrace();
+            System.out.println("Có lỗi");
         }
         return list;
     }
@@ -518,6 +560,8 @@ public class DAO {
                         rs.getString(15)));
             }
         } catch (Exception e) {
+        	e.printStackTrace();
+            System.out.println("Có lỗi");
         }
         return list;
     }
@@ -548,6 +592,8 @@ public class DAO {
                         rs.getString(15)));
             }
         } catch (Exception e) {
+        	e.printStackTrace();
+            System.out.println("Có lỗi");
         }
         return list;
     }
@@ -569,6 +615,8 @@ public class DAO {
                        ));
             }
         } catch (Exception e) {
+        	e.printStackTrace();
+            System.out.println("Có lỗi");
         }
         return list;
     }
@@ -598,6 +646,8 @@ public class DAO {
                         rs.getString(15)));
             }
         } catch (Exception e) {
+        	e.printStackTrace();
+            System.out.println("Có lỗi");
         }
         return list;
     }
@@ -627,6 +677,8 @@ public class DAO {
                         rs.getString(15)));
             }
         } catch (Exception e) {
+        	e.printStackTrace();
+            System.out.println("Có lỗi");
         }
         return list;
     }
@@ -656,6 +708,8 @@ public class DAO {
                          rs.getString(15)));
             }
         } catch (Exception e) {
+        	e.printStackTrace();
+            System.out.println("Có lỗi");
         }
         return list;
     }
@@ -685,6 +739,8 @@ public class DAO {
                          rs.getString(15)));
             }
         } catch (Exception e) {
+        	e.printStackTrace();
+            System.out.println("Có lỗi");
         }
         return list;
     }
@@ -714,6 +770,8 @@ public class DAO {
                          rs.getString(15)));
             }
         } catch (Exception e) {
+        	e.printStackTrace();
+            System.out.println("Có lỗi");
         }
         return list;
     }
@@ -743,6 +801,8 @@ public class DAO {
                          rs.getString(15)));
             }
         } catch (Exception e) {
+        	e.printStackTrace();
+            System.out.println("Có lỗi");
         }
         return list;
     }
@@ -773,6 +833,8 @@ public class DAO {
                         rs.getString(15)));
             }
         } catch (Exception e) {
+        	e.printStackTrace();
+            System.out.println("Có lỗi");
         }
         return list;
     }
@@ -780,7 +842,7 @@ public class DAO {
     public List<XeMay> searchPriceAbove20() {
         List<XeMay> list = new ArrayList<>();
         String query = "select * from XeMay\r\n"
-        		+ "where [price] > 20000000";
+        		+ "where [giaTien] > 20000000";
         try {
             conn = new DBContext().getConnection();//mo ket noi voi sql
             ps = conn.prepareStatement(query);
@@ -802,6 +864,8 @@ public class DAO {
                         rs.getString(15)));
             }
         } catch (Exception e) {
+        	e.printStackTrace();
+            System.out.println("Có lỗi");
         }
         return list;
     }
@@ -810,7 +874,7 @@ public class DAO {
         List<XeMay> list = new ArrayList<>();
         String query = "select top 4 * from XeMay\r\n"
         		+ "where [maDanhMuc] =?\r\n"
-        		+ "order by id desc";
+        		+ "order by maXe desc";
         try {
             conn = new DBContext().getConnection();//mo ket noi voi sql
             ps = conn.prepareStatement(query);
@@ -833,6 +897,8 @@ public class DAO {
                         rs.getString(15)));
             }
         } catch (Exception e) {
+        	e.printStackTrace();
+            System.out.println("Có lỗi");
         }
         return list;
     }
@@ -848,19 +914,21 @@ public class DAO {
             ps.setString(1, maXe);
             rs = ps.executeQuery();
             while (rs.next()) {
-                list.add(new FeedBack(rs.getInt(1),
-                        rs.getInt(2),
-                        rs.getString(3),
-                        rs.getDate(4)
+                list.add(new FeedBack(rs.getInt(2),
+                        rs.getInt(3),
+                        rs.getString(4),
+                        rs.getDate(5)
                        ));
             }
         } catch (Exception e) {
+        	e.printStackTrace();
+            System.out.println("Có lỗi");
         }
         return list;
     }
 
     public XeMay getXeMayBymaXe(String maXe) {
-        String query = "select * from XeMay\n"
+        String query = "select *from XeMay\n"
                 + "where maXe = ?";
         try {
             conn = new DBContext().getConnection();//mo ket noi voi sql
@@ -884,6 +952,8 @@ public class DAO {
                         rs.getString(15));
             }
         } catch (Exception e) {
+        	e.printStackTrace();
+            System.out.println("Có lỗi");
         }
         return null;
     }
@@ -903,6 +973,8 @@ public class DAO {
                         rs.getInt(4)));
             }
         } catch (Exception e) {
+        	e.printStackTrace();
+            System.out.println("Có lỗi");
         }
         return list;
     }
@@ -924,6 +996,8 @@ public class DAO {
                        rs.getInt(4));
            }
        } catch (Exception e) {
+    	   e.printStackTrace();
+    	    System.out.println("Có lỗi");
        }
       return null;
    }
@@ -941,18 +1015,19 @@ public class DAO {
             	 return rs.getInt(1);
              }
         } catch (Exception e) {
-        	
+        	e.printStackTrace();
+            System.out.println("Có lỗi");
         }
         return 0;
     }
     
-    public TongChiTieuMuaHang checkTongChiTieuBanHangExist(int userID) {
+    public TongChiTieuMuaHang checkTongChiTieuMuaHangExist(int maAccount) {
 
-        String query = "select * from TongChiTieuBanHang where [userID]=?";
+        String query = "select * from TongChiTieuMuaHang where [maAccount]=?";
         try {
             conn = new DBContext().getConnection();//mo ket noi voi sql
             ps = conn.prepareStatement(query);
-            ps.setInt(1, userID);
+            ps.setInt(1, maAccount);
            
             rs = ps.executeQuery();
             while (rs.next()) {
@@ -960,6 +1035,8 @@ public class DAO {
                         rs.getDouble(2));
             }
         } catch (Exception e) {
+        	e.printStackTrace();
+            System.out.println("Có lỗi");
         }
        return null;
     }
@@ -979,6 +1056,8 @@ public class DAO {
                        );
             }
         } catch (Exception e) {
+        	e.printStackTrace();
+            System.out.println("Có lỗi");
         }
        return null;
     }
@@ -997,6 +1076,8 @@ public class DAO {
                         rs.getString(2)));
             }
         } catch (Exception e) {
+        	e.printStackTrace();
+            System.out.println("Có lỗi");
         }
         return list;
     }
@@ -1027,6 +1108,8 @@ public class DAO {
                         rs.getString(14));
             }
         } catch (Exception e) {
+        	e.printStackTrace();
+            System.out.println("Có lỗi");
         }
         return null;
     }
@@ -1055,6 +1138,8 @@ public class DAO {
                         rs.getString(15)));
             }
         } catch (Exception e) {
+        	e.printStackTrace();
+            System.out.println("Có lỗi");
         }
         return list;
     }
@@ -1085,6 +1170,8 @@ public class DAO {
                         rs.getString(15)));
             }
         } catch (Exception e) {
+        	e.printStackTrace();
+            System.out.println("Có lỗi");
         }
         return list;
     }
@@ -1115,6 +1202,8 @@ public class DAO {
                         rs.getString(15)));
             }
         } catch (Exception e) {
+        	e.printStackTrace();
+            System.out.println("Có lỗi");
         }
         return list;
     }
@@ -1137,6 +1226,8 @@ public class DAO {
                 		rs.getString(5));
             }
         } catch (Exception e) {
+        	e.printStackTrace();
+            System.out.println("Có lỗi");
         }
         return null;
     }
@@ -1157,6 +1248,8 @@ public class DAO {
                 		rs.getString(5));
             }
         } catch (Exception e) {
+        	e.printStackTrace();
+            System.out.println("Có lỗi");
         }
         return null;
     }
@@ -1177,6 +1270,8 @@ public class DAO {
                 		rs.getString(5));
             }
         } catch (Exception e) {
+        	e.printStackTrace();
+            System.out.println("Có lỗi");
         }
         return null;
     }
@@ -1185,6 +1280,7 @@ public class DAO {
         String query = "select top 1 * from FeedBack\r\n"
         		+ "where maAccount = ? and maXe = ?\r\n"
         		+ "order by maFeedBack desc";
+        FeedBack fb = new FeedBack();
         try {
             conn = new DBContext().getConnection();//mo ket noi voi sql
             ps = conn.prepareStatement(query);
@@ -1192,12 +1288,14 @@ public class DAO {
             ps.setInt(2, maXe);
             rs = ps.executeQuery();
             while (rs.next()) {
-                return new FeedBack(rs.getInt(1),
-                        rs.getInt(2),
-                        rs.getString(3),
-                        rs.getDate(4));
+                return fb = new FeedBack(rs.getInt(2),
+                        rs.getInt(3),
+                        rs.getString(4),
+                        rs.getDate(5));
             }
         } catch (Exception e) {
+        	e.printStackTrace();
+        	System.out.println("co loi");
         }
         return null;
     }
@@ -1213,6 +1311,8 @@ public class DAO {
             ps.setString(3, email);
             ps.executeUpdate();
         } catch (Exception e) {
+        	e.printStackTrace();
+            System.out.println("Có lỗi");
         }
     }
 
@@ -1225,6 +1325,8 @@ public class DAO {
             ps.setString(1, id);
             ps.executeUpdate();
         } catch (Exception e) {
+        	e.printStackTrace();
+            System.out.println("Có lỗi");
         }
     }
     
@@ -1237,6 +1339,8 @@ public class DAO {
             ps.setString(1, id);
             ps.executeUpdate();
         } catch (Exception e) {
+        	e.printStackTrace();
+            System.out.println("Có lỗi");
         }
     }
     
@@ -1250,6 +1354,8 @@ public class DAO {
             ps.setString(1, pid);
             ps.executeUpdate();
         } catch (Exception e) {
+        	e.printStackTrace();
+            System.out.println("Có lỗi");
         }
     }
     
@@ -1262,6 +1368,8 @@ public class DAO {
             ps.setString(1, id);
             ps.executeUpdate();
         } catch (Exception e) {
+        	e.printStackTrace();
+            System.out.println("Có lỗi");
         }
     }
     
@@ -1274,6 +1382,8 @@ public class DAO {
             ps.setInt(1, maAccount);
             ps.executeUpdate();
         } catch (Exception e) {
+        	e.printStackTrace();
+            System.out.println("Có lỗi");
         }
     }
     
@@ -1285,6 +1395,8 @@ public class DAO {
             ps.setString(1, productID);
             ps.executeUpdate();
         } catch (Exception e) {
+        	e.printStackTrace();
+            System.out.println("Có lỗi");
         }
     }
     
@@ -1296,6 +1408,8 @@ public class DAO {
             ps.setString(1, productID);
             ps.executeUpdate();
         } catch (Exception e) {
+        	e.printStackTrace();
+            System.out.println("Có lỗi");
         }
     }
     
@@ -1307,6 +1421,8 @@ public class DAO {
             ps.setString(1, productID);
             ps.executeUpdate();
         } catch (Exception e) {
+        	e.printStackTrace();
+            System.out.println("Có lỗi");
         }
     }
     
@@ -1318,6 +1434,8 @@ public class DAO {
             ps.setString(1, id);
             ps.executeUpdate();
         } catch (Exception e) {
+        	e.printStackTrace();
+            System.out.println("Có lỗi");
         }
     }
     
@@ -1329,6 +1447,8 @@ public class DAO {
             ps.setString(1, id);
             ps.executeUpdate();
         } catch (Exception e) {
+        	e.printStackTrace();
+            System.out.println("Có lỗi");
         }
     }
     
@@ -1341,6 +1461,8 @@ public class DAO {
             ps.setString(1, idSupplier);
             ps.executeUpdate();
         } catch (Exception e) {
+        	e.printStackTrace();
+            System.out.println("Có lỗi");
         }
     }
     
@@ -1352,6 +1474,8 @@ public class DAO {
             ps.setInt(1, maXe);
             ps.executeUpdate();
         } catch (Exception e) {
+        	e.printStackTrace();
+            System.out.println("Có lỗi");
         }
     }
 
@@ -1376,7 +1500,8 @@ public class DAO {
            
         } catch (Exception e) {
         	
-        	
+        	e.printStackTrace();
+            System.out.println("Có lỗi");
         }
     }
     
@@ -1394,6 +1519,8 @@ public class DAO {
             ps.setString(5, email);
             ps.executeUpdate();
         } catch (Exception e) {
+        	e.printStackTrace();
+            System.out.println("Có lỗi");
         }
     }
     
@@ -1408,20 +1535,24 @@ public class DAO {
         
             ps.executeUpdate();
         } catch (Exception e) {
+        	e.printStackTrace();
+            System.out.println("Có lỗi");
         }
     }
     
-    public void insertSoLuongDaBan(int productID, int soLuongDaBan) {
-        String query = "insert SoLuongDaBan(productID,soLuongDaBan)\r\n"
+    public void insertSoLuongDaBan(int maXe, int soLuongDaBan) {
+        String query = "insert SoLuongXeDaBan(maXe,soLuongDaBan)\r\n"
         		+ "values(?,?)";
         try {
             conn = new DBContext().getConnection();//mo ket noi voi sql
             ps = conn.prepareStatement(query);
-            ps.setInt(1, productID);
+            ps.setInt(1, maXe);
             ps.setInt(2, soLuongDaBan);
            
             ps.executeUpdate();
         } catch (Exception e) {
+        	e.printStackTrace();
+            System.out.println("Có lỗi");
         }
     }
     
@@ -1438,6 +1569,8 @@ public class DAO {
             ps.setString(5, cateID);
             ps.executeUpdate();
         } catch (Exception e) {
+        	e.printStackTrace();
+            System.out.println("Có lỗi");
         }
     }
     
@@ -1460,6 +1593,8 @@ public class DAO {
             ps.executeUpdate();
            
         } catch (Exception e) {	
+        	e.printStackTrace();
+            System.out.println("Có lỗi");
         }
     }
     
@@ -1476,7 +1611,8 @@ public class DAO {
             ps.executeUpdate();
            
         } catch (Exception e) {	
-        	
+        	e.printStackTrace();
+            System.out.println("Có lỗi");
         }
     }
     
@@ -1491,6 +1627,8 @@ public class DAO {
             ps.setInt(3, soLuong);
             ps.executeUpdate();
         } catch (Exception e) {
+        	e.printStackTrace();
+            System.out.println("Có lỗi");
         }
     }
 
@@ -1536,7 +1674,8 @@ public class DAO {
             ps.executeUpdate();
            
         } catch (Exception e) {
-        	 
+        	e.printStackTrace();
+            System.out.println("Có lỗi");
         }
     }
     
@@ -1555,6 +1694,8 @@ public class DAO {
             ps.setInt(4, maAccount);
             ps.executeUpdate();
         } catch (Exception e) {
+        	e.printStackTrace();
+            System.out.println("Có lỗi");
         }
     }
     
@@ -1569,12 +1710,13 @@ public class DAO {
             ps.executeUpdate();
             
         } catch (Exception e) {
-        	
+        	e.printStackTrace();
+            System.out.println("Có lỗi");
         }
     }
     
     public void editSoLuongDaBan(int productID, int soLuongBanThem) {
-        String query = "exec dbo.proc_CapNhatSoLuongDaBan ?,?";
+        String query = "exec dbo.proc_CapNhatSoLuongXeDaBan ?,?";
         try {
             conn = new DBContext().getConnection();//mo ket noi voi sql
             ps = conn.prepareStatement(query);
@@ -1584,27 +1726,29 @@ public class DAO {
             ps.executeUpdate();
             
         } catch (Exception e) {
-        	
+        	e.printStackTrace();
+            System.out.println("Có lỗi");
         }
     }
     
-    public void editTongBanHang(int sell_ID, double tongTienBanHangThem) {
-        String query = "exec dbo.proc_CapNhatTongBanHang ?,?";
-        try {
-            conn = new DBContext().getConnection();//mo ket noi voi sql
-            ps = conn.prepareStatement(query);
-            ps.setInt(1, sell_ID);
-            ps.setDouble(2, tongTienBanHangThem);
-          
-            ps.executeUpdate();
-            
-        } catch (Exception e) {
-        	
-        }
-    }
+//    public void editTongBanHang(int sell_ID, double tongTienBanHangThem) {
+//        String query = "exec dbo.proc_CapNhatTongBanHang ?,?";
+//        try {
+//            conn = new DBContext().getConnection();//mo ket noi voi sql
+//            ps = conn.prepareStatement(query);
+//            ps.setInt(1, sell_ID);
+//            ps.setDouble(2, tongTienBanHangThem);
+//          
+//            ps.executeUpdate();
+//            
+//        } catch (Exception e) {
+//        	e.printStackTrace();
+//            System.out.println("Có lỗi");
+//        }
+//    }
     
     public void editsoLuongGioHang(int maAccount, int maXe, int soLuong) {
-        String query = "update GioHag set [soLuong]=?,\r\n"
+        String query = "update GioHang set [soLuong]=?\r\n"
         		+ "where [maAccount]=? and [maXe]=?";
         try {
             conn = new DBContext().getConnection();//mo ket noi voi sql
@@ -1614,6 +1758,8 @@ public class DAO {
             ps.setInt(3, maXe);
             ps.executeUpdate();
         } catch (Exception e) {
+        	e.printStackTrace();
+            System.out.println("Có lỗi");
         }
     }
     
@@ -1628,6 +1774,8 @@ public class DAO {
             ps.setInt(3, maXe);
             ps.executeUpdate();
         } catch (Exception e) {
+        	e.printStackTrace();
+            System.out.println("Có lỗi");
         }
     }
 
