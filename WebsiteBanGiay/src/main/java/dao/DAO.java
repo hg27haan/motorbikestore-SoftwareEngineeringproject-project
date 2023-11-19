@@ -234,8 +234,7 @@ public class DAO {
                         rs.getString(2),
                         rs.getString(3),
                         rs.getInt(4),
-                        rs.getInt(5),
-                		rs.getString(6)));
+                		rs.getString(5)));
             }
         } catch (Exception e) {
         }
@@ -877,8 +876,8 @@ public class DAO {
 
     public Cart checkCartExist(int accountID,int productID) {
 
-       String query = "select * from Cart\r\n"
-       		+ "where [accountID] = ? and [productID] = ?";
+       String query = "select * from GioHang\r\n"
+       		+ "where [maAccount] = ? and [maGioHang] = ?";
        try {
            conn = new DBContext().getConnection();//mo ket noi voi sql
            ps = conn.prepareStatement(query);
@@ -899,7 +898,7 @@ public class DAO {
     
     public int checkAccountAdmin(int userID) {
 
-        String query = "select isAdmin from Account where [uID]=?";
+        String query = "select isAdmin from Account where [maAccount]=?";
         try {
             conn = new DBContext().getConnection();//mo ket noi voi sql
             ps = conn.prepareStatement(query);
@@ -1084,8 +1083,8 @@ public class DAO {
 
     public Account login(String user, String pass) {
         String query = "select * from Account\n"
-                + "where [user] = ?\n"
-                + "and pass = ?";
+                + "where [username] = ?\n"
+                + "and password = ?";
         try {
             conn = new DBContext().getConnection();//mo ket noi voi sql
             ps = conn.prepareStatement(query);
@@ -1097,17 +1096,19 @@ public class DAO {
                         rs.getString(2),
                         rs.getString(3),
                         rs.getInt(4),
-                        rs.getInt(5),
-                		rs.getString(6));
+                		rs.getString(5));
             }
+            
         } catch (Exception e) {
+        	System.out.print("Co loi xay ra trong qua trinh login");
+        	System.out.print(e.getMessage());
         }
         return null;
     }
 
     public Account checkAccountExist(String user) {
         String query = "select * from Account\n"
-                + "where [user] = ?\n";
+                + "where username = ?\n";
         try {
             conn = new DBContext().getConnection();//mo ket noi voi sql
             ps = conn.prepareStatement(query);
@@ -1118,8 +1119,7 @@ public class DAO {
                         rs.getString(2),
                         rs.getString(3),
                         rs.getInt(4),
-                        rs.getInt(5),
-                		rs.getString(6));
+                		rs.getString(5));
             }
         } catch (Exception e) {
         }
@@ -1139,8 +1139,7 @@ public class DAO {
                         rs.getString(2),
                         rs.getString(3),
                         rs.getInt(4),
-                        rs.getInt(5),
-                		rs.getString(6));
+                		rs.getString(5));
             }
         } catch (Exception e) {
         }
@@ -1346,20 +1345,20 @@ public class DAO {
         }
     }
     
-    public void insertAccount(String user, String pass, String isSell,
-    		String isAdmin, String email) {
-        String query = "insert Account([user], pass, isSell, isAdmin, email)\r\n"
-        		+ "values(?,?,?,?,?)";
+    public void insertAccount(String user, String pass, String isAdmin, String email) {
+        String query = "insert Account(username, password, isAdmin, email)\r\n"
+        		+ "values(?,?,?,?)";
         try {
             conn = new DBContext().getConnection();//mo ket noi voi sql
             ps = conn.prepareStatement(query);
             ps.setString(1, user);
             ps.setString(2, pass);
-            ps.setString(3, isSell);
-            ps.setString(4, isAdmin);
-            ps.setString(5, email);
+            ps.setString(3, isAdmin);
+            ps.setString(4, email);
             ps.executeUpdate();
         } catch (Exception e) {
+        	System.out.print("That bai trong viec them tai khoan");
+        	System.out.print(e.getMessage());
         }
     }
     
@@ -1414,7 +1413,7 @@ public class DAO {
     }
   
     public void insertReview(int accountID, int productID, String contentReview) {
-        String query = "insert Review(accountID, productID, contentReview, dateReview)\r\n"
+        String query = "insert FeedBack(maAccount, maXe, noiDung, ngayDanhGia)\r\n"
         		+ "values(?,?,?,?)";
 
         try {
@@ -1582,8 +1581,8 @@ public class DAO {
     }
     
     public void editAmountCart(int accountID, int productID, int amount) {
-        String query = "update Cart set [amount]=?\r\n"
-        		+ "where [accountID]=? and [productID]=?";
+        String query = "update GioHang set [soLuong]=?\r\n"
+        		+ "where [maAccount]=? and [maXe]=?";
         try {
             conn = new DBContext().getConnection();//mo ket noi voi sql
             ps = conn.prepareStatement(query);
@@ -1592,6 +1591,7 @@ public class DAO {
             ps.setInt(3, productID);
             ps.executeUpdate();
         } catch (Exception e) {
+        	System.out.print("Da co loi xay ra trong qua trình chinh sua.");
         }
     }
 

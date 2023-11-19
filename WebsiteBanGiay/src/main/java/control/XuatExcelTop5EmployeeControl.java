@@ -87,13 +87,11 @@ public class XuatExcelTop5EmployeeControl extends HttpServlet {
         
         for (TongChiTieuBanHang top5 : listTop5NhanVien) {
         	  for (Account acc : listAllAccount) {
-        		  if(top5.getUserID()==acc.getId()) {
+        		  if(top5.getUserID()==acc.getMaAccount()) {
         			  	i=i+1;
 	 	     			 row=workSheet.createRow(i);
 	 	     			 cell0=row.createCell(0);
-	 	     		     cell0.setCellValue(acc.getId());
-	 	     		     cell1=row.createCell(1);
-	 	     		     cell1.setCellValue(acc.getUser());
+	 	     		     cell0.setCellValue(acc.getMaAccount());
 	 	     		     cell2=row.createCell(2);
 	 	     		     cell2.setCellValue(acc.getEmail());
 	 	     		     cell3=row.createCell(3);

@@ -42,7 +42,7 @@ public class ManagerControl extends HttpServlet {
         	response.sendRedirect("login");
         	return;
         }
-        int id = a.getId();
+        int id = a.getMaAccount();
         String index = request.getParameter("index");
         if(index == null) {
         	index="1";

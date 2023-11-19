@@ -43,7 +43,7 @@ public class LoadAmountCartControl extends HttpServlet {
             out.println(totalAmountCart);
         	return;
         }
-        int accountID = a.getId();
+        int accountID = a.getMaAccount();
         DAO dao = new DAO();
         List<Cart> list = dao.getCartByAccountID(accountID);
         totalAmountCart = list.size();

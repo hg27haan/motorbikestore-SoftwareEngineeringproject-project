@@ -89,14 +89,12 @@ public class XuatExcelAccountControl extends HttpServlet {
         	i=i+1;
         			 row=workSheet.createRow(i);
         			 cell0=row.createCell(0);
-        		     cell0.setCellValue(acc.getId());
+        		     cell0.setCellValue(acc.getMaAccount());
         		     cell1=row.createCell(1);
-        		     cell1.setCellValue(acc.getUser());
-        		     cell2=row.createCell(2);
-        		     cell2.setCellValue(acc.getIsSell());
-        		     cell3=row.createCell(3);
+        		     cell1.setCellValue(acc.getUsername());
+        		     cell3=row.createCell(2);
         		     cell3.setCellValue(acc.getIsAdmin());	
-        		     cell4=row.createCell(4);
+        		     cell4=row.createCell(3);
         		     cell4.setCellValue(acc.getEmail());	
         }
                

@@ -42,12 +42,12 @@ public class SearchByAjaxHoaDon extends HttpServlet {
         double tongGia;
         for (Invoice o : listInvoiceByDate) {
         	for (Account a : listAllAccount) {
-        		if(o.getAccountID() == a.getId()) {	
+        		if(o.getAccountID() == a.getMaAccount()) {	
         			tongGia=Math.round((o.getTongGia()) * 100.0) / 100.0;
         	out.println("<tr>\r\n"
         			+ "                  <th scope=\"row\"></th>\r\n"
         			+ "                  <td>"+o.getMaHD()+"</td>\r\n"
-        			+ "                  <td>"+a.getUser()+"</td>\r\n"
+        			+ "                  <td>"+a.getUsername()+"</td>\r\n"
         			+ "                  <td>"+tongGia+"</td>\r\n"
         			+ "                  <td>"+o.getNgayXuat()+"</td> \r\n"
         			+ "                </tr>");

@@ -38,7 +38,7 @@ public class ManagerAccountControl extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         HttpSession session = request.getSession();
         Account a = (Account) session.getAttribute("acc");
-        int id = a.getId();
+        int id = a.getMaAccount();
         DAO dao = new DAO();
 
         List<Account> list = dao.getAllAccount();

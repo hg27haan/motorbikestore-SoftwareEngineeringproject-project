@@ -7,56 +7,16 @@ package entity;
 
 
 public class Account {
-    private int id;
-    private String user;
-    private String pass;
-    private int isSell;
-    private int isAdmin;
+    private int maAccount;
+    private String username;
+    private String password;
     private String email;
-
-    public String getEmail() {
-		return email;
-	}
-
-	public void setEmail(String email) {
-		this.email = email;
-	}
-
-	
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public String getUser() {
-        return user;
-    }
-
-    public void setUser(String user) {
-        this.user = user;
-    }
-
-    public String getPass() {
-        return pass;
-    }
-
-    public void setPass(String pass) {
-        this.pass = pass;
-    }
-
-    public int getIsSell() {
-        return isSell;
-    }
-
-    public Account(int id, String user, String pass, int isSell, int isAdmin, String email) {
-		
-		this.id = id;
-		this.user = user;
-		this.pass = pass;
-		this.isSell = isSell;
+    private int isAdmin;
+    
+    public Account(int maAccount, String username, String password, int isAdmin,String email) {
+		this.maAccount = maAccount;
+		this.username = username;
+		this.password = password;
 		this.isAdmin = isAdmin;
 		this.email = email;
 	}
@@ -67,23 +27,48 @@ public class Account {
 
 	@Override
 	public String toString() {
-		return "Account [id=" + id + ", user=" + user + ", pass=" + pass + ", isSell=" + isSell + ", isAdmin=" + isAdmin
-				+ ", email=" + email + "]";
+		return "Account [maAccount=" + this.maAccount + ", username=" + this.username + ", password=" + this.password + ", isAdmin=" + this.isAdmin
+				+ ", email=" + this.email + "]";
+	}
+    //
+	public int getIsAdmin() {
+		return isAdmin;
 	}
 
-	public void setIsSell(int isSell) {
-        this.isSell = isSell;
-    }
+	public void setIsAdmin(int isAdmin) {
+		this.isAdmin = isAdmin;
+	}
+	public int getMaAccount() {
+		return maAccount;
+	}
 
-    public int getIsAdmin() {
-        return isAdmin;
-    }
+	public void setMaAccount(int maAccount) {
+		this.maAccount = maAccount;
+	}
 
-    public void setIsAdmin(int isAdmin) {
-        this.isAdmin = isAdmin;
-    }
+	public String getUsername() {
+		return username;
+	}
 
-   
+	public void setUsername(String username) {
+		this.username = username;
+	}
+
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
+	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email= email;
+	}
    
 
     

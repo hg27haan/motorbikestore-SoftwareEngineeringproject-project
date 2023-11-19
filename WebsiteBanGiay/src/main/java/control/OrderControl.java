@@ -33,7 +33,7 @@ public class OrderControl extends HttpServlet {
 	        	response.sendRedirect("login");
 	        	return;
 	        }
-	        int accountID = a.getId();
+	        int accountID = a.getMaAccount();
 	        DAO dao = new DAO();
 	        List<Cart> list = dao.getCartByAccountID(accountID);
 	        List<Product> list2 = dao.getAllProduct();
@@ -110,7 +110,7 @@ public class OrderControl extends HttpServlet {
 		        	response.sendRedirect("login");
 		        	return;
 		        }
-		        int accountID = a.getId();
+		        int accountID = a.getMaAccount();
 		        DAO dao = new DAO();
 		        List<Cart> list = dao.getCartByAccountID(accountID);
 		        List<Product> list2 = dao.getAllProduct();

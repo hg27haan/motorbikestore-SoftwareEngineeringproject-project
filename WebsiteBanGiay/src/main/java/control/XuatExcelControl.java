@@ -90,13 +90,11 @@ public class XuatExcelControl extends HttpServlet {
         for (Invoice o : list) {
         	i=i+1;
         	for (Account a : listAllAccount) {
-        		if(o.getAccountID()==a.getId()) {
+        		if(o.getAccountID()==a.getMaAccount()) {
         			tongGia=Math.round((o.getTongGia()) * 100.0) / 100.0;
         			 row=workSheet.createRow(i);
         			 cell0=row.createCell(0);
         		     cell0.setCellValue(o.getMaHD());
-        		     cell1=row.createCell(1);
-        		     cell1.setCellValue(a.getUser());
         		     cell2=row.createCell(2);
         		     cell2.setCellValue(tongGia);
         		     cell3=row.createCell(3);

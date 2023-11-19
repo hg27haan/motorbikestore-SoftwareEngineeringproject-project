@@ -48,7 +48,7 @@ public class ForgotPasswordControl extends HttpServlet {
 				StringBuilder sb = new StringBuilder();
 				sb.append("Dear ").append(username).append("<br>");
 				sb.append("You are used the forgot password. <br> ");
-				sb.append("Your password is <b>").append(account.getPass()).append(" </b> <br>");
+				sb.append("Your password is <b>").append(account.getPassword()).append(" </b> <br>");
 				sb.append("Regards<br>");
 				sb.append("Administrator");
 				

@@ -62,7 +62,7 @@
                                             <tbody>
                                             <c:forEach items="${listCart}" var="o">
                                              <c:forEach items="${listProduct}" var="p">
-                                                <c:if test="${o.productID == p.id}">
+                                                <c:if test="${o.productID == p.productID}">
                                                 <tr>
                                                     <th scope="row">
                                                         <div class="p-2">

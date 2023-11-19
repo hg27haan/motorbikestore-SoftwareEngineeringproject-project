@@ -20,13 +20,9 @@ import javax.servlet.http.HttpSession;
 
 @WebServlet(name = "LoginControl", urlPatterns = {"/login"})
 public class LoginControl extends HttpServlet {
-
-   
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-//        processRequest(request, response);
-    	//b1 get user,pass from cookie
     	Cookie arr[] = request.getCookies();
     	if(arr != null) {
     		for(Cookie o : arr) {
@@ -41,19 +37,9 @@ public class LoginControl extends HttpServlet {
     	//b2: set user,pass to login form
         request.getRequestDispatcher("Login.jsp").forward(request, response);
     }
-
-    /**
-     * Handles the HTTP <code>POST</code> method.
-     *
-     * @param request servlet request
-     * @param response servlet response
-     * @throws ServletException if a servlet-specific error occurs
-     * @throws IOException if an I/O error occurs
-     */
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-//        processRequest(request, response);
     	 response.setContentType("text/html;charset=UTF-8");
          String username = request.getParameter("user");
          String password = request.getParameter("pass");
@@ -82,7 +68,7 @@ public class LoginControl extends HttpServlet {
              response.addCookie(u);//luu u va p len Chrome
              response.addCookie(p);
              
-             response.sendRedirect("home");
+             response.sendRedirect("admin");
          }
     }
 

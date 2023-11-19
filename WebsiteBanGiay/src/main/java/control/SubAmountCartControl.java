@@ -39,7 +39,7 @@ public class SubAmountCartControl extends HttpServlet {
         	response.sendRedirect("login");
         	return;
         }
-        int accountID = a.getId();
+        int accountID = a.getMaAccount();
         int productID = Integer.parseInt(request.getParameter("productID"));
         int amount = Integer.parseInt(request.getParameter("amount"));
         amount-=1;

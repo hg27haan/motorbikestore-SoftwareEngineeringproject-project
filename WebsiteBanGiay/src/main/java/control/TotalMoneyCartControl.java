@@ -39,7 +39,7 @@ public class TotalMoneyCartControl extends HttpServlet {
         request.setCharacterEncoding("UTF-8");
         HttpSession session = request.getSession();
         Account a = (Account) session.getAttribute("acc");
-        int accountID = a.getId();
+        int accountID = a.getMaAccount();
         DAO dao = new DAO();
         List<Cart> list = dao.getCartByAccountID(accountID);
         List<Product> list2 = dao.getAllProduct();

@@ -37,7 +37,7 @@ public class EditProfileControl extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         HttpSession session = request.getSession();
         Account a = (Account) session.getAttribute("acc");
-        int id = a.getId();
+        int id = a.getMaAccount();
         String username = request.getParameter("username");
         String password = request.getParameter("password");
         String email = request.getParameter("email");
