@@ -1446,16 +1446,15 @@ public class DAO {
         }
     }
     
-    public void insertCart(int accountID, int productID, int amount, String size) {
-        String query = "insert Cart(accountID, productID, amount,size)\r\n"
-        		+ "values(?,?,?,?)";
+    public void insertCart(int accountID, int productID, int amount) {
+        String query = "insert GioHang(maAccount, maGioHang, soLuong)\r\n"
+        		+ "values(?,?,?)";
         try {
             conn = new DBContext().getConnection();//mo ket noi voi sql
             ps = conn.prepareStatement(query);
             ps.setInt(1, accountID);
             ps.setInt(2, productID);
             ps.setInt(3, amount);
-            ps.setString(4, size);
             ps.executeUpdate();
         } catch (Exception e) {
         }
@@ -1564,19 +1563,17 @@ public class DAO {
         }
     }
     
-    public void editAmountAndSizeCart(int accountID, int productID, int amount, String size) {
-        String query = "update Cart set [amount]=?,\r\n"
-        		+ "[size]=?\r\n"
-        		+ "where [accountID]=? and [productID]=?";
+    public void editAmountAndSizeCart(int accountID, int productID, int amount) {
+        String query = "update GioHang set [soLuong]=?,\r\n"
+        		+ "where [maAccount]=? and [maGioHang]=?";
         try {
             conn = new DBContext().getConnection();//mo ket noi voi sql
             ps = conn.prepareStatement(query);
-            ps.setInt(1, amount);
-            ps.setString(2, size);
-            ps.setInt(3, accountID);
-            ps.setInt(4, productID);
+            ps.setInt(2, accountID);
+            ps.setInt(3, productID);
             ps.executeUpdate();
         } catch (Exception e) {
+        	System.out.print("Bị lỗi trong quá trình Edit Amount Cart");
         }
     }
     

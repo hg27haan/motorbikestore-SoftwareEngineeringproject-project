@@ -34,7 +34,6 @@ public class AddCartControl extends HttpServlet {
         }
         int accountID = a.getMaAccount();
         int amount = Integer.parseInt(request.getParameter("quantity"));
-        String size = request.getParameter("size");
         
         try {
 	        DAO dao = new DAO();
@@ -43,12 +42,12 @@ public class AddCartControl extends HttpServlet {
 	        String sizeExisted;
 	        if(cartExisted != null) {
 	        	 amountExisted = cartExisted.getAmount();
-	        	 dao.editAmountAndSizeCart(accountID,productID, (amountExisted+amount), size);
+	        	 dao.editAmountAndSizeCart(accountID,productID, (amountExisted+amount));
 	        	 request.setAttribute("mess", "Da tang so luong san pham!");
 	        	 request.getRequestDispatcher("managerCart").forward(request, response);
 	        }
 	        else {
-	        	  dao.insertCart(accountID, productID, amount, size);
+	        	  dao.insertCart(accountID, productID, amount);
 	        	  request.setAttribute("mess", "Da them san pham vao gio hang!");
 	        	  request.getRequestDispatcher("managerCart").forward(request, response);
 	        }

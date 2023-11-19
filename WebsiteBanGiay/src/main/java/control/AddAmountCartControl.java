@@ -30,10 +30,19 @@ public class AddAmountCartControl extends HttpServlet {
         	response.sendRedirect("login");
         	return;
         }
-        int accountID = a.getMaAccount();
-        int productID = Integer.parseInt(request.getParameter("productID"));
-        int amount = Integer.parseInt(request.getParameter("amount"));
-        amount+=1;
+        int accountID = 0;
+        int productID = 0;
+        int amount = 0;
+	    try {
+	        accountID = a.getMaAccount();
+	        productID = Integer.parseInt(request.getParameter("productID"));
+	        amount = Integer.parseInt(request.getParameter("amount"));
+	        amount+=1;
+        }catch(Exception e) {
+        	System.out.print("Co loi xay ra trong qua trinh chuyen so");
+        	System.out.print(e.getMessage());
+        	request.getRequestDispatcher("Error_Account.jsp").forward(request, response);
+        }
         try {
             DAO dao = new DAO();
             dao.editAmountCart(accountID, productID, amount);
