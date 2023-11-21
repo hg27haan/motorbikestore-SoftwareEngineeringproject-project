@@ -198,7 +198,7 @@
               <table class="table table-sm table-borderless">
                 <tbody>
                   <tr>
-                    <td class="pl-0 pb-0 w-25">Quantity</td>
+                    <td class="pl-0 pb-0 w-25">Số Lượng</td>
                     
                     <!--  <td class="pb-0">Select size</td> -->
                     
@@ -241,9 +241,8 @@
               </table>
             </div>
             <div class="mt-1">
-             <button type="submit" class="btn btn-primary btn-md mr-1 mb-2">Buy now</button>
-           <button type="submit" class="btn btn-light btn-md mr-1 mb-2"><i class="fas fa-shopping-cart pr-2"></i>Add to
-              cart</button>
+             <button type="submit" class="btn btn-primary btn-md mr-1 mb-2">Mua Ngay</button>
+           <button type="submit" class="btn btn-light btn-md mr-1 mb-2"><i class="fas fa-shopping-cart pr-2"></i>Thêm Vào Giỏ Hàng</button>
               </div>
               </form>
               
@@ -259,7 +258,7 @@
         <ul class="nav tabs-primary nav-justified" id="advancedTab" role="tablist">
           <li class="nav-item">
             <a class="nav-link active show" id="description-tab" data-toggle="tab" href="#description" role="tab"
-              aria-controls="description" aria-selected="true">Description</a>
+              aria-controls="description" aria-selected="true">Giới Thiệu Xe</a>
           </li>
           
 <!--           <li class="nav-item"> -->
@@ -274,7 +273,7 @@
         </ul>
         <div class="tab-content" id="advancedTabContent">
           <div class="tab-pane fade show active" id="description" role="tabpanel" aria-labelledby="description-tab">
-            <h5>Product Description</h5>
+            <h5>Giới Thiệu Thông Tin Xe</h5>
             
             <h6>$${String.format("%.02f",detail.giaTien*0.9) }</h6>
             <p class="pt-1">${detail.gioiThieu}</p>
@@ -299,19 +298,19 @@
 <!--           </div> -->
 
           <div class="tab-pane fade" id="reviews" role="tabpanel" aria-labelledby="reviews-tab">
-            <h5><span>${countAllReview }</span> FeedBack for <span>${detail.tenXe }</span></h5>
+            <h5><span>${countAllReview }</span> FeedBack cho <span>${detail.tenXe }</span></h5>
             
-             <h5 class="mt-4">Add a FeedBack</h5>
+             <h5 class="mt-4">Thêm FeedBack</h5>
             <p></p>
       
             <div>
               <!-- Your review -->
               <div class="md-form md-outline">
                 <textarea id="form76" class="md-textarea form-control pr-6" rows="4"></textarea>
-                <label for="form76">Your FeedBack</label>
+                <label for="form76">Nhập FeedBack Của Bạn</label>
               </div>
               <div class="text-right pb-2">
-                <button type="button" class="btn btn-primary" onclick="addReview(${detail.maXe})">Add a FeedBack</button>
+                <button type="button" class="btn btn-primary" onclick="addReview(${detail.maXe})">Thêm FeedBack</button>
               </div>
             </div>
             
@@ -355,7 +354,7 @@
       <!--Section: Block Content-->
       <section class="text-center">
 
-        <h4 class="text-center my-5"><strong>Related products</strong></h4>
+        <h4 class="text-center my-5"><strong>Các Xe Máy Liên Quan</strong></h4>
 
         <!-- Grid row -->
         <div class="row">

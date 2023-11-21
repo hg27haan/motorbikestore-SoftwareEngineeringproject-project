@@ -69,7 +69,7 @@
             <!-- Section: Filters -->
             <section>
 
-              <h5 class="pt-2 mb-4">Bộ lọc</h5>
+              <h5 class="pt-2 mb-4">Tìm Kiếm</h5>
 
               <section class="mb-4">
 

@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 
@@ -35,16 +35,16 @@
 <jsp:include page="Menu.jsp"></jsp:include>
 <div id="logreg-forms">
             <form class="form-signin" action="editProfile" method="post">
-                <h1 class="h3 mb-3 font-weight-normal" style="text-align: center">CHINH SUA TAI KHOAN</h1>
+                <h1 class="h3 mb-3 font-weight-normal" style="text-align: center">CHỈNH SỬA TÀI KHOẢN</h1>
                 <p class="text-success">${mess}</p>
                 <p class="text-danger">${error}</p>
-                <label for="username">Username</label>
+                <label for="username">Tên Đăng Nhập</label>
                 <input name="username" type="text" id="username" class="form-control" value="${sessionScope.acc.username }" required="" autofocus="">
-                <label for="password">Password</label>
+                <label for="password">Mật Khẩu</label>
                 <input name="password" type="password" id="password" class="form-control" value="${sessionScope.acc.password }" required="" autofocus="">
                 <label for="email">Email</label>
                 <input name="email" type="text" id="email" class="form-control" value="${sessionScope.acc.email }" required="" autofocus="">
-                <button class="btn btn-success btn-block" type="submit"><i class="fas fa-sign-in-alt"></i> Edit</button> 
+                <button type="submit" style="background-color:#2A76F2; color:#FFFFFF; font:20px Roboto, sans-serif; width: 380px; height: 45.6px"; border-radius: 5px><i class="fas fa-sign-in-alt"></i> Edit</button> 
             </form>
              
 </div>

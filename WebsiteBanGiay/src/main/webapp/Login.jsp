@@ -14,7 +14,7 @@
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
         <link href="css/login.css" rel="stylesheet" type="text/css"/>
-        <title>Login Form</title>
+        <title>Đăng Nhập</title>
     </head>
     <body>
     <jsp:include page="Menu.jsp"></jsp:include>
@@ -31,28 +31,28 @@
 				</div>
 				</c:if>
             <form class="form-signin" action="login" method="post">
-                <h1 class="h3 mb-3 font-weight-normal" style="text-align: center"> Sign in</h1>  
-                <input name="username" value="${username }"  type="text" id="inputEmail" class="form-control" placeholder="Username" required="" autofocus="">
-                <input name="password" value="${password }" type="password" id="inputPassword" class="form-control" placeholder="Password" required="">
+                <h1 class="h3 mb-3 font-weight-normal" style="text-align: center"> ĐĂNG NHẬP</h1>  
+                <input name="username" value="${username }"  type="text" id="inputEmail" class="form-control" placeholder="Tên Đăng Nhập" required="" autofocus="">
+                <input name="password" value="${password }" type="password" id="inputPassword" class="form-control" placeholder="Mật Khẩu" required="">
 
                 <div class="form-group form-check">
                     <input name="remember" value="1" type="checkbox" class="form-check-input" id="exampleCheck1">
-                    <label class="form-check-label" for="exampleCheck1">Remember me</label>
+                    <label class="form-check-label" for="exampleCheck1">Ghi Nhớ Đăng Nhập</label>
                 </div>
 
-                <button class="btn btn-success btn-block" type="submit"><i class="fas fa-sign-in-alt"></i> Sign in</button>
+                <button class="btn btn-success btn-block" type="submit"><i class="fas fa-sign-in-alt"></i> ĐĂNG NHẬP</button>
                 <hr>
-                <button class="btn btn-primary btn-block" type="button" id="btn-signup"><i class="fas fa-user-plus"></i> Sign up New Account</button>
+                <button class="btn btn-primary btn-block" type="button" id="btn-signup"><i class="fas fa-user-plus"></i> ĐĂNG KÝ TÀI KHOẢN</button>
             </form>
 
             <form action="signup" method="post" class="form-signup">
-                <h1 class="h3 mb-3 font-weight-normal" style="text-align: center"> Sign up</h1>
-                <input name="user" type="text" id="user-name" class="form-control" placeholder="User name" required="" autofocus="">
-                <input name="pass" type="password" id="user-pass" class="form-control" placeholder="Password" required autofocus="">
-                <input name="repass" type="password" id="user-repeatpass" class="form-control" placeholder="Repeat Password" required autofocus="">
+                <h1 class="h3 mb-3 font-weight-normal" style="text-align: center"> ĐĂNG KÝ</h1>
+                <input name="user" type="text" id="user-name" class="form-control" placeholder="Tên Đăng Nhập" required="" autofocus="">
+                <input name="pass" type="password" id="user-pass" class="form-control" placeholder="Mật Khẩu" required autofocus="">
+                <input name="repass" type="password" id="user-repeatpass" class="form-control" placeholder="Nhập Lại Mật Khẩu" required autofocus="">
 				 <input name="email" type="email" id="email" class="form-control" placeholder="Email" required="" autofocus="">
-                <button class="btn btn-primary btn-block" type="submit"><i class="fas fa-user-plus"></i> Sign Up</button>
-                <a href="#" id="cancel_signup"><i class="fas fa-angle-left"></i> Back</a>
+                <button class="btn btn-primary btn-block" type="submit"><i class="fas fa-user-plus"></i> ĐĂNG KÝ</button>
+                <a href="#" id="cancel_signup"><i class="fas fa-angle-left"></i> TRỞ VỀ</a>
             </form>
             <br>
 

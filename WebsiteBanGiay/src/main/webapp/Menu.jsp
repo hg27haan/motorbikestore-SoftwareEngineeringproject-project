@@ -8,7 +8,7 @@
 
 	<nav class="navbar navbar-expand-md navbar-dark bg-dark" style="position: fixed; top: 0; width:100%;  z-index: 100000;">
 	    <div class="container">
-	        <a class="navbar-brand" href="home">Shoes Family</a>
+	        <a class="navbar-brand" href="home">Cửa Hàng Xe Máy SPKT</a>
 	        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
 	            <span class="navbar-toggler-icon"></span>
 	        </button>
@@ -27,14 +27,7 @@
 	                        <a class="nav-link" href="manager">Manager Product</a>
 	                    </li>
 	                </c:if> --%>
-	                <c:if test="${sessionScope.acc != null}">
-	                    <li class="nav-item">
-	                        <a class="nav-link" href="#">Hello ${sessionScope.acc.username}</a>
-	                    </li>
-	                    <li class="nav-item">
-	                        <a class="nav-link" href="logout">ĐĂNG XUẤT</a>
-	                    </li> 
-	                </c:if>
+	                
 	                <c:if test="${sessionScope.acc == null}">
 	                    <li class="nav-item">
 	                        <a class="nav-link" href="login">ĐĂNG NHẬP</a>
@@ -46,10 +39,20 @@
 	                    </li>
 	                </c:if>
 	                <c:if test="${sessionScope.acc != null}">
+	                    
+	                    <li class="nav-item">
+	                        <a class="nav-link" href="logout">ĐĂNG XUẤT</a>
+	                    </li> 
 	                    <li class="nav-item">
 	                        <a class="nav-link" href="EditProfile.jsp">CHỈNH SỬA TÀI KHOẢN</a>
 	                    </li>
+	                    <li class="nav-item">
+	                        <a class="nav-link" href="#">XIN CHÀO, ${sessionScope.acc.username}</a>
+	                    </li>
 	                </c:if>
+<%-- 	                <c:if test="${sessionScope.acc != null}"> --%>
+	                    
+<%-- 	                </c:if> --%>
 	               <%--  <c:if test="${sessionScope.acc.isAdmin == 1}">
 	                    <li class="nav-item">
 	                        <a class="nav-link" href="statistic">Statistic</a>
@@ -59,8 +62,8 @@
 	
 	            <form action="search" method="post" class="form-inline my-2 my-lg-0">
 	                
-	                <a class="btn btn-success btn-sm ml-3" href="managerCart">
-	                    <i class="fa fa-shopping-cart"></i> <span style="font-size: 14px;">Cart</span>
+	                <a href="managerCart" style="background-color:#2A76F2; color:#FFFFFF; font:10.24px Roboto, sans-serif; margin:0px 0px 0px 16px; padding:11px 21px 10px; border-radius: 8px">
+	                    <i class="fa fa-shopping-cart"></i> <span style="font-size: 14px;">GIỎ HÀNG</span>
 	                    <b><span id="amountCart" class="badge badge-light" style="color:black; font-size: 12px;"></span></b>
 	                  
 	                </a>

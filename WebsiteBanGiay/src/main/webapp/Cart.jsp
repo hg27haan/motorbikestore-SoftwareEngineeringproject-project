@@ -93,7 +93,7 @@
                                                         <a href="addAmountCart?productID=${o.maXe}&amount=${o.soLuong}"><button class="btnAdd">+</button></a>
                                                     </td>
                                                     <td class="align-middle"><a href="deleteCart?productID=${o.maXe }" class="text-dark">
-                                                            <button type="button" class="btn btn-danger">Delete</button>
+                                                            <button type="button" class="btn btn-danger">Xóa</button>
                                                         </a>
                                                     </td>
                                                 </tr> 
@@ -107,20 +107,26 @@
                             </div>
                         </div>
 
-                        <div class="row py-5 p-4 bg-white rounded shadow-sm">
+                        <div >
                            
-                            <div class="col-lg-6">
+                            <div >
                                 <div class="bg-light rounded-pill px-4 py-3 text-uppercase font-weight-bold">Thành tiền</div>
     
                                 <div class="p-4">
                                     <ul class="list-unstyled mb-4" id="contentTotalMoney">
                                          <li class="d-flex justify-content-between py-3 border-bottom"><strong class="text-muted">Tổng tiền hàng</strong><strong>100 $</strong></li>
-<!--                                         <li class="d-flex justify-content-between py-3 border-bottom"><strong class="text-muted">Phí vận chuyển</strong><strong>Free ship</strong></li> -->
                                          <li class="d-flex justify-content-between py-3 border-bottom"><strong class="text-muted">VAT</strong><strong>10 $</strong></li>
                                          <li class="d-flex justify-content-between py-3 border-bottom"><strong class="text-muted">Tổng thanh toán</strong> 
                                             <h5 class="font-weight-bold">110 $</h5> 
                                         </li> 
-                                    </ul><a href="order" class="btn btn-dark rounded-pill py-2 btn-block text-white">Thanh Toán</a>
+                                    </ul>
+                                    
+                                    	<a href="order" style="color:white; font:30px Roboto, sans-serif">
+	                                    	<button style="background-color:#2A76F2; color:#FFFFFF;  width:100%; heigth:150px; border-radius:10px; cursor:pointer">
+	                                    		Thanh Toán
+	                                    	</button>
+                                    	</a>
+                                    
                                 </div>
                             </div>
                         </div>

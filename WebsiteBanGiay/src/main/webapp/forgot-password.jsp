@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 
@@ -29,20 +29,20 @@
 	integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU"
 	crossorigin="anonymous">
 <link href="css/login.css" rel="stylesheet" type="text/css" />
-<title>Forgot Password Form</title>
+<title>QUÊN MẬT KHẨU</title>
 </head>
 <body>
 <jsp:include page="Menu.jsp"></jsp:include>
 <div id="logreg-forms">
             <form class="form-signin" action="forgotPassword" method="post">
-                <h1 class="h3 mb-3 font-weight-normal" style="text-align: center"> Forgot Password</h1>
+                <h1 class="h3 mb-3 font-weight-normal" style="text-align: center"> QUÊN MẬT KHẨU</h1>
                 <p class="text-success">${mess}</p>
                 <p class="text-danger">${error}</p>
-                <label for="username">Username</label>
-                <input name="username" type="text" id="username" class="form-control" placeholder="Username" required="" autofocus="">
+                <label for="username">Tên Đăng Nhập</label>
+                <input name="username" type="text" id="username" class="form-control" placeholder="Tên Đăng Nhập" required="" autofocus="">
                 <label for="email">Email</label>
                 <input name="email" type="text" id="email" class="form-control" placeholder="Email" required="" autofocus="">
-                <button class="btn btn-success btn-block" type="submit"><i class="fas fa-sign-in-alt"></i> Retrieve</button> 
+                <button class="btn btn-success btn-block" type="submit"><i class="fas fa-sign-in-alt"></i> Lấy Lại Mật Khẩu</button> 
             </form>
              
 </div>

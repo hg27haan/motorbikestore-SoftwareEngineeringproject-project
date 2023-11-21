@@ -44,21 +44,21 @@
       }
 
       .carousel-item:nth-child(1) {
-        background-image: url('https://file.hstatic.net/1000230642/file/banner__1__9831c8de62ca4121b4f3caa18164f352_master.jpg');
+        background-image: url('https://headhongdac.com/upload/images/AB%20-%20H%C3%ACnh%20d%E1%BA%A7u%20trang.jpg');
         background-repeat: no-repeat;
         background-size: 100% 100%;
         background-position: center center;
       }
 
       .carousel-item:nth-child(2) {
-        background-image: url('https://file.hstatic.net/1000230642/file/web-top-banner_68b9a0c957374772bdf25d1d0f312b11_master.jpg');
+        background-image: url('https://xe-vietnam.com/wp-content/uploads/2022/12/vision-1-scaled.jpg');
         background-repeat: no-repeat;
         background-size: 100% 100%;
         background-position: center center;
       }
 
       .carousel-item:nth-child(3) {
-        background-image: url('https://file.hstatic.net/1000230642/file/banner_central_opt_2_76f1c057c7dc43ee9c8a36c6bee9ac4d_master.jpg');
+        background-image: url('https://yamaha-motor.com.vn/wp/wp-content/uploads/2022/01/Ex155-COC-visual-Media.jpg');
         background-repeat: no-repeat;
         background-size: 100% 100%;
         background-position: center center;
@@ -125,32 +125,32 @@
 
             
             <div class="card-group" style="margin-top:50px;">
+<!--   <div class="card" style="border-style: none;"> -->
+<!--     <img style="height:55px; width:64px; margin: auto;" src="https://giayxshop.vn/wp-content/uploads/2019/11/iconfinder_truck_1291768-1.png"> -->
+<!--     <div class="card-body"> -->
+<!--       <h5 class="card-title" style="text-align:center">GIAO HÀNG TOÀN QUỐC</h5> -->
+<!--       <p class="card-text" style="text-align:center">Vận chuyển khắp Việt Nam</p> -->
+<!--     </div> -->
+<!--   </div> -->
   <div class="card" style="border-style: none;">
-    <img style="height:55px; width:64px; margin: auto;" src="https://giayxshop.vn/wp-content/uploads/2019/11/iconfinder_truck_1291768-1.png">
-    <div class="card-body">
-      <h5 class="card-title" style="text-align:center">GIAO HÀNG TOÀN QUỐC</h5>
-      <p class="card-text" style="text-align:center">Vận chuyển khắp Việt Nam</p>
-    </div>
-  </div>
-  <div class="card" style="border-style: none;">
-    <img class="card-img-top" style="height:55px; width:64px; margin: auto;" src="https://giayxshop.vn/wp-content/uploads/2019/11/iconfinder_payment_1954199-3.png" alt="Card image cap">
+    <img class="card-img-top" style="border-radius:5px; height:90px; width:100px; margin: auto;" src="https://luathongbang.com.vn/wp-content/uploads/2021/12/thanh-toan-tien-mat-e1573618010533.jpg" alt="Card image cap">
     <div class="card-body">
       <h5 class="card-title" style="text-align:center">THANH TOÁN KHI NHẬN HÀNG</h5>
-      <p class="card-text" style="text-align:center">Nhận hàng tại nhà rồi thanh toán</p>
+      <p class="card-text" style="text-align:center">Nhận hàng tại Cửa Hàng rồi thanh toán</p>
     </div>
   </div>
+<!--   <div class="card" style="border-style: none;"> -->
+<!--     <img class="card-img-top" style="height:55px; width:64px; margin: auto;" src="https://giayxshop.vn/wp-content/uploads/2019/11/iconfinder_service_repair_phone_mobile_wrench_screw_driver_4014703-1.png" alt="Card image cap"> -->
+<!--     <div class="card-body"> -->
+<!--       <h5 class="card-title" style="text-align:center">BẢO HÀNH DÀI HẠN</h5> -->
+<!--       <p class="card-text" style="text-align:center">Bảo hàng lên đến 60 ngày</p> -->
+<!--     </div> -->
+<!--   </div> -->
   <div class="card" style="border-style: none;">
-    <img class="card-img-top" style="height:55px; width:64px; margin: auto;" src="https://giayxshop.vn/wp-content/uploads/2019/11/iconfinder_service_repair_phone_mobile_wrench_screw_driver_4014703-1.png" alt="Card image cap">
+    <img class="card-img-top" style="border-radius:5px; height:90px; width:100px; margin: auto;" src="https://img.freepik.com/premium-vector/yellow-scooter-side-view-cartoon-motorbike-icon_53562-17582.jpg" alt="Card image cap">
     <div class="card-body">
-      <h5 class="card-title" style="text-align:center">BẢO HÀNH DÀI HẠN</h5>
-      <p class="card-text" style="text-align:center">Bảo hàng lên đến 60 ngày</p>
-    </div>
-  </div>
-  <div class="card" style="border-style: none;">
-    <img class="card-img-top" style="height:55px; width:64px; margin: auto;" src="https://giayxshop.vn/wp-content/uploads/2019/11/iconfinder_refresh_3017918-1.png" alt="Card image cap">
-    <div class="card-body">
-      <h5 class="card-title" style="text-align:center">ĐỔI HÀNG DỄ DÀNG</h5>
-      <p class="card-text" style="text-align:center">Đổi hàng thoải mái trong 30 ngày</p>
+      <h5 class="card-title" style="text-align:center">XE MỚI, HIỆN ĐẠI</h5>
+      <p class="card-text" style="text-align:center">Đảm bảo xu hướng mới, hiện đại cho khách hàng</p>
     </div>
   </div>
 </div>
@@ -192,7 +192,7 @@
             
             
              <div class="row" style="margin-top:25px">            
-				<h1 style="text-align:center; width:100%" id="nike">GIÀY NIKE MỚI NHẤT</h1>
+				<h1 style="text-align:center; width:100%" id="nike">XE VISION MỚI NHẤT</h1>
                     <div class="col-sm-12">
                         <div id="contentNike" class="row">
                         <c:forEach items="${list4NikeLast}" var="o">
@@ -215,13 +215,13 @@
                             </div>
                         </c:forEach>
                     </div>
-                   <button onclick="loadMoreNike()" class="btn btn-primary">Load more</button>
+                   <button onclick="loadMoreNike()" class="btn btn-primary">Xem Thêm</button>
                 </div>
             </div>
             
             
               <div class="row" style="margin-top:25px">            
-				<h1 style="text-align:center; width:100%" id="adidas">GIÀY ADIDAS MỚI NHẤT</h1>
+				<h1 style="text-align:center; width:100%" id="adidas">XE AIRBLADE MỚI NHẤT</h1>
                     <div class="col-sm-12">
                         <div id="contentAdidas" class="row">
                         <c:forEach items="${list4AdidasLast}" var="o">
@@ -244,7 +244,7 @@
                             </div>
                         </c:forEach>
                     </div>
-                   <button onclick="loadMoreAdidas()" class="btn btn-primary">Load more</button>
+                   <button onclick="loadMoreAdidas()" class="btn btn-primary">Xem Thêm</button>
                 </div>
             </div>
             
@@ -254,18 +254,17 @@
                         <div id="content" class="row">
                             <div class=" col-12 col-md-12 col-lg-6">
                                     <div class="card-body">
-                                        <h4 class="card-title show_txt" style="text-align:center; font-size:18pt; color:#b57b00;">Về chúng tôi</h4>
-                                        <h2 class="card-title show_txt" style="text-align:center; font-size:24pt;">Shoes Family</h2>
-                                        <p style="text-align:center;">Uy tín lâu năm chuyên cung cấp giày thể thao sneaker nam, nữ hàng Replica 1:1 - 
-                                        Like Auth với chất lượng đảm bảo và giá tốt nhất tại Hà Nội, tpHCM.</p>
-										<p>Bạn đang cần tìm một đôi giày thể thao sneaker đẹp và hợp thời trang và đang hot Trends 
-										đến từ các thương hiệu lớn nhưng lại không đủ hầu bao để sắm được hàng chính hãng? 
-										Hãy đến với ShoesFamily – nơi bạn thỏa lòng mong ước mà chỉ phải chi ra 1 phần nhỏ so với dòng chính hãng ngoài store 
-										mà vẫn sắm cho mình được một đôi chất lượng từ rep 1:1 đến siêu cấp like auth.</p>                  
+                                        <h4 class="card-title show_txt" style="text-align:center; font-size:18pt; color:#2EA043;">Giới Thiệu Chung</h4>
+                                        <h2 class="card-title show_txt" style="text-align:center; font-size:24pt;">Cửa Hàng Xe Máy SPKT</h2>
+                                        <p style="text-align:center;">Chào mừng bạn đến với cửa hàng xe máy SPKT - địa chỉ tin cậy cho những tín đồ đam mê Xe Máy! 
+                                        Chúng tôi tự hào là đơn vị uy tín, chuyên cung cấp các dòng xe máy hàng đầu với 4 danh mục sản phẩm hàng đầu: AirBlade, Vision, Wave và Exciter.</p>
+										<p>Tại cửa hàng xe máy SPKT, chúng tôi cam kết mang đến cho khách hàng những trải nghiệm tuyệt vời nhất với dòng xe máy 
+										hiện đại và chất lượng. Đội ngũ nhân viên chuyên nghiệp và nhiệt huyết sẽ hỗ trợ bạn chọn lựa chiếc xe phù hợp với nhu cầu và sở thích cá nhân.</p>
+										<p>Đặt niềm tin vào chúng tôi, và chúng tôi sẽ là đối tác đáng tin cậy của bạn trong hành trình sở hữu chiếc xe máy hoàn hảo. Chất lượng và sự hài lòng của khách hàng là ưu tiên hàng đầu của chúng tôi tại cửa hàng xe máy SPKT.</p>                  
                                     </div>  
                             </div>
-                            <div class=" col-12 col-md-12 col-lg-6">
-                                    <img class="card-img-top" src="https://shopgiayreplica.com/wp-content/uploads/2020/11/shop-giay-replica-1-1.jpg" alt="Card image cap">        
+                            <div class=" col-12 col-md-12 col-lg-6" style="padding-top:90px; border-radius:0px">
+                                    <img class="card-img-top" src="https://media-cdn-v2.laodong.vn/Storage/NewsPortal/2021/3/31/894372/Anh3.jpg" alt="Card image cap">        
                             </div>
                     </div>
                 </div>

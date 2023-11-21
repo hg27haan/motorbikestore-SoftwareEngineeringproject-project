@@ -2,6 +2,9 @@
 <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!------ Include the above in your HEAD tag ---------->
 
 <!DOCTYPE html>
@@ -13,13 +16,13 @@
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
         <link href="css/login.css" rel="stylesheet" type="text/css"/>
-        <title>Order</title>
+        <title>ĐẶT HÀNG</title>
     </head>
     <body>
     	<jsp:include page="Menu.jsp"></jsp:include>
         <div id="logreg-forms">
             <form class="form-signin" action="order" method="post">
-                <h1 class="h3 mb-3 font-weight-normal" style="text-align: center">Order</h1>
+                <h1 class="h3 mb-3 font-weight-normal" style="text-align: center">ĐẶT HÀNG</h1>
                 <c:if test="${error!=null }">
                  <div class="alert alert-danger" role="alert">
 						 ${error}
@@ -30,16 +33,14 @@
 				  	${mess}
 				</div>
 				</c:if>
-                <label for="name">Name</label>
-                <input name="name" type="text" id="name" class="form-control" placeholder="Name" required="" autofocus="">
-                 <label for="phoneNumber">Phone number</label>
-                <input name="phoneNumber" type="text" id="phoneNumber" class="form-control" placeholder="Phone number" required="" autofocus="">
+                <label for="name">Họ và Tên Người Nhận</label>
+                <input name="name" type="text" id="name" class="form-control" placeholder="Họ và Tên" required="" autofocus="">
+                 <label for="phoneNumber">Số Điện Thoại</label>
+                <input name="phoneNumber" type="text" id="phoneNumber" class="form-control" placeholder="Số Điện Thoại" required="" autofocus="">
                 <label for="email">Email</label>
-                <input name="email" type="text" id="email" class="form-control" placeholder="email" required="" autofocus="">
-<!--                 <label for="deliveryAddress">Delivery Address</label> -->
-<!--                 <input name="deliveryAddress" type="text" id="deliveryAddress" class="form-control" placeholder="Delivery Address" required="" autofocus=""> -->
+                <input name="email" type="text" id="email" class="form-control" placeholder="Email" required="" autofocus="">
                
-                <button class="btn btn-success btn-block" type="submit"><i class="fas fa-american-sign-language-interpreting"></i>Dat Hang</button>
+                <button style="background-color:#2A76F2; color:#FFFFFF;  width:100%; heigth:200px; border-radius:10px; cursor:pointer; margin-top:20px" type="submit"><i class="fas fa-american-sign-language-interpreting"></i>ĐẶT HÀNG</button>
                 
             </form>
 
