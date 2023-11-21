@@ -39,9 +39,11 @@ public class ManagerControl extends HttpServlet {
         int indexPage = Integer.parseInt(index);
         DAO dao = new DAO();
         List<XeMay> listP = dao.getAllProduct();
+        List<DanhMuc> listC = dao.getAllDanhMuc();
         
         request.setAttribute("tag", indexPage);
         request.setAttribute("listP", listP);
+        request.setAttribute("listCC", listC);
         request.getRequestDispatcher("QuanLyXeMay.jsp").forward(request, response);
     }
     @Override

@@ -53,7 +53,7 @@ public class XuatExcelTop5CustomerControl extends HttpServlet {
         int randomNum =  rn.nextInt(range) + minimum;
 
         
-        FileOutputStream file=new FileOutputStream("C:\\ExcelWebBanGiay\\"+"top-5-khach-hang-"+Integer.toString(randomNum)+".xlsx");
+        FileOutputStream file=new FileOutputStream("C:\\ExcelWebsiteQuanLyBanXe\\"+"top-5-khach-hang-"+Integer.toString(randomNum)+".xlsx");
         XSSFWorkbook workbook=new XSSFWorkbook();
         XSSFSheet workSheet=workbook.createSheet("1");
         XSSFRow row;
@@ -64,7 +64,7 @@ public class XuatExcelTop5CustomerControl extends HttpServlet {
         
         row=workSheet.createRow(0);
         cell0=row.createCell(0);
-        cell0.setCellValue("ID");
+        cell0.setCellValue("Mã Account");
         cell1=row.createCell(1);
         cell1.setCellValue("Username");
         cell2=row.createCell(2);
@@ -96,7 +96,7 @@ public class XuatExcelTop5CustomerControl extends HttpServlet {
         workbook.close();
         file.close();
         
-        request.setAttribute("mess", "Đã xuất file Excel thành công!");
+        request.setAttribute("mess", "Đã xuất file Excel thành công. Vào thư mục C:\\ExcelWebsiteQuanLyBanXe trên máy để kiểm tra!");
         request.getRequestDispatcher("top5khachhang").forward(request, response); 
     }
     @Override

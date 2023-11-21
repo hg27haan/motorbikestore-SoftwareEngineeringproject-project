@@ -1533,12 +1533,17 @@ public class DAO {
         }
     }
 
-    public void insertProduct(String name, String image, String price,
-            String title, String description, String category, int sid, String model, String color, String delivery, String image2, String image3, String image4) {
-        String query = "insert Product([name],[image],[price],[title],\r\n"
-        		+ "[description],[cateID],[sell_ID],[model],\r\n"
-        		+ "[color],[delivery],[image2],[image3],[image4])\r\n"
-        		+ "values(N'"+name+"','"+image+"','"+price+"',N'"+title+"',N'"+description+"','"+category+"','"+sid+"',N'"+model+"',N'"+color+"',N'"+delivery+"','"+image2+"','"+image3+"','"+image4+"')";
+    public void insertXeMay(String tenXe, String hinhAnh1, String giaTien,
+            String title, String gioiThieu, String maDanhMuc, String khoiLuong, 
+            String daiRongCao, String dungTichXiLanh, String tiSoNen, 
+            String dungTichBinhXang, String hinhAnh2, String hinhAnh3, String hinhAnh4) {
+        String query = "insert XeMay([tenXe],[hinhAnh1],[giaTien],[title],\r\n"
+        		+ "[gioiThieu],[maDanhMuc],[khoiLuong],[daiRongCao],[dungTichXiLanh],\r\n"
+        		+ "[tiSoNen],[dungTichBinhXang],[hinhAnh2],[hinhAnh3],[hinhAnh4])\r\n"
+        		+ "values(N'"+tenXe+"','"+hinhAnh1+"','"+giaTien+"',N'"+title+"',N'"+
+        		gioiThieu+"','"+maDanhMuc+"',N'"+khoiLuong+"',N'"+daiRongCao
+        		+"',N'"+dungTichXiLanh+"',N'"+tiSoNen+"',N'"+dungTichBinhXang+"','"+
+        		hinhAnh2+"','"+hinhAnh3+"','"+hinhAnh4+"')";
         try {
         	
             conn = new DBContext().getConnection();//mo ket noi voi sql
@@ -1679,7 +1684,7 @@ public class DAO {
         }
     }
 
-    public void editProduct(String ptenXe, String phinhAnh1, String pgiaTien, String ptitle, 
+    public void editXeMay(String ptenXe, String phinhAnh1, String pgiaTien, String ptitle, 
     		String pgioiThieu, String pdanhMuc, 
     		String pkhoiLuong, String pdaixRongxCao, 
     		String pdungTichXiLanh, String ptiSoNen, String pdungTichBinhXang, 
@@ -1778,21 +1783,21 @@ public class DAO {
         }
     }
     
-    public void editsoLuongGioHang(int maAccount, int maXe, int soLuong) {
-        String query = "update GioHang set [soLuong]=?\r\n"
-        		+ "where [maAccount]=? and [maXe]=?";
-        try {
-            conn = new DBContext().getConnection();//mo ket noi voi sql
-            ps = conn.prepareStatement(query);
-            ps.setInt(1, soLuong);
-            ps.setInt(2, maAccount);
-            ps.setInt(3, maXe);
-            ps.executeUpdate();
-        } catch (Exception e) {
-        	e.printStackTrace();
-            System.out.println("Có lỗi");
-        }
-    }
+//    public void editsoLuongGioHang(int maAccount, int maXe, int soLuong) {
+//        String query = "update GioHang set [soLuong]=?\r\n"
+//        		+ "where [maAccount]=? and [maXe]=?";
+//        try {
+//            conn = new DBContext().getConnection();//mo ket noi voi sql
+//            ps = conn.prepareStatement(query);
+//            ps.setInt(1, soLuong);
+//            ps.setInt(2, maAccount);
+//            ps.setInt(3, maXe);
+//            ps.executeUpdate();
+//        } catch (Exception e) {
+//        	e.printStackTrace();
+//            System.out.println("Có lỗi");
+//        }
+//    }
     
     public void editsoLuongGioHang(int maAccount, int maXe, int soLuong) {
         String query = "update GioHang set [soLuong]=?\r\n"

@@ -48,7 +48,7 @@ public class XuatExcelAccountControl extends HttpServlet {
         int randomNum =  rn.nextInt(range) + minimum;
 
         
-        FileOutputStream file=new FileOutputStream("C:\\ExcelWebBanGiay\\"+"tai-khoan-"+Integer.toString(randomNum)+".xlsx");
+        FileOutputStream file=new FileOutputStream("C:\\ExcelWebsiteQuanLyBanXé\\"+"tai-khoan-"+Integer.toString(randomNum)+".xlsx");
         XSSFWorkbook workbook=new XSSFWorkbook();
         XSSFSheet workSheet=workbook.createSheet("1");
         XSSFRow row;
@@ -91,7 +91,7 @@ public class XuatExcelAccountControl extends HttpServlet {
         workbook.close();
         file.close();
         
-        request.setAttribute("mess", "Đã xuất file Excel thành công!");
+        request.setAttribute("mess", "Đã xuất file Excel thành công. Vào thư mục C:\\ExcelWebsiteQuanLyBanXe trên máy để xem!");
         request.getRequestDispatcher("managerAccount").forward(request, response); 
     }
     @Override

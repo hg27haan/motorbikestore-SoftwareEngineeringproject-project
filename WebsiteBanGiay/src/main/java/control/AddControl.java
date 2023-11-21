@@ -33,27 +33,30 @@ public class AddControl extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         request.setCharacterEncoding("UTF-8");
-        String pname = request.getParameter("name");
-        String pimage = request.getParameter("image");
+        String pname = request.getParameter("tenXe");
+        String pimage = request.getParameter("hinhAnh1");
         
-        String pimage2 = request.getParameter("image2");
-        String pimage3 = request.getParameter("image3");
-        String pimage4 = request.getParameter("image4");
-        String pmodel = request.getParameter("model");
-        String pcolor = request.getParameter("color");
-        String pdelivery = request.getParameter("delivery");
+        String pimage2 = request.getParameter("hinhAnh2");
+        String pimage3 = request.getParameter("hinhAnh3");
+        String pimage4 = request.getParameter("hinhAnh4");
+        String pkhoiLuong = request.getParameter("khoiLuong");
+        String pdaiRongCao = request.getParameter("daiRongCao");
+        String pdungTichXiLanh = request.getParameter("dungTichXiLanh");
+        String ptiSoNen = request.getParameter("tiSoNen");
+        String pdungTichBinhXang = request.getParameter("dungTichBinhXang");
         
-        String pprice = request.getParameter("price");
+        String pgiaTien = request.getParameter("giaTien");
         String ptitle = request.getParameter("title");
-        String pdescription = request.getParameter("description");
-        String pcategory = request.getParameter("category");
+        String pgioiThieu = request.getParameter("gioiThieu");
+        String pdanhMuc = request.getParameter("danhMuc");
         HttpSession session = request.getSession();
         Account a = (Account) session.getAttribute("acc");
-        int sid = a.getId();
+        //int sid = a.getId();
         
         
         DAO dao = new DAO();
-        dao.insertProduct(pname, pimage, pprice, ptitle, pdescription, pcategory, sid, pmodel, pcolor, pdelivery, pimage2, pimage3, pimage4);
+        dao.insertXeMay(pname, pimage, pgiaTien, ptitle, pgioiThieu, pdanhMuc, 
+        		pkhoiLuong, pdaiRongCao, pdungTichXiLanh, ptiSoNen, pdungTichBinhXang, pimage2, pimage3, pimage4);
         request.setAttribute("mess", "Product Added!");
         request.getRequestDispatcher("manager").forward(request, response);
     }

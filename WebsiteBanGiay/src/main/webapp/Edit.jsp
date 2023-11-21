@@ -47,7 +47,7 @@
                             <div class="modal-body">					
       						 <div class="form-group">
            <!--                          <label>Mã Xe</label> -->
-                                    <input value="${detail.maXe}" name="maXe type="hidden" class="form-control" readonly required>
+                                    <input value="${detail.maXe}" name="maXe" type="hidden" class="form-control" readonly required>
                                 </div> 
                                 <div class="form-group">
                                     <label>Tên Xe</label>
@@ -77,7 +77,10 @@
                                     <label>Title</label>
                                     <textarea name="title" class="form-control" required>${detail.title}</textarea>
                                 </div>
-                                
+                                <div class="form-group">
+                                    <label>Giới Thiệu</label>
+                                    <textarea name="gioiThieu" class="form-control" required>${detail.gioiThieu}</textarea>
+                                </div>
                                 
                                   <div class="form-group">
                                     <label>Khối Lượng</label>

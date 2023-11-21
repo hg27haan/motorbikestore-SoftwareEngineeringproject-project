@@ -54,7 +54,7 @@ public class XuatExcelControl extends HttpServlet {
         int randomNum =  rn.nextInt(range) + minimum;
 
         
-        FileOutputStream file=new FileOutputStream("C:\\ExcelWebBanGiay\\"+"hoa-don-"+ngayXuat+"-"+Integer.toString(randomNum)+".xlsx");
+        FileOutputStream file=new FileOutputStream("C:\\ExcelWebsiteQuanLyBanXe\\"+"hoa-don-"+ngayXuat+"-"+Integer.toString(randomNum)+".xlsx");
         XSSFWorkbook workbook=new XSSFWorkbook();
         XSSFSheet workSheet=workbook.createSheet("1");
         XSSFRow row;
@@ -96,7 +96,7 @@ public class XuatExcelControl extends HttpServlet {
         workbook.write(file);
         workbook.close();
         file.close();
-        request.setAttribute("mess", "Đã xuất file Excel thành công!");
+        request.setAttribute("mess", "Đã xuất file Excel thành công. Vào thư mục C:\\ExcelWebsiteQuanLyBanXe trên máy để xem!");
         request.getRequestDispatcher("hoaDon").forward(request, response);
 
        

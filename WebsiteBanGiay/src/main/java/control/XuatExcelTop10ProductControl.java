@@ -55,7 +55,7 @@ public class XuatExcelTop10ProductControl extends HttpServlet {
         int randomNum =  rn.nextInt(range) + minimum;
 
         
-        FileOutputStream file=new FileOutputStream("C:\\ExcelWebBanGiay\\"+"top-10-san-pham-ban-chay-"+Integer.toString(randomNum)+".xlsx");
+        FileOutputStream file=new FileOutputStream("C:\\ExcelWebsiteQuanLyBanXe\\"+"top-10-san-pham-ban-chay-"+Integer.toString(randomNum)+".xlsx");
         XSSFWorkbook workbook=new XSSFWorkbook();
         XSSFSheet workSheet=workbook.createSheet("1");
         XSSFRow row;
@@ -74,29 +74,23 @@ public class XuatExcelTop10ProductControl extends HttpServlet {
         
         row=workSheet.createRow(0);
         cell0=row.createCell(0);
-        cell0.setCellValue("ID");
+        cell0.setCellValue("Mã Xe");
         cell1=row.createCell(1);
-        cell1.setCellValue("Name");
+        cell1.setCellValue("Tên Xe");
         cell2=row.createCell(2);
-        cell2.setCellValue("Image");
+        cell2.setCellValue("Hình Ảnh 1");
         cell3=row.createCell(3);
-        cell3.setCellValue("Price");
+        cell3.setCellValue("Giá Tiền");
         cell4=row.createCell(4);
         cell4.setCellValue("Title");
         cell5=row.createCell(5);
-        cell5.setCellValue("Description");
-        cell5=row.createCell(6);
-        cell5.setCellValue("Model");
-        cell5=row.createCell(7);
-        cell5.setCellValue("Color");
-        cell5=row.createCell(8);
-        cell5.setCellValue("Delivery");
-        cell5=row.createCell(9);
-        cell5.setCellValue("Image");
-        cell5=row.createCell(10);
-        cell5.setCellValue("Image");
-        cell5=row.createCell(11);
-        cell5.setCellValue("Số lượng đã bán");
+        cell5.setCellValue("Giới Thiệu");
+        cell6=row.createCell(6);
+        cell6.setCellValue("Hình Ảnh 2");
+        cell7=row.createCell(10);
+        cell7.setCellValue("Hình Ảnh 3");
+        cell8=row.createCell(11);
+        cell8.setCellValue("Số lượng đã bán");
         
         int i=0;
         
@@ -116,20 +110,14 @@ public class XuatExcelTop10ProductControl extends HttpServlet {
              		     cell3.setCellValue(pro.getGiaTien());	
              		     cell4=row.createCell(4);
              		     cell4.setCellValue(pro.getTitle());	
-             		     cell4=row.createCell(5);
-             		     cell4.setCellValue(pro.getGioiThieu());	
-             		     cell4=row.createCell(6);
-             		     /*cell4.setCellValue(pro.getModel());	
-             		     cell4=row.createCell(7);
-             		     cell4.setCellValue(pro.get);	
-             		     cell4=row.createCell(8);
-             		     cell4.setCellValue(pro.));	*/
-             		     cell4=row.createCell(9);
-             		     cell4.setCellValue(pro.getHinhAnh2());	
-             		     cell4=row.createCell(10);
-             		     cell4.setCellValue(pro.getHinhAnh3());	
-             		     cell4=row.createCell(11);
-             		     cell4.setCellValue(soluong.getSoLuongDaBan());	
+             		     cell5=row.createCell(5);
+             		     cell5.setCellValue(pro.getGioiThieu());	
+             		     cell6=row.createCell(6);
+             		     cell6.setCellValue(pro.getHinhAnh2());	
+             		     cell7=row.createCell(7);
+             		     cell7.setCellValue(pro.getHinhAnh3());	
+             		     cell8=row.createCell(8);
+             		     cell8.setCellValue(soluong.getSoLuongDaBan());	
         		   }	
                }
         }
@@ -139,7 +127,7 @@ public class XuatExcelTop10ProductControl extends HttpServlet {
         workbook.close();
         file.close();
         
-        request.setAttribute("mess", "Đã xuất file Excel thành công!");
+        request.setAttribute("mess", "Đã xuất file Excel thành công. Vào thư mục C:\\ExcelWebsiteQuanLyBanXe trên máy để xem!");
         request.getRequestDispatcher("top10").forward(request, response); 
     }
     @Override

@@ -42,7 +42,7 @@ public class EditControl extends HttpServlet {
         String pgioiThieu = request.getParameter("gioiThieu");
         String pdanhMuc = request.getParameter("danhMuc");
         DAO dao = new DAO();
-        dao.editProduct(ptenXe, phinhAnh1, pgiaTien, ptitle, pgioiThieu, pdanhMuc, pkhoiLuong, 
+        dao.editXeMay(ptenXe, phinhAnh1, pgiaTien, ptitle, pgioiThieu, pdanhMuc, pkhoiLuong, 
         		pdaixRongxCao, pdungTichXiLanh, ptiSoNen, pdungTichBinhXang, phinhAnh2, phinhAnh3, phinhAnh4, pmaXe);
        request.setAttribute("mess", "Edited!");
        request.getRequestDispatcher("manager").forward(request, response);

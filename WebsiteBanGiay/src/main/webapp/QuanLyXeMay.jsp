@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Quản lý sản phẩm</title>
+<title>Quản lý Xe Máy</title>
  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -179,6 +179,88 @@
   
     
 </main>
+
+	<!-- add XeMay HTML -->
+        <div id="addEmployeeModal" class="modal fade">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <form action="add" method="post">
+                        <div class="modal-header">						
+                            <h4 class="modal-title">Thêm Xe Máy</h4>
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                        </div>
+                        <div class="modal-body">					
+                            <div class="form-group">
+                                <label>Tên Xe</label>
+                                <input name="tenXe" type="text" class="form-control" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Hình Ảnh 1</label>
+                                <input name="hinhAnh1" type="text" class="form-control" >
+                            </div>
+                              <div class="form-group">
+                                <label>Hình Ảnh 2</label>
+                                <input name="hinhAnh2" type="text" class="form-control" >
+                            </div>
+                              <div class="form-group">
+                                <label>Hình Ảnh 3</label>
+                                <input name="hinhAnh3" type="text" class="form-control" >
+                            </div>
+                              <div class="form-group">
+                                <label>Hình Ảnh 4</label>
+                                <input name="hinhAnh4" type="text" class="form-control" >
+                            </div>
+                            <div class="form-group">
+                                <label>Giá Tiền</label>
+                                <input name="giaTien" type="text" class="form-control" >
+                            </div>
+                            <div class="form-group">
+                                <label>Title</label>
+                                <textarea name="title" class="form-control" required></textarea>
+                            </div>
+                             <div class="form-group">
+                                <label>Khối Lượng</label>
+                                <input name="khoiLuong" type="text" class="form-control" >
+                            </div>
+                            <div class="form-group">
+                                <label>Dài x Rộng x Cao</label>
+                                <input name="daiRongCao" type="text" class="form-control" >
+                            </div>
+                            <div class="form-group">
+                                <label>Dung Tích Xi Lanh</label>
+                                <input name="dungTichXiLanh" type="text" class="form-control" >
+                            </div>
+                             <div class="form-group">
+                                <label>Tỉ Số Nén</label>
+                                <input name="tiSoNen" type="text" class="form-control" >
+                            </div>
+                             <div class="form-group">
+                                <label>Dung Tích Bình Xăng</label>
+                                <input name="dungTichBinhXang" type="text" class="form-control" >
+                            </div>
+                            <div class="form-group">
+                                <label>Giới Thiệu</label>
+                                <textarea name="gioiThieu" class="form-control" ></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label>Danh Mục</label>
+                                <select name="danhMuc" class="form-select" aria-label="Default select example">
+                                    <c:forEach items="${listCC}" var="o">
+                                        <option value="${o.maDanhMuc}">${o.tenDanhMuc}</option>
+                                    </c:forEach>
+                                </select>
+                            </div>
+
+                        </div>
+                        <div class="modal-footer">  
+                            <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
+                            <input type="submit" class="btn btn-success" value="Add">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
         
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <!--Main layout-->
