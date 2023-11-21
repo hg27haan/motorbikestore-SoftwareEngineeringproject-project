@@ -78,7 +78,7 @@
                                                             </div>
                                                         </div>
                                                     </th>
-                                                    <td class="align-middle"><strong>${p.giaTien}$</strong></td>
+                                                    <td class="align-middle"><strong>${String.format("%.0f",p.getGiaTien())}$</strong></td>
                                                     
 <%--                                                     <td class="align-middle"><strong>${p.color}</strong></td> --%>
 <%--                                                     <td class="align-middle"><strong>${p.delivery}</strong></td> --%>

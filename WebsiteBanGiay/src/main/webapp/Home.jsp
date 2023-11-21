@@ -177,7 +177,7 @@
                                         <p class="card-text show_txt">${o.title}</p>
                                         <div class="row">
                                             <div class="col">
-                                                <p class="btn btn-success btn-block">${o.giaTien} $</p>
+                                                <p class="btn btn-success btn-block">${String.format("%.0f",o.getGiaTien())} $</p>
                                             </div> 
                                         </div>
                                     </div>
@@ -206,7 +206,7 @@
                                         <p class="card-text show_txt">${o.title}</p>
                                         <div class="row">
                                             <div class="col">
-                                                <p class="btn btn-success btn-block">${o.giaTien} $</p>
+                                                <p class="btn btn-success btn-block">${String.format("%.0f",o.giaTien)} $</p>
                                             </div>
                                             
                                         </div>
@@ -235,7 +235,7 @@
                                         <p class="card-text show_txt">${o.title}</p>
                                         <div class="row">
                                             <div class="col">
-                                                <p class="btn btn-success btn-block">${o.giaTien} $</p>
+                                                <p class="btn btn-success btn-block">${String.format("%.0f",o.giaTien)} $</p>
                                             </div>
                                            
                                         </div>

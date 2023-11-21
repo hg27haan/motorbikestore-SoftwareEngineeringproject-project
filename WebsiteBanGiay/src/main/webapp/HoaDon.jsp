@@ -150,7 +150,7 @@
                   <td>${a.username }</td>
                   </c:if>
                   </c:forEach>
-                  <td>${String.format("%.02f",i.tongTien) }</td>
+                  <td>${String.format("%.0f",i.tongTien) }</td>
                   <td>${i.ngayThanhToan }</td> 
                 </tr>
                  </c:forEach>

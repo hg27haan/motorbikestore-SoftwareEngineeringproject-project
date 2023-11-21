@@ -146,7 +146,7 @@
                      <td>
                           <img src="${o.hinhAnh1}" style="width: 200px;height: 120px;">
                     </td>
-                     <td>${o.giaTien} $</td>
+                     <td>${String.format("%.0f",o.getGiaTien())} $</td>
                       <td>
                               <a href="loadProduct?pid=${o.maXe}"><button type="button" class="btn btn-warning"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></button></a>
                               <a href="delete?pid=${o.maXe}"><button type="button" class="btn btn-danger"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></button></a>

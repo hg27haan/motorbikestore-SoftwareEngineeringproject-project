@@ -143,7 +143,7 @@
 						                     <td>
 						                          <img src="${o.hinhAnh1}" style="width: 200px;height: 120px;">
 						                    </td>
-						                     <td>${o.giaTien} $</td>
+						                     <td>${String.format("%.0f",o.getGiaTien())} $</td>
 						                      <td>${t.soLuongDaBan }</td>
 						                </tr>
 			                	</c:if>

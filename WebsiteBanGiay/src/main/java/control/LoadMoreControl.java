@@ -48,7 +48,7 @@ public class LoadMoreControl extends HttpServlet {
                     + "                                        <p class=\"card-text show_txt\">"+o.getTitle()+"</p>\n"
                     + "                                        <div class=\"row\">\n"
                     + "                                            <div class=\"col\">\n"
-                    + "                                                <p class=\"btn btn-danger btn-block\">"+o.getGiaTien()+" $</p>\n"
+                    + "                                                <p class=\"btn btn-danger btn-block\">"+String.format("%.0f",o.getGiaTien())+" $</p>\n"
                     + "                                            </div>\n"
                     + "                                            <div class=\"col\">\n"
                     + "                                                <a href=\"addCart?pid="+o.getMaXe()+"\" class=\"btn btn-success btn-block\">Add to cart</a>\n"

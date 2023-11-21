@@ -160,8 +160,8 @@
 
             <h5>${detail.tenXe}</h5>
         
-            <p><span class="mr-1"><strong>$${String.format("%.02f",detail.giaTien*0.9) }</strong></span><span
-                    class="text-grey"><strong><s>$${detail.giaTien }</s></strong></span></p>
+            <p><span class="mr-1"><strong>$${String.format("%.0f",detail.giaTien*0.9) }</strong></span><span
+                    class="text-grey"><strong><s>$${String.format("%.0f",detail.giaTien) }</s></strong></span></p>
             
                     
             <p class="pt-1">${detail.gioiThieu}</p>
@@ -382,7 +382,7 @@
               <div class="pt-4">
 
                 <h5>${o.title }</h5>
-                <p><span class="text-danger mr-1"><strong>${String.format("%.02f",o.giaTien*0.9) }$</strong></span><span
+                <p><span class="text-danger mr-1"><strong>${String.format("%.0f",o.giaTien*0.9) }$</strong></span><span
                     class="text-grey"><strong><s>${o.giaTien }$</s></strong></span></p>
                     
                

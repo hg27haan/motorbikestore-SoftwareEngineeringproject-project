@@ -45,7 +45,7 @@ public class EditProfileControl extends HttpServlet {
 
         dao.editProfile(username, password, email, maAccount);
         
-        request.setAttribute("mess", "Cap nhat tai khoan thanh cong! Hay dang nhap bang tai khoan moi!");
+        request.setAttribute("mess", "Cập Nhật Tài Khoản Thành Công! Hãy Đăng Nhập Bằng Tài Khoản Mới!");
 
         request.getRequestDispatcher("Login.jsp").forward(request, response);
     }
