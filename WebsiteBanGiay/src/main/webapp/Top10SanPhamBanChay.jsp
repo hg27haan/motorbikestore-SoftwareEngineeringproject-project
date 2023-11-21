@@ -34,19 +34,8 @@
        <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
         <link href="css/style.css" rel="stylesheet" type="text/css"/> 
         <link href="css/manager.css" rel="stylesheet" type="text/css"/>
-        
-<!--           <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round"> -->
-<!--         <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"> -->
-  <!--       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"> -->
-     <!--     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">  -->
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+       <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-         <style>
-            img{
-                width: 200px;
-                height: 120px;
-            }
-        </style>
         <style>
         body {
             margin: 0;
@@ -105,13 +94,14 @@
 
 <!--Main layout-->
 <main>
+  <jsp:include page="Horizbar.jsp"></jsp:include>
   <div class="container pt-4">
   
 
 
     
      <!--Section: Top 10 san pham ban chay-->
-    <section class="mb-4">
+    <section class="mb-4" style="margin-top:100px">
       <div class="card"> 
          <div class="card-header py-3">
           	<h5 class="mb-0 text-center"><strong>Top 10 sản phẩm bán chạy nhất</strong></h5>
@@ -151,7 +141,7 @@
 						                   <td>${o.maXe}</td>
 						                    <td>${o.tenXe}</td>
 						                     <td>
-						                          <img src="${o.hinhAnh1}">
+						                          <img src="${o.hinhAnh1}" style="width: 200px;height: 120px;">
 						                    </td>
 						                     <td>${o.giaTien} $</td>
 						                      <td>${t.soLuongDaBan }</td>

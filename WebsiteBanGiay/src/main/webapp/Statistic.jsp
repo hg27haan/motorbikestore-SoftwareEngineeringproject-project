@@ -90,7 +90,8 @@
 
 <!--Main layout-->
 <main>
-  <div class="container pt-4">
+  <jsp:include page="Horizbar.jsp"></jsp:include>
+  <div class="container pt-4" >
   
     
     
@@ -102,7 +103,7 @@
 
     <!--Section: Statistics with subtitles-->
     <section>
-      <div class="row" id="total">
+      <div class="row" id="total" style="margin-top:100px">
         <div class="col-xl-6 col-md-12 mb-4">
           <div class="card">
             <div class="card-body">

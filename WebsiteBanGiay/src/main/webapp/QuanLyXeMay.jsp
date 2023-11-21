@@ -34,19 +34,9 @@
        <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
         <link href="css/style.css" rel="stylesheet" type="text/css"/> 
         <link href="css/manager.css" rel="stylesheet" type="text/css"/>
-        
-<!--           <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round"> -->
-<!--         <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"> -->
-  <!--       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"> -->
-     <!--     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">  -->
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-         <style>
-            img{
-                width: 200px;
-                height: 120px;
-            }
-        </style>
+         
         <style>
         body {
             margin: 0;
@@ -105,9 +95,10 @@
 
 <!--Main layout-->
 <main>
+	<jsp:include page="Horizbar.jsp"></jsp:include>
   <div class="container pt-4">
-     <!--Section: Quan Ly tai Khoan-->
-    <section class="mb-4">
+     <!--Section: Quan Ly Xe máy-->
+    <section class="mb-4" style="margin-top:100px">
       <div class="card">
         <div class="card-header py-3 row">
           <div class="col-sm-3">
@@ -150,15 +141,15 @@
               <tbody>
                  <c:forEach items="${listP}" var="o">
                 <tr>
-                   <td>${o.id}</td>
-                    <td>${o.name}</td>
+                   <td>${o.maXe}</td>
+                    <td>${o.tenXe}</td>
                      <td>
-                          <img src="${o.image}">
+                          <img src="${o.hinhAnh1}" style="width: 200px;height: 120px;">
                     </td>
-                     <td>${o.price} $</td>
+                     <td>${o.giaTien} $</td>
                       <td>
-                              <a href="loadProduct?pid=${o.id}"><button type="button" class="btn btn-warning"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></button></a>
-                              <a href="delete?pid=${o.id}"><button type="button" class="btn btn-danger"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></button></a>
+                              <a href="loadProduct?pid=${o.maXe}"><button type="button" class="btn btn-warning"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></button></a>
+                              <a href="delete?pid=${o.maXe}"><button type="button" class="btn btn-danger"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></button></a>
                       </td>
                 </tr>
                 </c:forEach>
@@ -183,86 +174,11 @@
         </div>
       </div>
     </section>
-    <!--Section: Quan Ly tai Khoan-->
+    <!--Section: Quan Ly Xe máy-->
   </div>
   
     
 </main>
- 
-      <!-- Edit Modal HTML -->
-        <div id="addEmployeeModal" class="modal fade">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <form action="add" method="post">
-                        <div class="modal-header">						
-                            <h4 class="modal-title">Add Product</h4>
-                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                        </div>
-                        <div class="modal-body">					
-                            <div class="form-group">
-                                <label>Name</label>
-                                <input name="name" type="text" class="form-control" required>
-                            </div>
-                            <div class="form-group">
-                                <label>Image</label>
-                                <input name="image" type="text" class="form-control" >
-                            </div>
-                              <div class="form-group">
-                                <label>Image 2</label>
-                                <input name="image2" type="text" class="form-control" >
-                            </div>
-                              <div class="form-group">
-                                <label>Image 3</label>
-                                <input name="image3" type="text" class="form-control" >
-                            </div>
-                              <div class="form-group">
-                                <label>Image 4</label>
-                                <input name="image4" type="text" class="form-control" >
-                            </div>
-                            <div class="form-group">
-                                <label>Price</label>
-                                <input name="price" type="text" class="form-control" >
-                            </div>
-                            <div class="form-group">
-                                <label>Title</label>
-                                <textarea name="title" class="form-control" required></textarea>
-                            </div>
-                             <div class="form-group">
-                                <label>Model</label>
-                                <input name="model" type="text" class="form-control" >
-                            </div>
-                             <div class="form-group">
-                                <label>Color</label>
-                                <input name="color" type="text" class="form-control" >
-                            </div>
-                             <div class="form-group">
-                                <label>Delivery</label>
-                                <input name="delivery" type="text" class="form-control" >
-                            </div>
-                            <div class="form-group">
-                                <label>Description</label>
-                                <textarea name="description" class="form-control" ></textarea>
-                            </div>
-                            <div class="form-group">
-                                <label>Category</label>
-                                <select name="category" class="form-select" aria-label="Default select example">
-                                    <c:forEach items="${listCC}" var="o">
-                                        <option value="${o.maDanhMuc}">${o.tenDanhMuc}</option>
-                                    </c:forEach>
-                                </select>
-                            </div>
-
-                        </div>
-                        <div class="modal-footer">  
-                            <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
-                            <input type="submit" class="btn btn-success" value="Add">
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-        
-        <script src="js/manager.js" type="text/javascript"></script>
         
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <!--Main layout-->

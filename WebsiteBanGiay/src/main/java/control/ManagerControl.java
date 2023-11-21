@@ -32,28 +32,16 @@ public class ManagerControl extends HttpServlet {
         	response.sendRedirect("login");
         	return;
         }
-        int id = a.getMaAccount();
         String index = request.getParameter("index");
         if(index == null) {
         	index="1";
         }
         int indexPage = Integer.parseInt(index);
-        
         DAO dao = new DAO();
-        List<XeMay> list = dao.getProductBySellIDAndIndex(id, indexPage);
-        List<DanhMuc> listC = dao.getAllCategory();
-        int allProductBySellID = dao.countAllProductBySellID(id);
-        int endPage = allProductBySellID/5;
-        if(allProductBySellID % 5 != 0) {
-        	endPage++;
-        }
+        List<XeMay> listP = dao.getAllProduct();
         
-
-        System.out.print(list);
         request.setAttribute("tag", indexPage);
-        request.setAttribute("endPage", endPage);
-        request.setAttribute("listCC", listC);
-        request.setAttribute("listP", list);
+        request.setAttribute("listP", listP);
         request.getRequestDispatcher("QuanLyXeMay.jsp").forward(request, response);
     }
     @Override

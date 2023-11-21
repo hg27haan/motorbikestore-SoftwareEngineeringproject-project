@@ -90,12 +90,13 @@
 
 <!--Main layout-->
 <main>
+  <jsp:include page="Horizbar.jsp"></jsp:include>
   <div class="container pt-4">
   
    
     
       <!-- Section: Main chart 2 -->
-    <section class="mb-4" id="doanhThuThang">
+    <section class="mb-4" id="doanhThuThang" style="margin-top:100px">
       <div class="card">
         <div class="card-header py-3">
           <h5 class="mb-0 text-center"><strong>Doanh thu theo tháng</strong></h5>

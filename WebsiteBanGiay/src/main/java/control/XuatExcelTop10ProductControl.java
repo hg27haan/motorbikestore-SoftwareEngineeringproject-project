@@ -37,16 +37,6 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 @WebServlet(name = "XuatExcelTop10ProductControl", urlPatterns = {"/xuatExcelTop10ProductControl"})
 public class XuatExcelTop10ProductControl extends HttpServlet {
-
-    /**
-     * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
-     * methods.
-     *
-     * @param request servlet request
-     * @param response servlet response
-     * @throws ServletException if a servlet-specific error occurs
-     * @throws IOException if an I/O error occurs
-     */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
@@ -113,31 +103,31 @@ public class XuatExcelTop10ProductControl extends HttpServlet {
         
         for (SoLuongXeDaBan soluong : listTop10Product) {
         	   for (XeMay pro : listAllProduct) {
-        		   if(soluong.getProductID() == pro.getId()) {
+        		   if(soluong.getMaXe() == pro.getMaXe()) {
         			   	i=i+1;
              			 row=workSheet.createRow(i);
              			 cell0=row.createCell(0);
-             		     cell0.setCellValue(pro.getId());
+             		     cell0.setCellValue(pro.getMaXe());
              		     cell1=row.createCell(1);
-             		     cell1.setCellValue(pro.getName());
+             		     cell1.setCellValue(pro.getTenXe());
              		     cell2=row.createCell(2);
-             		     cell2.setCellValue(pro.getImage());
+             		     cell2.setCellValue(pro.getHinhAnh1());
              		     cell3=row.createCell(3);
-             		     cell3.setCellValue(pro.getPrice());	
+             		     cell3.setCellValue(pro.getGiaTien());	
              		     cell4=row.createCell(4);
              		     cell4.setCellValue(pro.getTitle());	
              		     cell4=row.createCell(5);
-             		     cell4.setCellValue(pro.getDescription());	
+             		     cell4.setCellValue(pro.getGioiThieu());	
              		     cell4=row.createCell(6);
-             		     cell4.setCellValue(pro.getModel());	
+             		     /*cell4.setCellValue(pro.getModel());	
              		     cell4=row.createCell(7);
-             		     cell4.setCellValue(pro.getColor());	
+             		     cell4.setCellValue(pro.get);	
              		     cell4=row.createCell(8);
-             		     cell4.setCellValue(pro.getDelivery());	
+             		     cell4.setCellValue(pro.));	*/
              		     cell4=row.createCell(9);
-             		     cell4.setCellValue(pro.getImage2());	
+             		     cell4.setCellValue(pro.getHinhAnh2());	
              		     cell4=row.createCell(10);
-             		     cell4.setCellValue(pro.getImage3());	
+             		     cell4.setCellValue(pro.getHinhAnh3());	
              		     cell4=row.createCell(11);
              		     cell4.setCellValue(soluong.getSoLuongDaBan());	
         		   }	
@@ -152,44 +142,18 @@ public class XuatExcelTop10ProductControl extends HttpServlet {
         request.setAttribute("mess", "Đã xuất file Excel thành công!");
         request.getRequestDispatcher("top10").forward(request, response); 
     }
-
-    // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
-    /**
-     * Handles the HTTP <code>GET</code> method.
-     *
-     * @param request servlet request
-     * @param response servlet response
-     * @throws ServletException if a servlet-specific error occurs
-     * @throws IOException if an I/O error occurs
-     */
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         processRequest(request, response);
     }
-
-    /**
-     * Handles the HTTP <code>POST</code> method.
-     *
-     * @param request servlet request
-     * @param response servlet response
-     * @throws ServletException if a servlet-specific error occurs
-     * @throws IOException if an I/O error occurs
-     */
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         processRequest(request, response);
     }
-
-    /**
-     * Returns a short description of the servlet.
-     *
-     * @return a String containing servlet description
-     */
     @Override
     public String getServletInfo() {
         return "Short description";
-    }// </editor-fold>
-
+    }
 }

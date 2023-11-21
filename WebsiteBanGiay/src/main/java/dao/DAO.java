@@ -120,7 +120,7 @@ public class DAO {
     }
     
     public int countAllProductBySellID(int sell_ID) {
-        String query = "select count(*) from Product where sell_ID=?";
+        String query = "select soLuongDaBan from SoLuongXeDaBan where maXe=?";
         try {
             conn = new DBContext().getConnection();//mo ket noi voi sql
             ps = conn.prepareStatement(query);
@@ -542,8 +542,8 @@ public class DAO {
     public List<XeMay> getProductBySellIDAndIndex(int id, int indexPage) {
         List<XeMay> list = new ArrayList<>();
         String query = "select * from XeMay \r\n"
-        		+ "where sell_ID = ?\r\n"
-        		+ "order by [id]\r\n"
+        		+ "where maXe = ?\r\n"
+        		+ "order by [maXe]\r\n"
         		+ "offset ? rows\r\n"
         		+ "fetch next 5 rows only";
         try {
@@ -1357,10 +1357,22 @@ public class DAO {
             System.out.println("Có lỗi");
         }
     }
-
+    public void deleteCartByAccountID(String id) {
+        String query = "delete from GioHang\n"
+                + "where [maAccount] = ?";
+        try {
+            conn = new DBContext().getConnection();//mo ket noi voi sql
+            ps = conn.prepareStatement(query);
+            ps.setString(1, id);
+            ps.executeUpdate();
+        } catch (Exception e) {
+        	e.printStackTrace();
+            System.out.println("Có lỗi");
+        }
+    }
     public void deleteInvoiceByAccountId(String id) {
-        String query = "delete from Invoice\n"
-                + "where [accountID] = ?";
+        String query = "delete from HoaDon\n"
+                + "where [maAccount] = ?";
         try {
             conn = new DBContext().getConnection();//mo ket noi voi sql
             ps = conn.prepareStatement(query);
@@ -1373,8 +1385,8 @@ public class DAO {
     }
     
     public void deleteTongChiTieuBanHangByUserID(String id) {
-        String query = "delete from TongChiTieuBanHang\n"
-                + "where [userID] = ?";
+        String query = "delete from TongChiTieuMuaHang\n"
+                + "where [maAccount] = ?";
         try {
             conn = new DBContext().getConnection();//mo ket noi voi sql
             ps = conn.prepareStatement(query);
@@ -1388,8 +1400,8 @@ public class DAO {
     
     
     public void deleteProduct(String pid) {
-        String query = "delete from Product\n"
-                + "where [id] = ?";
+        String query = "delete from XeMay\n"
+                + "where [maXe] = ?";
         try {
             conn = new DBContext().getConnection();//mo ket noi voi sql
             ps = conn.prepareStatement(query);
@@ -1430,7 +1442,7 @@ public class DAO {
     }
     
     public void deleteCartByProductID(String productID) {
-        String query = "delete from Cart where [productID]=?";
+        String query = "delete from GioHang where [maGioHang]=?";
         try {
             conn = new DBContext().getConnection();//mo ket noi voi sql
             ps = conn.prepareStatement(query);
@@ -1443,7 +1455,7 @@ public class DAO {
     }
     
     public void deleteSoLuongDaBanByProductID(String productID) {
-        String query = "delete from SoLuongDaBan where [productID]=?";
+        String query = "delete from SoLuongXeDaBan where [maXe]=?";
         try {
             conn = new DBContext().getConnection();//mo ket noi voi sql
             ps = conn.prepareStatement(query);
@@ -1456,7 +1468,7 @@ public class DAO {
     }
     
     public void deleteReviewByProductID(String productID) {
-        String query = "delete from Review where [productID] = ?";
+        String query = "delete from FeedBack where [maXe] = ?";
         try {
             conn = new DBContext().getConnection();//mo ket noi voi sql
             ps = conn.prepareStatement(query);
@@ -1469,7 +1481,7 @@ public class DAO {
     }
     
     public void deleteReviewByAccountID(String id) {
-        String query = "delete from Review where [accountID] = ?";
+        String query = "delete from FeedBack where [maAccount] = ?";
         try {
             conn = new DBContext().getConnection();//mo ket noi voi sql
             ps = conn.prepareStatement(query);
@@ -1482,7 +1494,7 @@ public class DAO {
     }
     
     public void deleteAccount(String id) {
-        String query = "delete from Account where uID= ?";
+        String query = "delete from Account where maAccount= ?";
         try {
             conn = new DBContext().getConnection();//mo ket noi voi sql
             ps = conn.prepareStatement(query);
@@ -1531,13 +1543,6 @@ public class DAO {
         	
             conn = new DBContext().getConnection();//mo ket noi voi sql
             ps = conn.prepareStatement(query);
-			/*
-			 * ps.setString(1, name); ps.setString(2, image); ps.setString(3, price);
-			 * ps.setString(4, title); ps.setString(5, description); ps.setString(6,
-			 * category); ps.setInt(7, sid); ps.setString(8, model); ps.setString(9, color);
-			 * ps.setString(10, delivery); ps.setString(11, image2); ps.setString(12,
-			 * image3); ps.setString(13, image4);
-			 */
             ps.executeUpdate();
            
         } catch (Exception e) {
@@ -1773,22 +1778,6 @@ public class DAO {
         }
     }
     
-//    public void editTongBanHang(int sell_ID, double tongTienBanHangThem) {
-//        String query = "exec dbo.proc_CapNhatTongBanHang ?,?";
-//        try {
-//            conn = new DBContext().getConnection();//mo ket noi voi sql
-//            ps = conn.prepareStatement(query);
-//            ps.setInt(1, sell_ID);
-//            ps.setDouble(2, tongTienBanHangThem);
-//          
-//            ps.executeUpdate();
-//            
-//        } catch (Exception e) {
-//        	e.printStackTrace();
-//            System.out.println("Có lỗi");
-//        }
-//    }
-    
     public void editsoLuongGioHang(int maAccount, int maXe, int soLuong) {
         String query = "update GioHang set [soLuong]=?\r\n"
         		+ "where [maAccount]=? and [maXe]=?";
@@ -1823,28 +1812,6 @@ public class DAO {
 
    public static void main(String[] args) {
         DAO dao = new DAO();
-//        List<Review> list = 
-//        	dao.insertProduct("Giày Bóng Đá Nam Bitis Hunter Football","https://product.hstatic.net/1000230642/product/02400vag__1__5d559f914caf4864ad99a37c18cc1a1b_1024x1024.jpg",
-//        					"535","Giày Bóng Đá Nam Biti Hunter Football","Với thiết kế năng động, Giày bóng đá Biti’s Hunter được tung ra với 5 màu sắc nổi bật tạo điểm nhấn trên sân đấu.",
-//        					"3",1,"G39","Yellow","Ho Chi Minh","https://product.hstatic.net/1000230642/product/02400vag__3__3a83e45335054285a27fba37cafb23c1_1024x1024.jpg",
-//        					"https://product.hstatic.net/1000230642/product/02400vag__4__d3693ef3babe4fc3a2908d8eb2df6e3b_1024x1024.jpg","https://product.hstatic.net/1000230642/product/02400vag__4__d3693ef3babe4fc3a2908d8eb2df6e3b_1024x1024.jpg");
-//        dao.editProduct("Giay chay du lich 2","https://giaygiare.vn/upload/sanpham/nike-sb-dunk-low-eire-net-deep-orange.jpg","301","title 3",
-//       		"desciption desciption 3", "1", "G66", "Blue", "Ho Chi Minh", "https://giaygiare.vn/upload/sanpham/nike-sb-dunk-low-eire-net-deep-orange.jpg",
-//       		"https://giaygiare.vn/upload/sanpham/nike-sb-dunk-low-eire-net-deep-orange.jpg",
-//        		"https://giaygiare.vn/upload/sanpham/nike-sb-dunk-low-eire-net-deep-orange.jpg", "3");
-
-//        List<Invoice> list = dao.searchByNgayXuat("2021-11-20");
-//        for (Invoice o : list) 
-//        { 
-//        	System.out.println(o); 
-//        }
-//      int s = dao.checkAccountAdmin(1);
-//      System.out.println(s);
-//      System.out.println("da chay xong");
-
-		/*
-		 * for (Review o : list) { System.out.println(o); }
-		 */
    }
 
 }

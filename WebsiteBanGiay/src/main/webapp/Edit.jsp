@@ -85,7 +85,7 @@
                                 </div>
                                 <div class="form-group">
                                     <label>Dài x Rộng x Cao</label>
-                                    <textarea name="daixRongxCao" class="form-control" required>${detail.daixRongxCao}</textarea>
+                                    <textarea name="daixRongxCao" class="form-control" required>${detail.daiRongCao}</textarea>
                                 </div>
                                 <div class="form-group">
                                     <label>Dung Tích Xi Lanh</label>
@@ -110,7 +110,7 @@
 
                             </div>
                             <div class="modal-footer">
-                                <input type="submit" class="btn btn-success" value="Edit">
+                                 <input type="submit" class="btn btn-success" value="Edit">
                             </div>
                         </form>
                     </div>

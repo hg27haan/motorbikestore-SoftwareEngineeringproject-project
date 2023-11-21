@@ -90,6 +90,7 @@
 
 <!--Main layout-->
 <main>
+	<jsp:include page="Horizbar.jsp"></jsp:include>
   <div class="container pt-4">
   
    
@@ -98,7 +99,7 @@
     
 
     <!--Section: Sales Performance KPIs-->
-    <section class="mb-4">
+    <section class="mb-4" style="margin-top:100px">
     	<c:if test="${error!=null }">
                  <div class="alert alert-danger" role="alert">
 						 ${error}

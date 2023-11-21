@@ -100,13 +100,14 @@
 
 <!--Main layout-->
 <main>
+  <jsp:include page="Horizbar.jsp"></jsp:include>
   <div class="container pt-4">
   
 
 
     
      <!--Section: Quan Ly tai Khoan-->
-    <section class="mb-4">
+    <section class="mb-4" style="margin-top:100px">
       <div class="card">
         <div class="card-header py-3 row">
           <div class="col-sm-3">
