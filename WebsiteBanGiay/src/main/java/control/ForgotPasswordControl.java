@@ -37,7 +37,7 @@ public class ForgotPasswordControl extends HttpServlet {
 			DAO dao = new DAO();
 			Account account = dao.checkAccountExistByusernameAndemail(username, emailAddress);
 			if(account == null) {
-				request.setAttribute("error", "Email hoac username sai!");
+				request.setAttribute("error", "Email hoặc Tên Đăng Nhập Bị Sai!");
 			}
 			if(account != null) {
 				Email email =new Email();
@@ -46,16 +46,16 @@ public class ForgotPasswordControl extends HttpServlet {
 				email.setTo(emailAddress);
 				email.setSubject("Forgot Password Function");
 				StringBuilder sb = new StringBuilder();
-				sb.append("Dear ").append(username).append("<br>");
-				sb.append("You are used the forgot password. <br> ");
-				sb.append("Your password is <b>").append(account.getPassword()).append(" </b> <br>");
-				sb.append("Regards<br>");
-				sb.append("Administrator");
+				sb.append("Gửi đến ").append(username).append(",<br>");
+				sb.append("Bạn vừa sử dụng chức năng Quên Mật Khẩu. <br> ");
+				sb.append("Mật Khẩu của bạn là: <b>").append(account.getPassword()).append(" </b> <br>");
+				sb.append("Trân trọng,<br>");
+				sb.append("Chủ Cửa Hàng");
 				
 				email.setContent(sb.toString());
 				EmailUtils.send(email);
 				
-				request.setAttribute("mess", "Mat khau da duoc gui den email cua ban!");
+				request.setAttribute("mess", "Mật Khẩu Đã Được Gửi Đến Email Của Bạn!");
 				
 				
 			}

@@ -116,8 +116,8 @@
                                     <ul class="list-unstyled mb-4" id="contentTotalMoney">
                                          <li class="d-flex justify-content-between py-3 border-bottom"><strong class="text-muted">Tổng tiền hàng</strong><strong>100 $</strong></li>
                                          <li class="d-flex justify-content-between py-3 border-bottom"><strong class="text-muted">VAT</strong><strong>10 $</strong></li>
-                                         <li class="d-flex justify-content-between py-3 border-bottom"><strong class="text-muted">Tổng thanh toán</strong> 
-                                            <h5 class="font-weight-bold">110 $</h5> 
+                                         <li class="d-flex justify-content-between py-3 border-bottom"><strong class="text-muted">Tổng thanh toán (chưa bao gồm VAT)</strong> 
+                                            <h5 class="font-weight-bold">110 $</h5>
                                         </li> 
                                     </ul>
                                     

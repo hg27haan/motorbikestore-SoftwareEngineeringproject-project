@@ -123,7 +123,7 @@ public class OrderControl extends HttpServlet {
 						}
 					}
 				}
-		        double totalMoneyVAT=totalMoney+totalMoney*0.1;
+		        double totalMoneyVAT=totalMoney;
 		        
 		        
 		        //old code
@@ -131,27 +131,27 @@ public class OrderControl extends HttpServlet {
 				email.setFrom("21133021@student.hcmute.edu.vn"); //chinh lai email quan tri tai day [chu y dung email con hoat dong]
 				email.setFromPassword("K_Haruto1103"); //mat khau email tren
 				email.setTo(emailAddress);
-				email.setSubject("Dat hang thanh cong tu Fashion Family");
+				email.setSubject("Đặt mua Xe thành công từ Cửa Hàng Xe Máy SPKT");
 				StringBuilder sb = new StringBuilder();
-				sb.append("Dear ").append(name).append("<br>");
-				sb.append("Ban vua dat dang tu Fashion Family. <br> ");
-				sb.append("Dia chi nhan hang cua ban la: 1 Võ Văn Ngân (Cửa Hàng) <b>").append(" </b> <br>");
-				sb.append("So dien thoai khi nhan hang cua ban la: <b>").append(phoneNumber).append(" </b> <br>");
-				sb.append("Cac san pham ban dat la: <br>");
+				sb.append("Gửi đến ").append(name).append(",<br>");
+				sb.append("Bạn vừa đặt mua Xe thành công từ Cửa Hàng Xe Máy SPKT. <br> ");
+				sb.append("Địa chỉ nhận Xe của bạn là: Số 1 Võ Văn Ngân (Địa Chỉ Cửa Hàng) <b>").append(" </b> <br>");
+				sb.append("Số Điện Thoại Để Xác Nhận Của Bạn Là: <b>").append(phoneNumber).append(" </b> <br>");
+				sb.append("Các Xe Máy Bạn Đã Đặt Mua Là: <br>");
 				for(GioHang c : list) {
 					for(XeMay p : list2) {
 						if(c.getMaXe()==p.getMaXe()) {
-							sb.append(p.getTenXe()).append("  |  ").append("Price:").append(p.getGiaTien()).append("đ").append("  |  ").append("Amount:").append(c.getSoLuong()).append("<br>");
+							sb.append(p.getTenXe()).append("  |  ").append("Giá Tiền:").append(String.format(".0%f", p.getGiaTien())).append(" đ").append("  |  ").append("Số Lượng:").append(c.getSoLuong()).append("<br>");
 						}
 					}
 				}
-				sb.append("Tong Tien: ").append(String.format("%.02f",totalMoneyVAT)).append("$").append("<br>");
-				sb.append("Cam on ban da dat hang tai Fashion Family<br>");
-				sb.append("Chu cua hang");
+				sb.append("Tổng Tiền: ").append(String.format("%.0f",totalMoneyVAT)).append(" đ").append("<br>");
+				sb.append("Cảm ơn bạn đã tin tưởng Cửa Hàng Xe Máy SPKT,<br>");
+				sb.append("Chủ Cửa Hàng");
 				
 				email.setContent(sb.toString());
 				EmailUtils.send(email);
-				request.setAttribute("mess", "Dat hang thanh cong!");
+				request.setAttribute("mess", "Đặt hàng thành công!");
 				
 				dao.deleteGioHangBymaAccount(maAccount);
 				
@@ -162,7 +162,7 @@ public class OrderControl extends HttpServlet {
 				
 			
 		} catch (Exception e) {
-			request.setAttribute("error", "Dat hang that bai!");
+			request.setAttribute("error", "Đặt Hàng Thất Bại!");
 			e.printStackTrace();
 		}
 	
