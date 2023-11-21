@@ -44,7 +44,7 @@ public class LoadMoreControl extends HttpServlet {
                     + "                                <div class=\"card\">\n"
                     + "                                    <img class=\"card-img-top\" src=\""+o.getHinhAnh1()+"\" alt=\"Card image cap\">\n"
                     + "                                    <div class=\"card-body\">\n"
-                    + "                                        <h4 class=\"card-title show_txt\"><a href=\"detail?pid="+o.getMaXe()+"\" title=\"View Product\">"+o.getTenXe()+"</a></h4>\n"
+                    + "                                        <h4 class=\"card-title show_txt\"><a href=\"detail?pmaXe="+o.getMaXe()+"\" title=\"View Product\">"+o.getTenXe()+"</a></h4>\n"
                     + "                                        <p class=\"card-text show_txt\">"+o.getTitle()+"</p>\n"
                     + "                                        <div class=\"row\">\n"
                     + "                                            <div class=\"col\">\n"

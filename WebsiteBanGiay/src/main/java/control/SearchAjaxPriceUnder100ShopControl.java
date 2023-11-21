@@ -48,7 +48,7 @@ public class SearchAjaxPriceUnder100ShopControl extends HttpServlet {
         			+ "                  <div class=\"view zoom overlay rounded z-depth-2\">\r\n"
         			+ "                    <img class=\"img-fluid w-100\"\r\n"
         			+ "                      src=\""+o.getHinhAnh1()+"\" alt=\"Sample\">\r\n"
-        			+ "                    <a href=\"detail?pid="+o.getMaXe()+"\">\r\n"
+        			+ "                    <a href=\"detail?pmaXe="+o.getMaXe()+"\">\r\n"
         			+ "                      <div class=\"mask\">\r\n"
         			+ "                        <img class=\"img-fluid w-100\"\r\n"
         			+ "                          src=\""+o.getHinhAnh1()+"\">\r\n"
