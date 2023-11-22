@@ -24,6 +24,7 @@ public class XeMay {
     private String hinhAnh2;
     private String hinhAnh3;
     private String hinhAnh4;
+
     
 	public XeMay(int maXe, String tenXe, String hinhAnh1, Double giaTien, String title, 
 			String gioiThieu, String khoiLuong, String daiRongCao, String dungTichXiLanh, 

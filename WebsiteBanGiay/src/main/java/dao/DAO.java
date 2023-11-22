@@ -20,6 +20,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.text.DateFormat;
+import java.text.DecimalFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
@@ -1344,7 +1345,7 @@ public class DAO {
 
     public void singup(String user, String pass, String email) {
         String query = "insert into Account\n"
-                + "values(?,?,0,0,?)";
+                + "values(?,?,0,?)";
         try {
             conn = new DBContext().getConnection();//mo ket noi voi sql
             ps = conn.prepareStatement(query);
@@ -1399,7 +1400,9 @@ public class DAO {
     }
     
     
-    public void deleteProduct(String pid) {
+    public String deleteProduct(String pid) {
+    	String del="Không Thể Xóa Xe Này Vì Có Khách Hàng Đang Thêm Vào Giỏ Hàng! Hãy "
+    			+ "Liên Lạc Với Khách Hàng!!!";
         String query = "delete from XeMay\n"
                 + "where [maXe] = ?";
         try {
@@ -1407,10 +1410,12 @@ public class DAO {
             ps = conn.prepareStatement(query);
             ps.setString(1, pid);
             ps.executeUpdate();
+            del="Thực Hiện Xóa Xe Thành Công!";
         } catch (Exception e) {
         	e.printStackTrace();
             System.out.println("Có lỗi");
         }
+        return del;
     }
     
     public void deleteProductBySellID(String id) {
