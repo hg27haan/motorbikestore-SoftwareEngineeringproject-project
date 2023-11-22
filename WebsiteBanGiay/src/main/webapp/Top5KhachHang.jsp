@@ -113,7 +113,7 @@
         	
         	   <c:if test="${mess!=null }">
                 <div class="alert alert-success" role="alert">
-				  	${mess}
+				  	<div style="margin-left:100px">${mess}</div>
 				</div>
 				</c:if>
 				

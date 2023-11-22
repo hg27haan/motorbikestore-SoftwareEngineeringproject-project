@@ -31,7 +31,7 @@ public class DeleteAccountControl extends HttpServlet {
         dao.deleteTongChiTieuBanHangByUserID(id);
         dao.deleteAccount(id);
         
-        request.setAttribute("mess", "Account Deleted!");
+        request.setAttribute("mess", "Thực Hiện Xóa Tài Khoản Thành Công!");
         request.getRequestDispatcher("managerAccount").forward(request, response);
     }
     @Override
