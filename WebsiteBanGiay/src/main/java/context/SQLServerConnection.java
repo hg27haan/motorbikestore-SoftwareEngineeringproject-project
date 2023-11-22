@@ -9,11 +9,11 @@ public class SQLServerConnection {
 			throws SQLException, ClassNotFoundException
 	{
 		String dbDriver = "com.microsoft.sqlserver.jdbc.SQLServerDriver";
-		String dbURL = "jdbc:sqlserver://localhost:61460";
+		String dbURL = "jdbc:sqlserver://localhost:1433";
 
-		String dbName="WebsiteBanXeMay";
+		String dbName="WebsiteQuanLyBanXeMay";
 		String dbUsername = "sa";
-		String dbPassword ="12345";
+		String dbPassword ="K_Haruto111103";
 		String connectionURL = dbURL + ";databaseName=" + dbName;
 		Connection conn = null;
 		try 

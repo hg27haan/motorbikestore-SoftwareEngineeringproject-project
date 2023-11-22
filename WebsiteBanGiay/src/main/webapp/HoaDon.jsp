@@ -147,7 +147,7 @@
                   <td>${i.maHoaDon }</td>
                   <c:forEach items="${listAllAccount}" var="a">
                   <c:if test="${i.maAccount==a.maAccount }">
-                  <td>${a.username }</td>
+                  	<td>${a.username }</td>
                   </c:if>
                   </c:forEach>
                   <td>${String.format("%.0f",i.tongTien) }</td>

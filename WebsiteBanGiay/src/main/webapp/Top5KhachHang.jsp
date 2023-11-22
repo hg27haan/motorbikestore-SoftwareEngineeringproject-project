@@ -137,7 +137,7 @@
 			                   <td>${o.maAccount}</td>
 			               		<td>${o.username}</td>
 			                   <td>${o.email}</td>
-			                   <td>${t.tongChiTieu}</td>    
+			                   <td>${String.format("%.0f",t.tongChiTieu)}</td>    
 			                </tr>
 			                    </c:if>
 			                </c:if>

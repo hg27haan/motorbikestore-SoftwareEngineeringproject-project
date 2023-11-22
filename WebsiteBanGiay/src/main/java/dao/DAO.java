@@ -228,7 +228,7 @@ public class DAO {
     }
     
     public int countAllReview() {
-        String query = "select count(*) from Review";
+        String query = "select count(*) from FeedBack";
         try {
             conn = new DBContext().getConnection();//mo ket noi voi sql
             ps = conn.prepareStatement(query);
@@ -1557,18 +1557,16 @@ public class DAO {
         }
     }
     
-    public void insertAccount(String user, String pass, String isSell,
-    		String isAdmin, String email) {
-        String query = "insert Account([user], pass, isSell, isAdmin, email)\r\n"
-        		+ "values(?,?,?,?,?)";
+    public void insertAccount(String user, String pass, String isAdmin, String email) {
+        String query = "insert Account([username], password, isAdmin, email)\r\n"
+        		+ "values(?,?,?,?)";
         try {
             conn = new DBContext().getConnection();//mo ket noi voi sql
             ps = conn.prepareStatement(query);
             ps.setString(1, user);
             ps.setString(2, pass);
-            ps.setString(3, isSell);
-            ps.setString(4, isAdmin);
-            ps.setString(5, email);
+            ps.setString(3, isAdmin);
+            ps.setString(4, email);
             ps.executeUpdate();
         } catch (Exception e) {
         	e.printStackTrace();
@@ -1643,7 +1641,8 @@ public class DAO {
             ps.setString(3, noiDung);
             ps.setDate(4,getCurrentDate());
             ps.executeUpdate();
-           
+            System.out.println("hello");
+            
         } catch (Exception e) {	
         	e.printStackTrace();
             System.out.println("Có lỗi");

@@ -36,15 +36,14 @@ public class AddAccountControl extends HttpServlet {
         request.setCharacterEncoding("UTF-8");
         String user = request.getParameter("user");
         String pass = request.getParameter("pass");
-        String isSell = request.getParameter("isSell");
         String isAdmin = request.getParameter("isAdmin");
         String email = request.getParameter("email");
        
         
         
         DAO dao = new DAO();
-        dao.insertAccount(user, pass, isSell, isAdmin, email);
-        request.setAttribute("mess", "Account Added!");
+        dao.insertAccount(user, pass, isAdmin, email);
+        request.setAttribute("mess", "Thêm Tài Khoản Thành Công!");
 
         request.getRequestDispatcher("managerAccount").forward(request, response);
     }

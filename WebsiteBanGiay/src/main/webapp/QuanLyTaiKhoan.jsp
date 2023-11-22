@@ -193,10 +193,6 @@
                                 <label>Password</label>
                                 <input name="pass" type="password" class="form-control" required>
                             </div>
-                            <div class="form-group form-check">
-			                    <input name="isSell" value="1" type="checkbox" class="form-check-input" id="isSell">
-			                    <label class="form-check-label" for="isSell">Là người bán</label>
-                			</div>
                 			 
                 			 <div class="form-group form-check">
 			                    <input name="isAdmin" value="1" type="checkbox" class="form-check-input" id="isAdmin">

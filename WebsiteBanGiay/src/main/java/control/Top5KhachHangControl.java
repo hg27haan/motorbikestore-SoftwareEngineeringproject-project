@@ -32,9 +32,9 @@ public class Top5KhachHangControl extends HttpServlet {
         DAO dao = new DAO();
 
         List<Account> listAllAccount = dao.getAllAccount();
-        System.out.println(listAllAccount);
+
         List<TongChiTieuMuaHang> listTop5KhachHang = dao.getTop5KhachHang();
-        System.out.println(listTop5KhachHang);
+
 
         request.setAttribute("listAllAccount", listAllAccount);
         request.setAttribute("listTop5KhachHang", listTop5KhachHang);

@@ -126,17 +126,17 @@
             <table class="table table-hover text-nowrap">
               <thead>
                 <tr>
-                  <th scope="col">ID</th>
-                  <th scope="col">Name</th>
-                  <th scope="col">Image</th>
-                  <th scope="col">Price</th>
-                  <th scope="col">SoLuongDaBan</th>
+                  <th scope="col">Mã Xe</th>
+                  <th scope="col">Tên Xe</th>
+                  <th scope="col">Hình Ảnh</th>
+                  <th scope="col">Giá Tiền</th>
+                  <th scope="col">Số Lượng Đã Bán</th>
                 </tr>
               </thead>
               <tbody>
                  <c:forEach items="${listTop10Product}" var="t">
 	                  <c:forEach items="${listAllProduct}" var="o">
-			                  <c:if test="${t.maXe==o.maXe }">
+			                  <c:if test="${t.maXe == o.maXe }">
 						                <tr>
 						                   <td>${o.maXe}</td>
 						                    <td>${o.tenXe}</td>

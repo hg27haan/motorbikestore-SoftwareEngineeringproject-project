@@ -31,16 +31,17 @@ public class Top10SanPhamControl extends HttpServlet {
        
         DAO dao = new DAO();
         List<XeMay> listAllProduct = dao.getAllProduct();
-        System.out.println(listAllProduct);
+//        System.out.println(listAllProduct);
         List<SoLuongXeDaBan> listTop10Product = dao.getTop10SanPhamBanChay();
-        System.out.println("SoLuongXeDaBan");
-        System.out.println(listTop10Product);
+//        System.out.println("SoLuongXeDaBan");
+//        System.out.println(listTop10Product);
         
         
         
         request.setAttribute("listAllProduct", listAllProduct);
+        System.out.println(listAllProduct);
         request.setAttribute("listTop10Product", listTop10Product);
-
+        System.out.println(listTop10Product);
         request.getRequestDispatcher("Top10SanPhamBanChay.jsp").forward(request, response);
     }
 

@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Statistic</title>
+<title>Admin</title>
  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -113,7 +113,7 @@
                     <i class="fas fa-pencil-alt text-info fa-3x me-4"></i>
                   </div>
                   <div>
-                    <h4>Total Products</h4>
+                    <h4>Tổng Số Lượng Xe Máy Hiện Tại</h4>
                     <p class="mb-0"></p>
                   </div>
                 </div>
@@ -135,7 +135,7 @@
                        ></i>
                   </div>
                   <div>
-                    <h4>Total Comments</h4>
+                    <h4>Tổng Số FeedBack Từ Khách Hàng</h4>
                     <p class="mb-0"></p>
                   </div>
                 </div>
@@ -158,7 +158,7 @@
                 <div class="d-flex flex-row">
                   <div class="align-self-center">
                     <!--  <h2 class="h1 mb-0 me-4">$${sumAllInvoice }</h2>-->
-                    <h4>Total Sales Of A Week</h4>
+                    <h4>Tổng Doanh Thu Tuần</h4>
                   </div>
                   <div>
                     <h2 class="h1 mb-0 me-4">$${totalMoney}</h2>
