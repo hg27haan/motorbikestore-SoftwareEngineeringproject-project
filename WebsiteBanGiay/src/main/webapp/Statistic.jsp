@@ -161,7 +161,7 @@
                     <h4>Tổng Doanh Thu Tuần</h4>
                   </div>
                   <div>
-                    <h2 class="h1 mb-0 me-4">$${totalMoney}</h2>
+                    <h2 class="h1 mb-0 me-4">${totalMoney} VNĐ</h2>
                     <p class="mb-0"></p>
                   </div>
                 </div>

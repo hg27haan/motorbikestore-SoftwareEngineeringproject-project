@@ -12,10 +12,10 @@
           <i class="fas fa-tachometer-alt fa-fw me-3"></i><span>Main dashboard</span>
         </a>
         <a href="doanhThuTheoThu" class="list-group-item list-group-item-action py-2 ripple" style="margin-bottom: 10px;height:50px; box-shadow: 10px 2px #c915ee;" onmouseover="this.style.color='#c915ee'" onmouseout="this.style.color='#49494a';">
-          <i class="fas fa-chart-pie fa-fw me-3"></i><span>Danh thu thứ</span>
+          <i class="fas fa-chart-pie fa-fw me-3"></i><span>Danh thu Thứ</span>
         </a>
          <a href="doanhThuTheoThang" class="list-group-item list-group-item-action py-2 ripple" style="margin-bottom: 10px;height:50px; box-shadow: 10px 2px #2285f5;" onmouseover="this.style.color='#2285f5'" onmouseout="this.style.color='#49494a';">
-          <i class="fas fa-chart-bar fa-fw me-3"></i><span>Doanh thu tháng</span>
+          <i class="fas fa-chart-bar fa-fw me-3"></i><span>Doanh thu Tháng</span>
         </a>
         <a href="hoaDon" class="list-group-item list-group-item-action py-2 ripple" style="margin-bottom: 10px;height:50px; box-shadow: 10px 2px #7810f6;" onmouseover="this.style.color='#7810f6'" onmouseout="this.style.color='#49494a';">
         <i class="fas fa-file-invoice-dollar fa-fw me-3"></i><span>Hóa Đơn</span>

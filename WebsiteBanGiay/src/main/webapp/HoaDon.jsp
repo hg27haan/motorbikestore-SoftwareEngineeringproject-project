@@ -134,9 +134,9 @@
                 <tr>
                   <th scope="col"></th>
                   <th scope="col">Mã Hóa Đơn</th>
-                  <th scope="col">Account</th>
-                  <th scope="col">Tổng Giá($)</th>
-                  <th scope="col">Ngày Xuất</th>
+                  <th scope="col">Tài Khoản</th>
+                  <th scope="col">Tổng Giá (VNĐ)</th>
+                  <th scope="col">Ngày Xuất (Năm-Tháng-Ngày)</th>
                 </tr>
               </thead>
            
@@ -150,7 +150,7 @@
                   	<td>${a.username }</td>
                   </c:if>
                   </c:forEach>
-                  <td>${String.format("%.0f",i.tongTien) }</td>
+                  <td>${String.format("%.0f",i.tongTien) } VNĐ</td>
                   <td>${i.ngayThanhToan }</td> 
                 </tr>
                  </c:forEach>

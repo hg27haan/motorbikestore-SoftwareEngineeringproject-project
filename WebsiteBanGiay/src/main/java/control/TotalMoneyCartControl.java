@@ -58,11 +58,11 @@ public class TotalMoneyCartControl extends HttpServlet {
         
         	
         PrintWriter out = response.getWriter();
-        		out.println(" <li class=\"d-flex justify-content-between py-3 border-bottom\"><strong class=\"text-muted\">Tổng tiền hàng</strong><strong>"+totalMoney+"</strong></li>\r\n"
+        		out.println(" <li class=\"d-flex justify-content-between py-3 border-bottom\"><strong class=\"text-muted\">Tổng tiền hàng</strong><strong>"+ String.format("%.0f",totalMoney ) +" VNĐ</strong></li>\r\n"
         				+ "                                        <li class=\"d-flex justify-content-between py-3 border-bottom\"><strong class=\"text-muted\">Giảm Giá</strong><strong>10 %</strong></li>\r\n"
         				+ "                                        <li class=\"d-flex justify-content-between py-3 border-bottom\"><strong class=\"text-muted\">VAT</strong><strong>10 %</strong></li>\r\n"
         				+ "                                        <li class=\"d-flex justify-content-between py-3 border-bottom\"><strong class=\"text-muted\">Tổng thanh toán (Bao gồm cả Giảm giá và VAT)</strong>\r\n"
-        				+ "                                            <h5 class=\"font-weight-bold\">"+totalMoneyVAT+"</h5>\r\n"
+        				+ "                                            <h5 class=\"font-weight-bold\">"+String.format("%.0f",totalMoneyVAT )+" VNĐ</h5>\r\n"
         				+ "                                        </li>");
         	
         

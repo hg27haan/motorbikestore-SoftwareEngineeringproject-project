@@ -48,7 +48,7 @@ public class SearchByAjaxHoaDon extends HttpServlet {
         			+ "                  <th scope=\"row\"></th>\r\n"
         			+ "                  <td>"+o.getMaHoaDon()+"</td>\r\n"
         			+ "                  <td>"+a.getMaAccount()+"</td>\r\n"
-        			+ "                  <td>"+String.format("%.0f", tongGia)+"</td>\r\n"
+        			+ "                  <td>"+String.format("%.0f", tongGia)+" VNĐ</td>\r\n"
         			+ "                  <td>"+o.getNgayThanhToan()+"</td> \r\n"
         			+ "                </tr>");
         		}

@@ -141,7 +141,7 @@ public class OrderControl extends HttpServlet {
 				for(GioHang c : list) {
 					for(XeMay p : list2) {
 						if(c.getMaXe()==p.getMaXe()) {
-							sb.append(p.getTenXe()).append("  |  ").append("Giá Tiền:").append(String.format(".0%f", p.getGiaTien())).append(" đ").append("  |  ").append("Số Lượng:").append(c.getSoLuong()).append("<br>");
+							sb.append(p.getTenXe()).append("   -|-   ").append("Giá Tiền: ").append(String.format(".0%f", p.getGiaTien()).substring(2, String.format(".0%f", p.getGiaTien()).length()-7)).append(" VNĐ").append("   -|-   ").append("Số Lượng: ").append(c.getSoLuong()).append(" chiếc<br>");
 						}
 					}
 				}

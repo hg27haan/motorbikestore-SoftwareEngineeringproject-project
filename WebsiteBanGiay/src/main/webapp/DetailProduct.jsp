@@ -160,8 +160,8 @@
 
             <h5>${detail.tenXe}</h5>
         
-            <p><span class="mr-1"><strong>$${String.format("%.0f",detail.giaTien*0.9) }</strong></span><span
-                    class="text-grey"><strong><s>$${String.format("%.0f",detail.giaTien) }</s></strong></span></p>
+            <p><span class="mr-1"><strong>${String.format("%.0f",detail.giaTien*0.9) } VNĐ</strong></span><span
+                    class="text-grey"><strong><s>${String.format("%.0f",detail.giaTien) } VNĐ</s></strong></span></p>
             
                     
             <p class="pt-1">${detail.gioiThieu}</p>
@@ -275,7 +275,7 @@
           <div class="tab-pane fade show active" id="description" role="tabpanel" aria-labelledby="description-tab">
             <h5>Giới Thiệu Thông Tin Xe</h5>
             
-            <h6>$${String.format("%.02f",detail.giaTien*0.9) }</h6>
+            <h6>${String.format("%.0f",detail.giaTien*0.9) } VNĐ</h6>
             <p class="pt-1">${detail.gioiThieu}</p>
           </div>
           
@@ -382,8 +382,8 @@
               <div class="pt-4">
 
                 <h5>${o.title }</h5>
-                <p><span class="text-danger mr-1"><strong>${String.format("%.0f",o.giaTien*0.9) }$</strong></span><span
-                    class="text-grey"><strong><s>${o.giaTien }$</s></strong></span></p>
+                <p><span class="text-danger mr-1"><strong>${String.format("%.0f",o.giaTien*0.9) } VNĐ</strong></span><span
+                    class="text-grey"><strong><s>${String.format("%.0f",o.giaTien) } VNĐ</s></strong></span></p>
                     
                
 

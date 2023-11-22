@@ -36,7 +36,7 @@ public class AddAmountCartControl extends HttpServlet {
         soLuong+=1;
         DAO dao = new DAO();
         dao.editsoLuongGioHang(maAccount, maXe, soLuong);
-        request.setAttribute("mess", "Da tang so luong!");
+        request.setAttribute("mess", "Đã Tăng Số Lượng!");
         request.getRequestDispatcher("managerCart").forward(request, response);
     }
 
