@@ -125,13 +125,6 @@
 
             
             <div class="card-group" style="margin-top:50px;">
-<!--   <div class="card" style="border-style: none;"> -->
-<!--     <img style="height:55px; width:64px; margin: auto;" src="https://giayxshop.vn/wp-content/uploads/2019/11/iconfinder_truck_1291768-1.png"> -->
-<!--     <div class="card-body"> -->
-<!--       <h5 class="card-title" style="text-align:center">GIAO HÀNG TOÀN QUỐC</h5> -->
-<!--       <p class="card-text" style="text-align:center">Vận chuyển khắp Việt Nam</p> -->
-<!--     </div> -->
-<!--   </div> -->
   <div class="card" style="border-style: none;">
     <img class="card-img-top" style="border-radius:5px; height:90px; width:100px; margin: auto;" src="https://luathongbang.com.vn/wp-content/uploads/2021/12/thanh-toan-tien-mat-e1573618010533.jpg" alt="Card image cap">
     <div class="card-body">
@@ -139,13 +132,6 @@
       <p class="card-text" style="text-align:center">Nhận hàng tại Cửa Hàng rồi thanh toán</p>
     </div>
   </div>
-<!--   <div class="card" style="border-style: none;"> -->
-<!--     <img class="card-img-top" style="height:55px; width:64px; margin: auto;" src="https://giayxshop.vn/wp-content/uploads/2019/11/iconfinder_service_repair_phone_mobile_wrench_screw_driver_4014703-1.png" alt="Card image cap"> -->
-<!--     <div class="card-body"> -->
-<!--       <h5 class="card-title" style="text-align:center">BẢO HÀNH DÀI HẠN</h5> -->
-<!--       <p class="card-text" style="text-align:center">Bảo hàng lên đến 60 ngày</p> -->
-<!--     </div> -->
-<!--   </div> -->
   <div class="card" style="border-style: none;">
     <img class="card-img-top" style="border-radius:5px; height:90px; width:100px; margin: auto;" src="https://img.freepik.com/premium-vector/yellow-scooter-side-view-cartoon-motorbike-icon_53562-17582.jpg" alt="Card image cap">
     <div class="card-body">

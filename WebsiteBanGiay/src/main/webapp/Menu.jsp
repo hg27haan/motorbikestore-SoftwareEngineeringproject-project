@@ -22,12 +22,6 @@
 	                        <a class="nav-link" href="shop">CỬA HÀNG</a>
 	                    </li> 
 	                
-	               <%--  <c:if test="${sessionScope.acc.isSell == 1}">
-	                    <li class="nav-item">
-	                        <a class="nav-link" href="manager">Manager Product</a>
-	                    </li>
-	                </c:if> --%>
-	                
 	                <c:if test="${sessionScope.acc == null}">
 	                    <li class="nav-item">
 	                        <a class="nav-link" href="login">ĐĂNG NHẬP</a>
@@ -47,17 +41,15 @@
 	                        <a class="nav-link" href="EditProfile.jsp">CHỈNH SỬA TÀI KHOẢN</a>
 	                    </li>
 	                    <li class="nav-item">
-	                        <a class="nav-link" href="#">XIN CHÀO, ${sessionScope.acc.username}</a>
+	                      <c:if test="${sessionScope.acc.username != \"admin\" }">
+	                    	
+	                        	<a class="nav-link" href="#">XIN CHÀO, ${sessionScope.acc.username}</a>
+	                      </c:if>
+	                      <c:if test="${sessionScope.acc.username == \"admin\" }">
+	                        	<a class="nav-link" href="admin">XIN CHÀO, ${sessionScope.acc.username}</a>
+	                     </c:if>  
 	                    </li>
 	                </c:if>
-<%-- 	                <c:if test="${sessionScope.acc != null}"> --%>
-	                    
-<%-- 	                </c:if> --%>
-	               <%--  <c:if test="${sessionScope.acc.isAdmin == 1}">
-	                    <li class="nav-item">
-	                        <a class="nav-link" href="statistic">Statistic</a>
-	                    </li>
-	                </c:if> --%>
 	            </ul>
 	
 	            <form action="search" method="post" class="form-inline my-2 my-lg-0">
